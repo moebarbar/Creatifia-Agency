@@ -109,9 +109,9 @@ export function Footer() {
           </div>
           <div className="flex flex-col justify-end items-start md:items-end">
             <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm uppercase tracking-widest text-white/60">
-              <a href="#" className="hover:text-accent transition-colors">Instagram</a>
+              <a href="https://www.instagram.com/moe.barbar/" target="_blank" className="hover:text-accent transition-colors">Instagram</a>
               <a href="#" className="hover:text-accent transition-colors">Twitter</a>
-              <a href="#" className="hover:text-accent transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/moe-barbar-1101b01a1/" target="_blank" className="hover:text-accent transition-colors">LinkedIn</a>
               <a href="#" className="hover:text-accent transition-colors">Dribbble</a>
             </div>
             <p className="mt-8 text-white/40 max-w-xs text-right hidden md:block">
@@ -121,11 +121,14 @@ export function Footer() {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 text-xs uppercase tracking-widest text-white/40">
           <p>&copy; 2024 PixelPerfect Agency</p>
-          <div className="flex gap-8 mt-4 md:mt-0">
+          <div className="flex flex-col md:flex-row gap-8 mt-4 md:mt-0 items-center">
             <span>San Francisco</span>
             <span>Tokyo</span>
             <span>Berlin</span>
           </div>
+        </div>
+        <div className="w-full text-center mt-12 text-white/20 text-[10px] uppercase tracking-[0.2em] hover:text-white/60 transition-colors">
+            This website is built and managed with ❤️ by <a href="https://www.linkedin.com/in/moe-barbar-1101b01a1/" target="_blank" className="hover:text-accent underline decoration-accent/50 underline-offset-4">Moe Barbar</a>
         </div>
       </div>
     </footer>
