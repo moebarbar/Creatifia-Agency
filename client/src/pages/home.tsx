@@ -56,23 +56,23 @@ export default function Home() {
              {/* Floating Frames (Replacements for Stickers) */}
              <div className="absolute inset-0 pointer-events-none z-20">
                  {/* Top Left Frame */}
-                 <div className="absolute top-[-5%] left-[5%] md:left-[10%] rotate-[-12deg] w-[15vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-4 border-white transform hover:translate-y-[-10px]" />
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                 <div className="absolute top-[5%] left-[5%] md:top-[-5%] md:left-[10%] rotate-[-12deg] w-[25vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
+                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white transform hover:translate-y-[-10px]" />
+                    <div className="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[10px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         Lead Engineer
                     </div>
                  </div>
                  
                  {/* Bottom Right Frame */}
-                 <div className="absolute bottom-[-15%] right-[5%] md:right-[15%] rotate-[8deg] w-[18vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-4 border-white" />
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                 <div className="absolute bottom-[5%] right-[5%] md:bottom-[-15%] md:right-[15%] rotate-[8deg] w-[30vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
+                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white" />
+                    <div className="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[10px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         React Expert
                     </div>
                  </div>
 
-                 {/* Middle Right Frame */}
-                 <div className="absolute top-[15%] right-[2%] md:right-[5%] rotate-[15deg] w-[12vw] md:w-[10vw] pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
+                 {/* Middle Right Frame - Hidden on Mobile to reduce clutter */}
+                 <div className="absolute top-[15%] right-[2%] md:right-[5%] rotate-[15deg] w-[12vw] md:w-[10vw] hidden md:block pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
                     <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-sm border-4 border-white" />
                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         Pixel Perfect
@@ -80,32 +80,32 @@ export default function Home() {
                  </div>
              </div>
 
-             <div className="flex flex-col items-center justify-center relative z-10 max-w-[80vw]">
+             <div className="flex flex-col items-center justify-center relative z-10 max-w-[90vw] md:max-w-[80vw]">
                 {/* Line 1 - Adjusted for containment */}
                 <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] w-full mb-2">
-                     <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white mix-blend-difference z-10">TRANSFORMING</span>
+                     <span className="text-[10vw] md:text-[6vw] font-display font-black uppercase text-white mix-blend-difference z-10">TRANSFORMING</span>
                 </div>
 
                 {/* Line 2 - Visible IDEAS + Portrait */}
-                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] gap-3 md:gap-5 relative z-10 mb-2">
-                     <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white hover:text-accent transition-colors duration-300">IDEAS</span>
+                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] gap-2 md:gap-5 relative z-10 mb-2">
+                     <span className="text-[10vw] md:text-[6vw] font-display font-black uppercase text-white hover:text-accent transition-colors duration-300">IDEAS</span>
                      <Magnetic>
-                        <div className="w-[8vw] h-[4vw] md:w-[6vw] md:h-[3vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500 z-30 relative">
+                        <div className="w-[16vw] h-[8vw] md:w-[6vw] md:h-[3vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500 z-30 relative">
                              <img src={portrait} alt="Portrait" className="w-full h-full object-cover scale-125" />
                         </div>
                      </Magnetic>
-                     <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white">INTO</span>
+                     <span className="text-[10vw] md:text-[6vw] font-display font-black uppercase text-white">INTO</span>
                 </div>
 
                 {/* Line 3 - Removed Diamond, kept simple */}
-                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] gap-3 md:gap-5 relative z-10 mb-2">
-                    <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-accent">REAL</span>
-                    <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white">WORLD</span>
+                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] gap-2 md:gap-5 relative z-10 mb-2">
+                    <span className="text-[10vw] md:text-[6vw] font-display font-black uppercase text-accent">REAL</span>
+                    <span className="text-[10vw] md:text-[6vw] font-display font-black uppercase text-white">WORLD</span>
                 </div>
 
                  {/* Line 4 - Finish */}
                  <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] relative z-10">
-                    <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white">RESULTS</span>
+                    <span className="text-[10vw] md:text-[6vw] font-display font-black uppercase text-white">RESULTS</span>
                 </div>
              </div>
             
