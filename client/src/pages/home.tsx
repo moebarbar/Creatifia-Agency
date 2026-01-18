@@ -71,32 +71,32 @@ export default function Home() {
                  </div>
              </div>
 
-             <div className="flex flex-col items-center justify-center relative z-10">
+             <div className="flex flex-col items-center justify-center relative z-10 max-w-[80vw]">
                 {/* Line 1 - Adjusted for containment */}
-                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] w-full">
-                     <span className="text-[10vw] md:text-[9.5vw] font-display font-black uppercase text-white mix-blend-difference z-10 break-all md:break-normal">TRANSFORMING</span>
+                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] w-full mb-2">
+                     <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white mix-blend-difference z-10">TRANSFORMING</span>
                 </div>
 
                 {/* Line 2 - Visible IDEAS + Portrait */}
-                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-1 md:-mt-2 relative z-10">
-                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white hover:text-accent transition-colors duration-300">IDEAS</span>
+                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] gap-3 md:gap-5 relative z-10 mb-2">
+                     <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white hover:text-accent transition-colors duration-300">IDEAS</span>
                      <Magnetic>
-                        <div className="w-[12vw] h-[6vw] md:w-[10vw] md:h-[5vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500 z-30 relative">
+                        <div className="w-[8vw] h-[4vw] md:w-[6vw] md:h-[3vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500 z-30 relative">
                              <img src={portrait} alt="Portrait" className="w-full h-full object-cover scale-125" />
                         </div>
                      </Magnetic>
-                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">INTO</span>
+                     <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white">INTO</span>
                 </div>
 
                 {/* Line 3 - Removed Diamond, kept simple */}
-                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-1 md:-mt-2 relative z-10">
-                    <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-accent">REAL</span>
-                    <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">WORLD</span>
+                <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] gap-3 md:gap-5 relative z-10 mb-2">
+                    <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-accent">REAL</span>
+                    <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white">WORLD</span>
                 </div>
 
                  {/* Line 4 - Finish */}
-                 <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] -mt-1 md:-mt-2 relative z-10">
-                    <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">RESULTS</span>
+                 <div className="flex items-center justify-center flex-wrap tracking-tight leading-[0.9] relative z-10">
+                    <span className="text-[5vw] md:text-[6vw] font-display font-black uppercase text-white">RESULTS</span>
                 </div>
              </div>
             
