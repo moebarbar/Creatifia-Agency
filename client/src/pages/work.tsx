@@ -1,28 +1,40 @@
 import { Navbar, Footer } from "@/components/layout/shell";
 import { FadeIn, TextReveal } from "@/components/ui/motion";
 import { ProjectCard } from "@/components/ui/project-card";
-import project1 from "@assets/generated_images/modern_dark_mode_saas_dashboard_interface_mockup.png";
-import project2 from "@assets/generated_images/editorial_fashion_e-commerce_website_design.png";
-import project3 from "@assets/generated_images/futuristic_fintech_mobile_app_interface.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import type { Project } from "@shared/schema";
 
-const projects = [
-  { id: "1", title: "Fintech Future", category: "App Interface", type: "App", image: project3 },
-  { id: "2", title: "Luxe Commerce", category: "E-commerce Website", type: "Website", image: project2 },
-  { id: "3", title: "SaaS Analytics", category: "Dashboard UI", type: "SaaS", image: project1 },
-  { id: "4", title: "Neo Bank", category: "Landing Page", type: "Website", image: project3 }, 
-  { id: "5", title: "Crypto Exchange", category: "Trading Platform", type: "SaaS", image: project1 },
-  { id: "6", title: "Fashion Week", category: "Event Site", type: "Website", image: project2 },
-];
+async function fetchProjects(): Promise<Project[]> {
+  const response = await fetch("/api/projects");
+  if (!response.ok) throw new Error("Failed to fetch projects");
+  return response.json();
+}
 
 const filters = ["All", "Website", "SaaS", "App"];
 
 export default function Work() {
   const [filter, setFilter] = useState("All");
+  const { data: projects = [], isLoading } = useQuery({
+    queryKey: ["projects"],
+    queryFn: fetchProjects,
+  });
 
   const filteredProjects = filter === "All" 
     ? projects 
-    : projects.filter(p => p.type === filter);
+    : projects.filter(p => p.tags.includes(filter));
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background pt-32">
+        <Navbar />
+        <div className="container mx-auto px-6 flex items-center justify-center h-[50vh]">
+          <p className="text-muted-foreground text-xl">Loading projects...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pt-32">
@@ -39,6 +51,7 @@ export default function Work() {
             <button
               key={f}
               onClick={() => setFilter(f)}
+              data-testid={`filter-${f.toLowerCase()}`}
               className={`text-sm font-bold uppercase tracking-widest transition-colors ${
                 filter === f ? "text-accent" : "text-muted-foreground hover:text-white"
               }`}

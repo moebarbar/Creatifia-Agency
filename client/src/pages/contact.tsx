@@ -8,12 +8,23 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
+
+async function submitContact(data: z.infer<typeof formSchema>) {
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) throw new Error("Failed to submit contact form");
+  return response.json();
+}
 
 export default function Contact() {
   const { toast } = useToast();
@@ -26,13 +37,26 @@ export default function Contact() {
     },
   });
 
+  const mutation = useMutation({
+    mutationFn: submitContact,
+    onSuccess: () => {
+      toast({
+        title: "Message Sent",
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent",
-      description: "We'll get back to you within 24 hours.",
-    });
-    form.reset();
+    mutation.mutate(values);
   }
 
   return (
@@ -102,8 +126,13 @@ export default function Contact() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full bg-white text-black hover:bg-accent font-bold uppercase tracking-widest py-6">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  data-testid="button-submit-contact"
+                  disabled={mutation.isPending}
+                  className="w-full bg-white text-black hover:bg-accent font-bold uppercase tracking-widest py-6"
+                >
+                  {mutation.isPending ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Form>
