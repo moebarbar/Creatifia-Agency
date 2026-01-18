@@ -8,15 +8,10 @@ import project3 from "@assets/generated_images/futuristic_fintech_mobile_app_int
 import torus from "@assets/generated_images/neon_lime_3d_abstract_torus_shape.png";
 import card from "@assets/generated_images/holographic_glass_ui_card_element.png";
 import sphere from "@assets/generated_images/chrome_metal_sphere_with_reflection.png";
-import asterisk from "@assets/generated_images/3d_chrome_metal_asterisk_shape.png";
-import cube from "@assets/generated_images/glowing_neon_green_wireframe_cube.png";
-import glass from "@assets/generated_images/distorted_liquid_glass_sphere.png";
-import eye from "@assets/generated_images/pixelated_retro_digital_eye_icon.png";
-import stickerFrontend from "@assets/generated_images/sticker_badge_saying_pure_frontend.png";
-import stickerPixel from "@assets/generated_images/sticker_badge_saying_pixel_perfect.png";
-import stickerShipped from "@assets/generated_images/sticker_badge_saying_shipped.png";
 import portrait from "@assets/generated_images/edgy_monochrome_developer_portrait.png";
-import metalShape from "@assets/generated_images/abstract_3d_metallic_shape.png";
+import portraitWoman from "@assets/generated_images/edgy_creative_woman_portrait_in_frame.png";
+import artFrame from "@assets/generated_images/abstract_digital_art_in_frame.png";
+import cyberpunkFrame from "@assets/generated_images/cyberpunk_creative_portrait_in_frame.png";
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
@@ -58,46 +53,54 @@ export default function Home() {
         <div className="container mx-auto px-6 z-10 relative">
           <div className="max-w-[95vw] mx-auto relative">
              
-             {/* Floating Stickers */}
-             <div className="absolute inset-0 pointer-events-none">
-                 <FloatingSticker src={stickerFrontend} className="w-32 md:w-48 top-[-10%] left-[5%] md:left-[15%]" rotate={-15} delay={1} />
-                 <FloatingSticker src={stickerPixel} className="w-32 md:w-48 bottom-[-10%] right-[5%] md:right-[20%]" rotate={10} delay={1.2} />
-                 <FloatingSticker src={stickerShipped} className="w-24 md:w-36 top-[20%] right-[0%] md:right-[10%]" rotate={5} delay={1.4} />
+             {/* Floating Frames (Replacements for Stickers) */}
+             <div className="absolute inset-0 pointer-events-none z-20">
+                 {/* Top Left Frame */}
+                 <div className="absolute top-[-5%] left-[5%] md:left-[10%] rotate-[-12deg] w-[15vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50">
+                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-4 border-white transform hover:translate-y-[-10px]" />
+                 </div>
+                 
+                 {/* Bottom Right Frame */}
+                 <div className="absolute bottom-[-15%] right-[5%] md:right-[15%] rotate-[8deg] w-[18vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50">
+                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-4 border-white" />
+                 </div>
+
+                 {/* Middle Right Frame */}
+                 <div className="absolute top-[15%] right-[2%] md:right-[5%] rotate-[15deg] w-[12vw] md:w-[10vw] pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50">
+                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-sm border-4 border-white" />
+                 </div>
              </div>
 
-             <div className="flex flex-col items-center justify-center relative">
-                {/* Line 1 - Extremely dense */}
-                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8]">
-                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white mix-blend-difference z-10">TRANSFORMING</span>
+             <div className="flex flex-col items-center justify-center relative z-10">
+                {/* Line 1 - Adjusted for containment */}
+                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] w-full">
+                     <span className="text-[10vw] md:text-[9.5vw] font-display font-black uppercase text-white mix-blend-difference z-10 break-all md:break-normal">TRANSFORMING</span>
                 </div>
 
-                {/* Line 2 - Mixed media */}
-                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-2 md:-mt-4 relative z-10">
-                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-transparent text-stroke md:text-stroke-2">IDEAS</span>
+                {/* Line 2 - Visible IDEAS + Portrait */}
+                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-1 md:-mt-2 relative z-10">
+                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white hover:text-accent transition-colors duration-300">IDEAS</span>
                      <Magnetic>
-                        <div className="w-[12vw] h-[6vw] md:w-[10vw] md:h-[5vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500">
-                             <img src={portrait} alt="Portrait" className="w-full h-full object-cover" />
+                        <div className="w-[12vw] h-[6vw] md:w-[10vw] md:h-[5vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500 z-30 relative">
+                             <img src={portrait} alt="Portrait" className="w-full h-full object-cover scale-125" />
                         </div>
                      </Magnetic>
                      <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">INTO</span>
                 </div>
 
-                {/* Line 3 - Visual Impact */}
-                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-2 md:-mt-4 relative z-10">
+                {/* Line 3 - Removed Diamond, kept simple */}
+                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-1 md:-mt-2 relative z-10">
                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-accent">REAL</span>
-                    <Magnetic>
-                         <InlineVisual src={metalShape} alt="Abstract" className="w-[8vw] h-[8vw] rounded-full" delay={0.6} />
-                    </Magnetic>
                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">WORLD</span>
                 </div>
 
                  {/* Line 4 - Finish */}
-                 <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] -mt-2 md:-mt-4 relative z-10">
+                 <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] -mt-1 md:-mt-2 relative z-10">
                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">RESULTS</span>
                 </div>
              </div>
             
-            <FadeIn delay={0.8} className="mt-12 md:mt-20 max-w-2xl mx-auto relative z-20 bg-background/50 backdrop-blur-sm p-6 rounded-2xl border border-white/5">
+            <FadeIn delay={0.8} className="mt-12 md:mt-24 max-w-2xl mx-auto relative z-30 bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl">
               <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-8">
                 From strategy to execution — we handle everything from <span className="text-white font-medium">Concept</span> to <span className="text-accent font-medium">Deployment</span>.
               </p>
