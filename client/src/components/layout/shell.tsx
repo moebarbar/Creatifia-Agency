@@ -31,29 +31,25 @@ export function Navbar() {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <Link href="/">
-            <a className="text-2xl font-display font-bold tracking-tighter uppercase z-50 relative hover:text-accent transition-colors">
-              Pixel<span className="text-accent">Perfect</span>
-            </a>
+          <Link href="/" className="text-2xl font-display font-bold tracking-tighter uppercase z-50 relative hover:text-accent transition-colors">
+            Pixel<span className="text-accent">Perfect</span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                <a
-                  className={`text-sm font-medium uppercase tracking-widest hover:text-accent transition-colors ${
-                    location === link.href ? "text-accent" : "text-muted-foreground"
-                  }`}
-                >
-                  {link.name}
-                </a>
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className={`text-sm font-medium uppercase tracking-widest hover:text-accent transition-colors ${
+                  location === link.href ? "text-accent" : "text-muted-foreground"
+                }`}
+              >
+                {link.name}
               </Link>
             ))}
-            <Link href="/contact">
-              <a className="bg-foreground text-background px-6 py-2 text-sm font-bold uppercase tracking-wider hover:bg-accent hover:text-black transition-colors">
-                Start Project
-              </a>
+            <Link href="/contact" className="bg-foreground text-background px-6 py-2 text-sm font-bold uppercase tracking-wider hover:bg-accent hover:text-black transition-colors">
+              Start Project
             </Link>
           </div>
 
@@ -76,13 +72,13 @@ export function Navbar() {
       >
         <div className="flex flex-col items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href}>
-              <a
-                onClick={() => setIsOpen(false)}
-                className="text-4xl font-display font-bold uppercase hover:text-accent transition-colors"
-              >
-                {link.name}
-              </a>
+            <Link 
+              key={link.name} 
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-display font-bold uppercase hover:text-accent transition-colors"
+            >
+              {link.name}
             </Link>
           ))}
         </div>
@@ -101,10 +97,8 @@ export function Footer() {
               Let's build <br />
               <span className="text-accent">icons.</span>
             </h2>
-            <Link href="/contact">
-              <a className="inline-block border border-white/20 px-8 py-4 text-xl uppercase tracking-widest hover:bg-accent hover:text-black hover:border-accent transition-all duration-300">
-                Start a Project
-              </a>
+            <Link href="/contact" className="inline-block border border-white/20 px-8 py-4 text-xl uppercase tracking-widest hover:bg-accent hover:text-black hover:border-accent transition-all duration-300">
+              Start a Project
             </Link>
           </div>
           <div className="flex flex-col justify-end items-start md:items-end">
@@ -127,8 +121,16 @@ export function Footer() {
             <span>Berlin</span>
           </div>
         </div>
-        <div className="w-full text-center mt-12 text-white/20 text-[10px] uppercase tracking-[0.2em] hover:text-white/60 transition-colors">
-            This website is built and managed with ❤️ by <a href="https://www.linkedin.com/in/moe-barbar/" target="_blank" className="hover:text-accent underline decoration-accent/50 underline-offset-4">Moe Barbar</a>
+        <div className="w-full text-center mt-12 text-white/40 text-xs uppercase tracking-[0.15em] hover:text-white/80 transition-colors">
+            Designed & developed with <span className="text-accent">❤️</span> by{" "}
+            <a 
+              href="https://www.linkedin.com/in/moe-barbar/" 
+              target="_blank" 
+              className="text-accent hover:text-white font-bold underline decoration-accent underline-offset-4 transition-colors"
+              data-testid="link-moe-linkedin"
+            >
+              Moe Barbar
+            </a>
         </div>
       </div>
     </footer>
