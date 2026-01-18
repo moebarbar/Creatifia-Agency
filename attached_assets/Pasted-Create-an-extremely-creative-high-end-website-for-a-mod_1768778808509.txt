@@ -1,0 +1,152 @@
+Create an extremely creative, high-end website for a modern FRONTEND Creative Agency.
+
+We specialize exclusively in FRONTEND work:
+- High-converting websites
+- Landing pages
+- Frontend UI for apps, SaaS, startups, and all types of businesses
+- Design-to-code builds (pixel-perfect execution)
+- Motion, interactions, and premium UI polish
+
+We clearly position as FRONTEND specialists.
+We do NOT present as full-stack.
+We build extremely creative websites using the frontend tools and technologies we already master.
+
+We also provide:
+- Creative copywriting (conversion-focused, brand-driven)
+- Creative graphic design (visual systems, layouts, web graphics)
+These are integrated into our frontend delivery, not offered as standalone services.
+
+IMPORTANT:
+Get STRONG inspiration from https://mariq.webflow.io/ in terms of:
+- Bold layouts
+- Experimental typography
+- Motion & interactions
+- Story-driven sections
+BUT do NOT copy layouts, components, or code.
+The final result must be original, unique, and elevated.
+
+Overall Style & Feel
+- Ultra-creative, agency-level, award-style website
+- Bold typography with strong hierarchy
+- Smooth, intentional animations and transitions
+- Editorial + futuristic vibe
+- Confident, minimal, premium
+- Designed to impress founders, startups, and SaaS teams
+
+Branding & Design
+- Modern, minimal color palette with strong dark/light contrast
+- Accent color used sparingly for emphasis
+- Large typography and creative text layouts
+- Asymmetry is welcome
+- Strong visual rhythm and spacing
+- Clean UI with experimental touches
+
+Tech Stack (Use what we already know)
+- Next.js (App Router) + TypeScript
+- TailwindCSS
+- Framer Motion for animations
+- shadcn/ui for base components (heavily customized)
+- Modern frontend best practices
+- Fully responsive, mobile-first
+- Performance-optimized
+
+Pages to Build
+1) Home
+2) Work / Portfolio
+3) Services
+4) About
+5) Contact
+
+HOME PAGE SECTIONS
+- Hero section:
+  - Big, bold manifesto-style headline focused on frontend creativity
+  - Short, confident subheadline (websites, landing pages, app frontends)
+  - Primary CTA: “Start a Project”
+  - Secondary CTA: “View Portfolio”
+  - Subtle animated background or motion typography
+
+- What We Do (Frontend-focused)
+  - Websites
+  - Landing Pages
+  - App / SaaS Frontend UI
+  - Creative Copywriting
+  - Creative Graphic Design
+
+- Featured Portfolio Preview
+  - Visually striking website previews
+  - Creative layouts (browser frames, full-bleed sections, stacked visuals)
+  - Hover interactions, motion reveals, and storytelling captions
+
+- How We Work (Process)
+  - Discover → Design → Build → Polish → Launch
+  - Emphasize clarity, creativity, and frontend craft
+
+- Why Choose Us
+  - Frontend-first mindset
+  - Creative copy + design baked into development
+  - Performance, responsiveness, and polish
+  - Clean, scalable frontend code
+
+- Testimonials / Client Quotes
+
+- Final CTA
+  - Strong, emotional close
+  - “Let’s build something people remember.”
+
+- Minimal footer with personality
+
+PORTFOLIO / WORK PAGE (VERY CREATIVE)
+- This section should feel like a gallery
+- Showcase portfolio websites with:
+  - Large previews
+  - Scroll-based animations
+  - Hover states with project intent and outcome
+- Each project includes:
+  - Project goal
+  - Our frontend solution
+  - Creative copy & design contribution
+  - Outcome (mock data acceptable)
+- Include filters (Website, Landing Page, SaaS, Startup, Business)
+
+SERVICES PAGE
+- Websites (creative, fast, conversion-ready)
+- Landing Pages (built to sell and convert)
+- App / SaaS Frontend UI
+- Creative Copywriting (clarity, persuasion, brand voice)
+- Creative Graphic Design (web visuals, layout systems, digital branding)
+- Focus on outcomes, not features
+
+ABOUT PAGE
+- Story-driven, not corporate
+- Position as a frontend studio obsessed with craft
+- Emphasize creativity, precision, and frontend excellence
+
+CONTACT PAGE
+- Minimal but bold
+- Large typography
+- Short form
+- Confident messaging (“Let’s build something great”)
+
+Copywriting Tone
+- Confident, bold, modern
+- Short, sharp sentences
+- No generic buzzwords
+- Speak like a premium frontend studio
+- Outcome-focused (“We build interfaces people remember”)
+
+Animation Guidelines
+- Smooth scroll-based animations
+- Subtle text reveals
+- Hover effects on links and portfolio cards
+- Motion should feel intentional and premium
+
+Deliverables
+- Fully working website
+- Clean, scalable frontend component structure
+- Reusable animation patterns
+- Easy-to-update portfolio system
+- Clear README explaining structure and customization
+
+Goal
+Create a website that looks like it belongs to a **top-tier frontend creative agency** —
+extremely creative, handcrafted, premium, and instantly trustworthy.
