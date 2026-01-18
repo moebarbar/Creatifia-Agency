@@ -111,7 +111,7 @@ export function Footer() {
             <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm uppercase tracking-widest text-white/60">
               <a href="https://www.instagram.com/moe.barbar/" target="_blank" className="hover:text-accent transition-colors">Instagram</a>
               <a href="#" className="hover:text-accent transition-colors">Twitter</a>
-              <a href="https://www.linkedin.com/in/moe-barbar-1101b01a1/" target="_blank" className="hover:text-accent transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/moe-barbar/" target="_blank" className="hover:text-accent transition-colors">LinkedIn</a>
               <a href="#" className="hover:text-accent transition-colors">Dribbble</a>
             </div>
             <p className="mt-8 text-white/40 max-w-xs text-right hidden md:block">
@@ -128,7 +128,7 @@ export function Footer() {
           </div>
         </div>
         <div className="w-full text-center mt-12 text-white/20 text-[10px] uppercase tracking-[0.2em] hover:text-white/60 transition-colors">
-            This website is built and managed with ❤️ by <a href="https://www.linkedin.com/in/moe-barbar-1101b01a1/" target="_blank" className="hover:text-accent underline decoration-accent/50 underline-offset-4">Moe Barbar</a>
+            This website is built and managed with ❤️ by <a href="https://www.linkedin.com/in/moe-barbar/" target="_blank" className="hover:text-accent underline decoration-accent/50 underline-offset-4">Moe Barbar</a>
         </div>
       </div>
     </footer>
