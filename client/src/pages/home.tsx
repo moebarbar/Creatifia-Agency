@@ -56,18 +56,27 @@ export default function Home() {
              {/* Floating Frames (Replacements for Stickers) */}
              <div className="absolute inset-0 pointer-events-none z-20">
                  {/* Top Left Frame */}
-                 <div className="absolute top-[-5%] left-[5%] md:left-[10%] rotate-[-12deg] w-[15vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50">
+                 <div className="absolute top-[-5%] left-[5%] md:left-[10%] rotate-[-12deg] w-[15vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
                     <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-4 border-white transform hover:translate-y-[-10px]" />
+                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        Lead Engineer
+                    </div>
                  </div>
                  
                  {/* Bottom Right Frame */}
-                 <div className="absolute bottom-[-15%] right-[5%] md:right-[15%] rotate-[8deg] w-[18vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50">
+                 <div className="absolute bottom-[-15%] right-[5%] md:right-[15%] rotate-[8deg] w-[18vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
                     <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-4 border-white" />
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        React Expert
+                    </div>
                  </div>
 
                  {/* Middle Right Frame */}
-                 <div className="absolute top-[15%] right-[2%] md:right-[5%] rotate-[15deg] w-[12vw] md:w-[10vw] pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50">
+                 <div className="absolute top-[15%] right-[2%] md:right-[5%] rotate-[15deg] w-[12vw] md:w-[10vw] pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
                     <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-sm border-4 border-white" />
+                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        Pixel Perfect
+                    </div>
                  </div>
              </div>
 
@@ -102,7 +111,7 @@ export default function Home() {
             
             <FadeIn delay={0.8} className="mt-12 md:mt-24 max-w-2xl mx-auto relative z-30 bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl">
               <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-8">
-                From strategy to execution — we handle everything from <span className="text-white font-medium">Concept</span> to <span className="text-accent font-medium">Deployment</span>.
+                We bridge the gap between <span className="text-white font-medium">Design</span> and <span className="text-accent font-medium">Engineering</span>. We turn ambitious visuals into clean, production-ready code.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -142,9 +151,9 @@ export default function Home() {
             <div key={i} className="flex items-center gap-16 mx-8">
               <span className="text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Next.js Specialists</span>
               <img src={sphere} className="w-12 h-12 object-cover rounded-full animate-pulse" />
-              <span className="text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Creative Frontend</span>
+              <span className="text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Creative Development</span>
               <img src={torus} className="w-12 h-12 object-cover rounded-full animate-spin-slow" />
-              <span className="text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Interactive Design</span>
+              <span className="text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Interactive Engineering</span>
               <img src={card} className="w-16 h-10 object-cover rounded border border-accent/50" />
             </div>
           ))}
