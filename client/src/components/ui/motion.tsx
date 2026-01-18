@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -52,3 +52,40 @@ export function FadeIn({ children, className, delay = 0 }: { children: React.Rea
     </motion.div>
   );
 }
+
+export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; alt: string; className?: string; delay?: number }) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
+  
+    return (
+      <span className="inline-block align-middle mx-2 md:mx-4 overflow-hidden rounded-full border border-white/10 relative top-[-0.1em]">
+        <motion.div
+            ref={ref}
+            initial={{ width: 0, opacity: 0 }}
+            animate={isInView ? { width: "auto", opacity: 1 } : { width: 0, opacity: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+            className="flex items-center"
+        >
+            <img src={src} alt={alt} className={cn("h-[0.8em] md:h-[0.9em] w-auto object-cover aspect-video", className)} />
+        </motion.div>
+      </span>
+    );
+  }
+
+  export function ParallaxImage({ src, alt, className, speed = 1 }: { src: string; alt: string; className?: string; speed?: number }) {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+
+    return (
+        <div ref={ref} className={cn("overflow-hidden relative", className)}>
+            <motion.div style={{ y }} className="w-full h-[140%] relative -top-[20%]">
+                 <img src={src} alt={alt} className="w-full h-full object-cover" />
+            </motion.div>
+        </div>
+    )
+  }
