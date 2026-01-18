@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useInView, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -58,15 +58,15 @@ export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; 
     const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
   
     return (
-      <span className="inline-block align-middle mx-2 md:mx-4 overflow-hidden rounded-full border border-white/10 relative top-[-0.1em]">
+      <span className="inline-block align-middle mx-1 md:mx-3 overflow-hidden rounded-lg border border-white/10 relative -top-[0.05em]">
         <motion.div
             ref={ref}
             initial={{ width: 0, opacity: 0, scale: 0 }}
             animate={isInView ? { width: "auto", opacity: 1, scale: 1 } : { width: 0, opacity: 0, scale: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
             className="flex items-center"
         >
-            <img src={src} alt={alt} className={cn("h-[0.8em] md:h-[0.9em] w-auto object-cover aspect-video hover:scale-110 transition-transform duration-500", className)} />
+            <img src={src} alt={alt} className={cn("h-[0.75em] w-auto object-cover hover:scale-110 transition-transform duration-500", className)} />
         </motion.div>
       </span>
     );
@@ -125,4 +125,21 @@ export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; 
     );
   }
 
-import { useScroll, useInView } from "framer-motion";
+  export function FloatingSticker({ src, className, delay=0, rotate=0 }: { src: string, className?: string, delay?: number, rotate?: number }) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0, rotate: rotate - 10 }}
+        animate={{ opacity: 1, scale: 1, rotate: rotate }}
+        transition={{ 
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: delay 
+        }}
+        whileHover={{ scale: 1.1, rotate: rotate + 5 }}
+        className={cn("absolute z-20 pointer-events-auto cursor-pointer drop-shadow-2xl", className)}
+      >
+        <img src={src} alt="sticker" className="w-full h-full object-contain" />
+      </motion.div>
+    )
+  }

@@ -1,5 +1,5 @@
 import { Navbar, Footer } from "@/components/layout/shell";
-import { TextReveal, FadeIn, InlineVisual, ParallaxImage, Magnetic } from "@/components/ui/motion";
+import { TextReveal, FadeIn, InlineVisual, ParallaxImage, Magnetic, FloatingSticker } from "@/components/ui/motion";
 import { ProjectCard } from "@/components/ui/project-card";
 import heroTexture from "@assets/generated_images/dark_abstract_digital_fluid_background_with_neon_accents.png";
 import project1 from "@assets/generated_images/modern_dark_mode_saas_dashboard_interface_mockup.png";
@@ -12,6 +12,12 @@ import asterisk from "@assets/generated_images/3d_chrome_metal_asterisk_shape.pn
 import cube from "@assets/generated_images/glowing_neon_green_wireframe_cube.png";
 import glass from "@assets/generated_images/distorted_liquid_glass_sphere.png";
 import eye from "@assets/generated_images/pixelated_retro_digital_eye_icon.png";
+import stickerFrontend from "@assets/generated_images/sticker_badge_saying_pure_frontend.png";
+import stickerPixel from "@assets/generated_images/sticker_badge_saying_pixel_perfect.png";
+import stickerShipped from "@assets/generated_images/sticker_badge_saying_shipped.png";
+import portrait from "@assets/generated_images/edgy_monochrome_developer_portrait.png";
+import metalShape from "@assets/generated_images/abstract_3d_metallic_shape.png";
+
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2 } from "lucide-react";
@@ -34,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background" ref={containerRef} onMouseMove={handleMouseMove}>
+    <div className="min-h-screen bg-background overflow-x-hidden" ref={containerRef} onMouseMove={handleMouseMove}>
       <Navbar />
 
       {/* Hero Section */}
@@ -50,52 +56,55 @@ export default function Home() {
         </motion.div>
 
         <div className="container mx-auto px-6 z-10 relative">
-          <div className="max-w-[90vw] mx-auto">
-             <div className="flex flex-col items-center justify-center gap-2 md:gap-4">
-                {/* Line 1 */}
-                <div className="flex items-center justify-center flex-wrap gap-x-4 md:gap-x-8">
-                     <TextReveal className="text-[10vw] md:text-[8vw] font-display font-bold uppercase leading-[0.8] tracking-tighter">We Craft</TextReveal>
+          <div className="max-w-[95vw] mx-auto relative">
+             
+             {/* Floating Stickers */}
+             <div className="absolute inset-0 pointer-events-none">
+                 <FloatingSticker src={stickerFrontend} className="w-32 md:w-48 top-[-10%] left-[5%] md:left-[15%]" rotate={-15} delay={1} />
+                 <FloatingSticker src={stickerPixel} className="w-32 md:w-48 bottom-[-10%] right-[5%] md:right-[20%]" rotate={10} delay={1.2} />
+                 <FloatingSticker src={stickerShipped} className="w-24 md:w-36 top-[20%] right-[0%] md:right-[10%]" rotate={5} delay={1.4} />
+             </div>
+
+             <div className="flex flex-col items-center justify-center relative">
+                {/* Line 1 - Extremely dense */}
+                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8]">
+                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white mix-blend-difference z-10">TRANSFORMING</span>
+                </div>
+
+                {/* Line 2 - Mixed media */}
+                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-2 md:-mt-4 relative z-10">
+                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-transparent text-stroke md:text-stroke-2">IDEAS</span>
                      <Magnetic>
-                        <InlineVisual src={asterisk} alt="Asterisk" delay={0.4} className="w-[1em] h-[1em] rounded-full" />
+                        <div className="w-[12vw] h-[6vw] md:w-[10vw] md:h-[5vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500">
+                             <img src={portrait} alt="Portrait" className="w-full h-full object-cover" />
+                        </div>
                      </Magnetic>
+                     <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">INTO</span>
                 </div>
 
-                {/* Line 2 */}
-                <div className="flex items-center justify-center flex-wrap gap-x-4 md:gap-x-8">
+                {/* Line 3 - Visual Impact */}
+                <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] gap-2 md:gap-4 -mt-2 md:-mt-4 relative z-10">
+                    <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-accent">REAL</span>
                     <Magnetic>
-                         <div className="w-[1.2em] h-[0.7em] relative top-1 md:top-2">
-                            <img src={cube} alt="Code" className="w-full h-full object-cover rounded border border-accent/40" />
-                         </div>
+                         <InlineVisual src={metalShape} alt="Abstract" className="w-[8vw] h-[8vw] rounded-full" delay={0.6} />
                     </Magnetic>
-                    <span className="text-[10vw] md:text-[8vw] font-display font-bold uppercase leading-[0.8] tracking-tighter text-transparent text-stroke hover:text-white transition-colors duration-500">
-                        <TextReveal delay={0.2}>Digital</TextReveal>
-                    </span>
-                    <Magnetic>
-                         <InlineVisual src={glass} alt="Glass" delay={0.5} className="w-[0.9em] h-[0.9em] rounded-full scale-125 mix-blend-screen" />
-                    </Magnetic>
+                    <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">WORLD</span>
                 </div>
 
-                {/* Line 3 */}
-                <div className="flex items-center justify-center flex-wrap gap-x-4 md:gap-x-8">
-                    <TextReveal delay={0.4} className="text-[10vw] md:text-[8vw] font-display font-bold uppercase leading-[0.8] tracking-tighter">Experiences</TextReveal>
-                    <motion.div 
-                        animate={{ rotate: [0, 10, -10, 0] }}
-                        transition={{ duration: 5, repeat: Infinity, repeatDelay: 2 }}
-                    >
-                         <InlineVisual src={eye} alt="Eye" delay={0.6} className="w-[1.2em] h-[0.6em] rounded-full border border-white/20" />
-                    </motion.div>
+                 {/* Line 4 - Finish */}
+                 <div className="flex items-center justify-center flex-wrap tracking-tighter leading-[0.8] -mt-2 md:-mt-4 relative z-10">
+                    <span className="text-[12vw] md:text-[11vw] font-display font-black uppercase text-white">RESULTS</span>
                 </div>
              </div>
             
-            <FadeIn delay={0.8} className="mt-12 md:mt-16 max-w-2xl mx-auto">
-              <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-10">
-                We bridge the gap between <span className="text-white font-medium">Design</span> and <span className="text-accent font-medium">Code</span>. 
-                <br className="hidden md:block"/> No compromises. No templates. Just pure performance.
+            <FadeIn delay={0.8} className="mt-12 md:mt-20 max-w-2xl mx-auto relative z-20 bg-background/50 backdrop-blur-sm p-6 rounded-2xl border border-white/5">
+              <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-8">
+                From strategy to execution — we handle everything from <span className="text-white font-medium">Concept</span> to <span className="text-accent font-medium">Deployment</span>.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/contact">
-                  <a className="group flex items-center justify-center gap-3 bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-accent hover:scale-105 transition-all duration-300 rounded-full">
+                  <a className="group flex items-center justify-center gap-3 bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-accent hover:scale-105 transition-all duration-300 rounded-full w-full sm:w-auto shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(145,255,0,0.5)]">
                     Start Project
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
