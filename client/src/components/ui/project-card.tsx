@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowUpRight } from "lucide-react";
+import { memo } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -10,7 +11,7 @@ interface ProjectCardProps {
   className?: string;
 }
 
-export function ProjectCard({ title, category, image, id, className }: ProjectCardProps) {
+export const ProjectCard = memo(function ProjectCard({ title, category, image, id, className }: ProjectCardProps) {
   return (
     <Link href={`/work`} className={`block group relative overflow-hidden ${className}`}>
       <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
@@ -19,6 +20,8 @@ export function ProjectCard({ title, category, image, id, className }: ProjectCa
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           src={image}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
@@ -36,4 +39,4 @@ export function ProjectCard({ title, category, image, id, className }: ProjectCa
       </div>
     </Link>
   );
-}
+});

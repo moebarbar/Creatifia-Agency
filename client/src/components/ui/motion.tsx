@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform, useInView, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { cn } from "@/lib/utils";
 
 interface TextRevealProps {
@@ -8,7 +8,7 @@ interface TextRevealProps {
   delay?: number;
 }
 
-export function TextReveal({ children, className, delay = 0 }: TextRevealProps) {
+export const TextReveal = memo(function TextReveal({ children, className, delay = 0 }: TextRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
@@ -34,9 +34,9 @@ export function TextReveal({ children, className, delay = 0 }: TextRevealProps) 
       ))}
     </span>
   );
-}
+});
 
-export function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+export const FadeIn = memo(function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
@@ -51,9 +51,9 @@ export function FadeIn({ children, className, delay = 0 }: { children: React.Rea
       {children}
     </motion.div>
   );
-}
+});
 
-export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; alt: string; className?: string; delay?: number }) {
+export const InlineVisual = memo(function InlineVisual({ src, alt, className, delay = 0 }: { src: string; alt: string; className?: string; delay?: number }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
   
@@ -66,13 +66,13 @@ export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; 
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
             className="flex items-center"
         >
-            <img src={src} alt={alt} className={cn("h-[0.75em] w-auto object-cover hover:scale-110 transition-transform duration-500", className)} />
+            <img src={src} alt={alt} className={cn("h-[0.75em] w-auto object-cover hover:scale-110 transition-transform duration-500", className)} loading="lazy" decoding="async" />
         </motion.div>
       </span>
     );
-  }
+  });
 
-  export function ParallaxImage({ src, alt, className, speed = 1 }: { src: string; alt: string; className?: string; speed?: number }) {
+  export const ParallaxImage = memo(function ParallaxImage({ src, alt, className, speed = 1 }: { src: string; alt: string; className?: string; speed?: number }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -84,13 +84,13 @@ export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; 
     return (
         <div ref={ref} className={cn("overflow-hidden relative", className)}>
             <motion.div style={{ y }} className="w-full h-[140%] relative -top-[20%]">
-                 <img src={src} alt={alt} className="w-full h-full object-cover" />
+                 <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
             </motion.div>
         </div>
     )
-  }
+  });
 
-  export function Magnetic({ children }: { children: React.ReactNode }) {
+  export const Magnetic = memo(function Magnetic({ children }: { children: React.ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -123,9 +123,9 @@ export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; 
             {children}
         </motion.div>
     );
-  }
+  });
 
-  export function FloatingSticker({ src, className, delay=0, rotate=0 }: { src: string, className?: string, delay?: number, rotate?: number }) {
+  export const FloatingSticker = memo(function FloatingSticker({ src, className, delay=0, rotate=0 }: { src: string, className?: string, delay?: number, rotate?: number }) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0, rotate: rotate - 10 }}
@@ -139,7 +139,7 @@ export function InlineVisual({ src, alt, className, delay = 0 }: { src: string; 
         whileHover={{ scale: 1.1, rotate: rotate + 5 }}
         className={cn("absolute z-20 pointer-events-auto cursor-pointer drop-shadow-2xl", className)}
       >
-        <img src={src} alt="sticker" className="w-full h-full object-contain" />
+        <img src={src} alt="sticker" className="w-full h-full object-contain" loading="lazy" decoding="async" />
       </motion.div>
     )
-  }
+  });

@@ -45,7 +45,7 @@ export default function Home() {
             style={{ x: mouseX, y: mouseY }}
             className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none scale-110"
         >
-          <img src={heroTexture} alt="" className="w-full h-full object-cover" />
+          <img src={heroTexture} alt="" className="w-full h-full object-cover" loading="eager" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
         </motion.div>
@@ -57,7 +57,7 @@ export default function Home() {
              <div className="absolute inset-0 pointer-events-none z-20">
                  {/* Top Left Frame */}
                  <div className="absolute top-[5%] left-[5%] md:top-[-5%] md:left-[10%] rotate-[-12deg] w-[25vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white transform hover:translate-y-[-10px]" />
+                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white transform hover:translate-y-[-10px]" loading="eager" decoding="async" />
                     <div className="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[10px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         Lead Engineer
                     </div>
@@ -65,7 +65,7 @@ export default function Home() {
                  
                  {/* Bottom Right Frame */}
                  <div className="absolute bottom-[5%] right-[5%] md:bottom-[-15%] md:right-[15%] rotate-[8deg] w-[30vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white" />
+                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white" loading="eager" decoding="async" />
                     <div className="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[10px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         React Expert
                     </div>
@@ -73,7 +73,7 @@ export default function Home() {
 
                  {/* Middle Right Frame - Hidden on Mobile to reduce clutter */}
                  <div className="absolute top-[15%] right-[2%] md:right-[5%] rotate-[15deg] w-[12vw] md:w-[10vw] hidden md:block pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-sm border-4 border-white" />
+                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-sm border-4 border-white" loading="lazy" decoding="async" />
                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         Pixel Perfect
                     </div>
@@ -146,11 +146,11 @@ export default function Home() {
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="flex items-center gap-8 md:gap-16 mx-4 md:mx-8">
               <span className="text-2xl md:text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Next.js Specialists</span>
-              <img src={sphere} className="w-8 h-8 md:w-12 md:h-12 object-cover rounded-full animate-pulse" />
+              <img src={sphere} className="w-8 h-8 md:w-12 md:h-12 object-cover rounded-full animate-pulse" loading="lazy" decoding="async" />
               <span className="text-2xl md:text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Creative Development</span>
-              <img src={torus} className="w-8 h-8 md:w-12 md:h-12 object-cover rounded-full animate-spin-slow" />
+              <img src={torus} className="w-8 h-8 md:w-12 md:h-12 object-cover rounded-full animate-spin-slow" loading="lazy" decoding="async" />
               <span className="text-2xl md:text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Interactive Engineering</span>
-              <img src={card} className="w-10 h-6 md:w-16 md:h-10 object-cover rounded border border-accent/50" />
+              <img src={card} className="w-10 h-6 md:w-16 md:h-10 object-cover rounded border border-accent/50" loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
