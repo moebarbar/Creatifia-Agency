@@ -272,18 +272,18 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 md:py-24 bg-black border-y border-white/5">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
             {[
               { number: "50+", label: "Projects Shipped", suffix: "" },
               { number: "98", label: "Client Satisfaction", suffix: "%" },
-              { number: "3", label: "Average Build Time", suffix: " weeks" },
-              { number: "24/7", label: "Support & Iterations", suffix: "" },
+              { number: "3", label: "Average Build Time", suffix: " wks" },
+              { number: "24/7", label: "Support", suffix: "" },
             ].map((stat, i) => (
               <FadeIn key={i} delay={i * 0.1} className="text-center group">
-                <div className="text-4xl md:text-7xl font-display font-black text-white group-hover:text-accent transition-colors duration-300">
+                <div className="text-3xl md:text-7xl font-display font-black text-white group-hover:text-accent transition-colors duration-300">
                   {stat.number}<span className="text-accent">{stat.suffix}</span>
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-2">{stat.label}</div>
+                <div className="text-[10px] md:text-sm uppercase tracking-widest text-muted-foreground mt-2">{stat.label}</div>
               </FadeIn>
             ))}
           </div>
@@ -302,23 +302,23 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {[
-              { step: "01", title: "Discovery", desc: "We dive deep into your vision, goals, and target audience. Understanding your brand DNA is non-negotiable.", icon: "🎯" },
-              { step: "02", title: "Design", desc: "High-fidelity mockups and interactive prototypes. You see exactly what you're getting before a single line of code.", icon: "✏️" },
-              { step: "03", title: "Develop", desc: "Clean, performant, production-ready code. React, Next.js, TypeScript — built to scale and easy to maintain.", icon: "⚡" },
-              { step: "04", title: "Deploy", desc: "Launch day! We handle hosting, CI/CD, and make sure your site is blazing fast across the globe.", icon: "🚀" },
+              { step: "01", title: "Discovery", desc: "We dive deep into your vision and goals. Understanding your brand is key.", icon: "🎯" },
+              { step: "02", title: "Design", desc: "High-fidelity mockups and prototypes. See exactly what you're getting.", icon: "✏️" },
+              { step: "03", title: "Develop", desc: "Clean, performant code. React, Next.js, TypeScript — built to scale.", icon: "⚡" },
+              { step: "04", title: "Deploy", desc: "Launch day! We handle hosting and make sure it's blazing fast.", icon: "🚀" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="group relative border border-white/10 bg-secondary/20 p-8 md:p-12 hover:border-accent/50 transition-all duration-500">
-                  <div className="flex items-start gap-6">
-                    <div className="text-5xl md:text-7xl font-display font-black text-white/10 group-hover:text-accent/30 transition-colors">{item.step}</div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="text-2xl">{item.icon}</span>
-                        <h3 className="text-2xl md:text-3xl font-display font-bold">{item.title}</h3>
+                <div className="group relative border border-white/10 bg-secondary/20 p-6 md:p-10 hover:border-accent/50 transition-all duration-500">
+                  <div className="flex items-start gap-4 md:gap-6">
+                    <div className="text-4xl md:text-6xl font-display font-black text-white/10 group-hover:text-accent/30 transition-colors">{item.step}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
+                        <span className="text-xl md:text-2xl">{item.icon}</span>
+                        <h3 className="text-xl md:text-3xl font-display font-bold">{item.title}</h3>
                       </div>
-                      <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{item.desc}</p>
+                      <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function Home() {
             <FadeIn>
               <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Tech Stack</span>
               <h2 className="text-4xl md:text-7xl font-display font-bold mb-6">
-                Built With <span className="text-transparent text-stroke">Modern</span> Tools
+                Built With <span className="text-accent">Modern</span> Tools
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
                 We use the latest technologies to ensure your project is fast, scalable, and future-proof.
@@ -343,7 +343,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-6">
             {[
               { name: "React", color: "from-cyan-500/20 to-cyan-500/5" },
               { name: "Next.js", color: "from-white/20 to-white/5" },
@@ -353,8 +353,8 @@ export default function Home() {
               { name: "Node.js", color: "from-green-500/20 to-green-500/5" },
             ].map((tech, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <div className={`group relative p-6 md:p-8 rounded-xl border border-white/10 bg-gradient-to-br ${tech.color} hover:border-white/30 hover:scale-105 transition-all duration-300 text-center`}>
-                  <div className="text-lg md:text-xl font-display font-bold">{tech.name}</div>
+                <div className={`group relative p-4 md:p-8 rounded-xl border border-white/10 bg-gradient-to-br ${tech.color} hover:border-white/30 hover:scale-105 transition-all duration-300 text-center`}>
+                  <div className="text-sm md:text-xl font-display font-bold">{tech.name}</div>
                 </div>
               </FadeIn>
             ))}
@@ -376,23 +376,23 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {[
-              { quote: "PixelPerfect turned our rough sketches into a stunning, high-converting landing page in just 2 weeks. Absolutely world-class execution.", author: "Sarah Chen", role: "CEO, TechFlow", rating: 5 },
-              { quote: "They don't just code — they think. Every interaction, every animation was thoughtfully considered. Our users noticed immediately.", author: "Marcus Johnson", role: "Founder, Elevate", rating: 5 },
-              { quote: "Finally, a dev team that speaks both design and engineering fluently. No more lost-in-translation moments. Pure collaboration.", author: "Elena Rodriguez", role: "CPO, Quantum Labs", rating: 5 },
+              { quote: "PixelPerfect turned our sketches into a stunning landing page in just 2 weeks. World-class execution.", author: "Sarah Chen", role: "CEO, TechFlow", rating: 5 },
+              { quote: "They don't just code — they think. Every interaction was thoughtfully considered.", author: "Marcus Johnson", role: "Founder, Elevate", rating: 5 },
+              { quote: "A dev team that speaks both design and engineering fluently. Pure collaboration.", author: "Elena Rodriguez", role: "CPO, Quantum Labs", rating: 5 },
             ].map((testimonial, i) => (
               <FadeIn key={i} delay={i * 0.15}>
-                <div className="group relative border border-white/10 bg-secondary/20 p-8 md:p-10 h-full flex flex-col hover:border-accent/30 transition-colors duration-500">
-                  <div className="flex gap-1 mb-6">
+                <div className="group relative border border-white/10 bg-secondary/20 p-6 md:p-10 h-full flex flex-col hover:border-accent/30 transition-colors duration-500">
+                  <div className="flex gap-1 mb-4 md:mb-6">
                     {[...Array(testimonial.rating)].map((_, j) => (
-                      <Star key={j} className="w-4 h-4 md:w-5 md:h-5 fill-accent text-accent" />
+                      <Star key={j} className="w-3 h-3 md:w-5 md:h-5 fill-accent text-accent" />
                     ))}
                   </div>
-                  <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 flex-1">"{testimonial.quote}"</p>
-                  <div className="border-t border-white/10 pt-6">
-                    <div className="font-display font-bold text-white">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  <p className="text-base md:text-xl text-white/90 leading-relaxed mb-6 md:mb-8 flex-1">"{testimonial.quote}"</p>
+                  <div className="border-t border-white/10 pt-4 md:pt-6">
+                    <div className="font-display font-bold text-white text-sm md:text-base">{testimonial.author}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</div>
                   </div>
                 </div>
               </FadeIn>
@@ -460,28 +460,28 @@ export default function Home() {
             <FadeIn>
               <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">FAQ</span>
               <h2 className="text-4xl md:text-7xl font-display font-bold">
-                Common <span className="text-transparent text-stroke">Questions</span>
+                Common <span className="text-accent">Questions</span>
               </h2>
             </FadeIn>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
             {[
-              { q: "How long does a typical project take?", a: "Most projects take 2-4 weeks from kickoff to launch. Complex web apps may take 6-8 weeks. We'll give you an accurate timeline after our discovery call." },
-              { q: "What's your pricing like?", a: "Projects typically range from $5K-$25K depending on scope. We offer fixed-price packages for landing pages and hourly rates for ongoing development work." },
-              { q: "Do you work with startups?", a: "Absolutely! We love working with early-stage startups. We offer flexible payment terms and can work within most budgets." },
-              { q: "What happens after launch?", a: "We don't disappear after deployment. We offer maintenance packages, can train your team, or continue as your ongoing development partner." },
-              { q: "Can you work with our existing design team?", a: "Yes! We collaborate seamlessly with Figma, Sketch, or any design tool. We can also take the lead on design if needed." },
+              { q: "How long does a project take?", a: "Most projects take 2-4 weeks. Complex apps may take 6-8 weeks." },
+              { q: "What's your pricing like?", a: "Projects range from $5K-$25K depending on scope." },
+              { q: "Do you work with startups?", a: "Absolutely! We offer flexible terms for early-stage startups." },
+              { q: "What happens after launch?", a: "We offer maintenance packages and ongoing development." },
+              { q: "Can you work with our design team?", a: "Yes! We collaborate with Figma, Sketch, or any design tool." },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.05}>
                 <details className="group border border-white/10 bg-secondary/10 hover:border-white/20 transition-colors">
-                  <summary className="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none">
-                    <h3 className="text-lg md:text-xl font-display font-bold pr-8">{faq.q}</h3>
-                    <div className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-open:rotate-45 transition-transform">
-                      <span className="text-xl leading-none">+</span>
+                  <summary className="flex items-center justify-between p-4 md:p-8 cursor-pointer list-none">
+                    <h3 className="text-base md:text-xl font-display font-bold pr-4">{faq.q}</h3>
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border border-white/20 flex items-center justify-center group-open:rotate-45 transition-transform flex-shrink-0">
+                      <span className="text-lg md:text-xl leading-none">+</span>
                     </div>
                   </summary>
-                  <div className="px-6 md:px-8 pb-6 md:pb-8 text-muted-foreground text-base md:text-lg">
+                  <div className="px-4 md:px-8 pb-4 md:pb-8 text-muted-foreground text-sm md:text-lg">
                     {faq.a}
                   </div>
                 </details>
