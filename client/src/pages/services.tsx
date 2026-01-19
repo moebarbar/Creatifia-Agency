@@ -50,24 +50,24 @@ export default function Services() {
           }
         ].map((service, i) => (
           <div key={i} className="group border-b border-white/10 relative overflow-hidden transition-colors hover:bg-white/5">
-            <div className="container mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
+            <div className="container mx-auto px-6 py-12 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 relative z-10">
               <div className="md:col-span-4">
-                <span className="text-accent font-mono text-sm mb-4 block">0{i + 1}</span>
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase group-hover:translate-x-4 transition-transform duration-500">
+                <span className="text-accent font-mono text-sm mb-2 md:mb-4 block">0{i + 1}</span>
+                <h2 className="text-2xl md:text-5xl font-display font-bold uppercase group-hover:translate-x-4 transition-transform duration-500">
                   {service.title}
                 </h2>
               </div>
               <div className="md:col-span-5">
-                <p className="text-xl text-muted-foreground leading-relaxed group-hover:text-white transition-colors duration-500">{service.desc}</p>
+                <p className="text-base md:text-xl text-muted-foreground leading-relaxed group-hover:text-white transition-colors duration-500">{service.desc}</p>
               </div>
               <div className="md:col-span-3 flex flex-col justify-between items-start md:items-end">
-                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-4 group-hover:translate-x-0 transform mb-8">
+                 <div className="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-4 group-hover:translate-x-0 transform mb-8">
                      <ArrowRight className="w-12 h-12 text-accent" />
                  </div>
-                <ul className="space-y-3">
+                <ul className="flex flex-wrap md:flex-col gap-2 md:space-y-3">
                   {service.tags.map(tag => (
-                    <li key={tag} className="flex items-center gap-3 text-sm uppercase tracking-widest text-white/60">
-                      <Check className="w-4 h-4 text-accent" /> {tag}
+                    <li key={tag} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm uppercase tracking-widest text-white/60">
+                      <Check className="w-3 h-3 md:w-4 md:h-4 text-accent" /> {tag}
                     </li>
                   ))}
                 </ul>

@@ -45,24 +45,24 @@ export default function About() {
         </div>
       </div>
 
-      <section className="py-32 bg-white text-black">
+      <section className="py-16 md:py-32 bg-white text-black">
         <div className="container mx-auto px-6">
           <FadeIn>
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-16 uppercase text-center">Our Core Values</h2>
+            <h2 className="text-3xl md:text-6xl font-display font-bold mb-8 md:mb-16 uppercase text-center">Our Core Values</h2>
           </FadeIn>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <FadeIn delay={0.1} className="border-l-2 border-black pl-8">
-              <h3 className="text-2xl font-bold mb-4 uppercase">Precision</h3>
-              <p className="opacity-70">We sweat the small stuff. One pixel off is a mile off. We test on every device, every screen size.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <FadeIn delay={0.1} className="border-l-2 border-black pl-6 md:pl-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 uppercase">Precision</h3>
+              <p className="opacity-70 text-sm md:text-base">We sweat the small stuff. One pixel off is a mile off. We test on every device, every screen size.</p>
             </FadeIn>
-            <FadeIn delay={0.2} className="border-l-2 border-black pl-8">
-              <h3 className="text-2xl font-bold mb-4 uppercase">Performance</h3>
-              <p className="opacity-70">A beautiful site that loads slowly is a broken site. We optimize images, code splitting, and bundle sizes.</p>
+            <FadeIn delay={0.2} className="border-l-2 border-black pl-6 md:pl-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 uppercase">Performance</h3>
+              <p className="opacity-70 text-sm md:text-base">A beautiful site that loads slowly is a broken site. We optimize images, code splitting, and bundle sizes.</p>
             </FadeIn>
-            <FadeIn delay={0.3} className="border-l-2 border-black pl-8">
-              <h3 className="text-2xl font-bold mb-4 uppercase">Transparency</h3>
-              <p className="opacity-70">No black boxes. You see our code, our commits, and our progress. We work as an extension of your team.</p>
+            <FadeIn delay={0.3} className="border-l-2 border-black pl-6 md:pl-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 uppercase">Transparency</h3>
+              <p className="opacity-70 text-sm md:text-base">No black boxes. You see our code, our commits, and our progress. We work as an extension of your team.</p>
             </FadeIn>
           </div>
         </div>
