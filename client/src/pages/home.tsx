@@ -286,8 +286,8 @@ export default function Home() {
               <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-4">Client Satisfaction</div>
             </FadeIn>
             <FadeIn delay={0.2} className="text-center">
-              <div className="text-4xl md:text-7xl font-display font-black">
-                <span className="text-accent">3</span><span className="text-white"> Weeks</span>
+              <div className="text-4xl md:text-7xl font-display font-black text-white">
+                <span className="text-accent">2-4</span> Wk
               </div>
               <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-4">Avg Build Time</div>
             </FadeIn>
