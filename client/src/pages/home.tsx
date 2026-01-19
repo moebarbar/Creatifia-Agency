@@ -272,18 +272,18 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 md:py-24 bg-black border-y border-white/5">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 items-start">
             {[
-              { number: "50+", label: "Projects Shipped", suffix: "" },
-              { number: "98", label: "Client Satisfaction", suffix: "%" },
-              { number: "3", label: "Average Build Time", suffix: " wks" },
-              { number: "24/7", label: "Support", suffix: "" },
+              { display: "50+", label: "Projects Shipped" },
+              { display: "98%", label: "Client Satisfaction" },
+              { display: "3 Wks", label: "Avg Build Time" },
+              { display: "24/7", label: "Support" },
             ].map((stat, i) => (
               <FadeIn key={i} delay={i * 0.1} className="text-center group">
-                <div className="text-3xl md:text-7xl font-display font-black text-white group-hover:text-accent transition-colors duration-300">
-                  {stat.number}<span className="text-accent">{stat.suffix}</span>
+                <div className="text-3xl md:text-7xl font-display font-black text-white group-hover:text-accent transition-colors duration-300 whitespace-nowrap leading-none">
+                  {stat.display}
                 </div>
-                <div className="text-[10px] md:text-sm uppercase tracking-widest text-muted-foreground mt-2">{stat.label}</div>
+                <div className="text-[10px] md:text-sm uppercase tracking-widest text-muted-foreground mt-3 min-h-[2rem]">{stat.label}</div>
               </FadeIn>
             ))}
           </div>
