@@ -328,7 +328,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <FadeIn>
             <div className="text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black uppercase leading-[1.1] mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-display font-black uppercase leading-[1.1] mb-8">
                 <span className="text-white/40">Your website is your</span>{" "}
                 <span className="text-white">first impression.</span>
                 <br />
@@ -344,7 +344,7 @@ export default function Home() {
                   { number: "3x", label: "Higher Conversion" },
                 ].map((stat, i) => (
                   <div key={i} className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 md:px-8 md:py-6">
-                    <div className="text-2xl md:text-4xl font-display font-black text-accent">{stat.number}</div>
+                    <div className="text-xl md:text-3xl font-display font-black text-accent">{stat.number}</div>
                     <div className="text-xs md:text-sm uppercase tracking-widest text-white/60 mt-1">{stat.label}</div>
                   </div>
                 ))}
@@ -364,7 +364,7 @@ export default function Home() {
           <div className="mb-12 md:mb-24 text-center">
              <FadeIn>
                <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Capabilities</span>
-               <h2 className="text-4xl md:text-8xl font-display font-bold">
+               <h2 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold">
                  Beyond <span className="text-transparent text-stroke">Templates.</span>
                </h2>
              </FadeIn>
@@ -382,7 +382,7 @@ export default function Home() {
                  </div>
                  
                  <div>
-                    <h3 className="text-2xl md:text-4xl font-display font-bold mb-2 md:mb-4">{item.title}</h3>
+                    <h3 className="text-xl md:text-3xl font-display font-bold mb-2 md:mb-4">{item.title}</h3>
                     <p className="text-muted-foreground text-base md:text-lg opacity-60 group-hover:opacity-100 transition-opacity">{item.desc}</p>
                  </div>
 
@@ -414,21 +414,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             <FadeIn delay={0.1}>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
-                <div className="text-4xl md:text-5xl font-display font-black text-accent mb-2">$299</div>
+                <div className="text-3xl md:text-4xl font-display font-black text-accent mb-2">$299</div>
                 <div className="text-white font-bold mb-2">Flat Rate</div>
                 <p className="text-muted-foreground text-sm">Any website, any complexity. One transparent price.</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
-                <div className="text-4xl md:text-5xl font-display font-black text-accent mb-2">5</div>
+                <div className="text-3xl md:text-4xl font-display font-black text-accent mb-2">5</div>
                 <div className="text-white font-bold mb-2">Days to First Draft</div>
                 <p className="text-muted-foreground text-sm">See your vision come to life in less than a week.</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
-                <div className="text-4xl md:text-5xl font-display font-black text-accent mb-2">∞</div>
+                <div className="text-3xl md:text-4xl font-display font-black text-accent mb-2">∞</div>
                 <div className="text-white font-bold mb-2">Revisions</div>
                 <p className="text-muted-foreground text-sm">We iterate until you're 100% satisfied.</p>
               </div>
@@ -740,20 +740,19 @@ export default function Home() {
       </section>
 
       {/* Pronunciation Section */}
-      <section className="py-12 md:py-16 bg-black relative overflow-hidden border-y border-white/5">
+      <section className="py-10 md:py-16 bg-black relative overflow-hidden border-y border-white/5">
         <div className="container mx-auto px-6">
           <FadeIn>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center md:text-left">
-              <div className="flex items-center gap-3">
-                <span className="text-white/40 text-sm uppercase tracking-widest">How to say it:</span>
-                <span className="text-xl md:text-2xl font-display font-bold text-white">
+            <div className="flex flex-col items-center justify-center gap-3 md:gap-4 text-center">
+              <div className="flex flex-col md:flex-row items-center gap-1 md:gap-3">
+                <span className="text-white/40 text-xs uppercase tracking-widest">How to say it:</span>
+                <span className="text-lg md:text-xl font-display font-bold text-white">
                   kray-ah-tee-<span className="text-accent">FEE</span>-ah
                 </span>
               </div>
-              <span className="hidden md:block text-white/20">|</span>
-              <div className="flex items-center gap-3">
-                <span className="text-white/40 text-sm uppercase tracking-widest">Meaning:</span>
-                <span className="text-lg md:text-xl text-white/80 italic">
+              <div className="flex flex-col md:flex-row items-center gap-1 md:gap-3">
+                <span className="text-white/40 text-xs uppercase tracking-widest">Meaning:</span>
+                <span className="text-sm md:text-base text-white/80 italic">
                   From <span className="text-accent font-medium not-italic">"créatif"</span> — creative in French
                 </span>
               </div>
@@ -772,7 +771,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
            <FadeIn>
-             <h2 className="text-3xl md:text-5xl lg:text-6xl leading-none font-display font-bold mb-6">
+             <h2 className="text-2xl md:text-4xl lg:text-5xl leading-none font-display font-bold mb-6">
                Ready for Your <span className="text-accent">$299</span> Website?
              </h2>
            </FadeIn>
