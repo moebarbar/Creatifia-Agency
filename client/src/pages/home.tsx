@@ -198,19 +198,19 @@ export default function Home() {
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute top-[8%] left-[-5%] rotate-[-12deg] w-[7vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={portraitWoman} alt="Professional web designer creating affordable websites for small businesses" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
+                    <img src={portraitWoman} alt="Professional web designer creating affordable websites for small businesses" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="lazy" decoding="async" />
                  </motion.div>
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute top-[5%] right-[-3%] rotate-[8deg] w-[6vw] pointer-events-auto hover:rotate-[2deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={artFrame} alt="Modern website design showcase for startups" className="w-full shadow-2xl rounded-lg border-2 border-accent/60" loading="eager" decoding="async" />
+                    <img src={artFrame} alt="Modern website design showcase for startups" className="w-full shadow-2xl rounded-lg border-2 border-accent/60" loading="lazy" decoding="async" />
                  </motion.div>
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute bottom-[15%] right-[-8%] rotate-[-6deg] w-[8vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={abstractArt} alt="Creative budget-friendly web design services" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
+                    <img src={abstractArt} alt="Creative budget-friendly web design services" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="lazy" decoding="async" />
                  </motion.div>
              </div>
 

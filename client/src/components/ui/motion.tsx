@@ -1,6 +1,11 @@
-import { motion, useMotionValue, useSpring, useTransform, useInView, useScroll } from "framer-motion";
-import { useRef, memo } from "react";
+import { motion, useMotionValue, useSpring, useTransform, useInView, useScroll, useReducedMotion } from "framer-motion";
+import { useRef, memo, useMemo } from "react";
 import { cn } from "@/lib/utils";
+
+const useOptimizedAnimation = () => {
+  const prefersReducedMotion = useReducedMotion();
+  return { prefersReducedMotion };
+};
 
 interface TextRevealProps {
   children: string;
@@ -11,8 +16,13 @@ interface TextRevealProps {
 export const TextReveal = memo(function TextReveal({ children, className, delay = 0 }: TextRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const { prefersReducedMotion } = useOptimizedAnimation();
 
-  const words = children.split(" ");
+  const words = useMemo(() => children.split(" "), [children]);
+
+  if (prefersReducedMotion) {
+    return <span className={cn("inline-block", className)}>{children}</span>;
+  }
 
   return (
     <span ref={ref} className={cn("inline-block", className)}>
@@ -26,7 +36,7 @@ export const TextReveal = memo(function TextReveal({ children, className, delay 
               ease: [0.22, 1, 0.36, 1],
               delay: delay + i * 0.05,
             }}
-            className="inline-block"
+            className="inline-block will-change-transform"
           >
             {word}
           </motion.span>
@@ -39,6 +49,11 @@ export const TextReveal = memo(function TextReveal({ children, className, delay 
 export const FadeIn = memo(function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const { prefersReducedMotion } = useOptimizedAnimation();
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
@@ -46,7 +61,7 @@ export const FadeIn = memo(function FadeIn({ children, className, delay = 0 }: {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
-      className={className}
+      className={cn(className, "will-change-[opacity,transform]")}
     >
       {children}
     </motion.div>
