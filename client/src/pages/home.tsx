@@ -317,75 +317,35 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Work - Asymmetrical Layout */}
-      <section className="py-20 md:py-40 bg-background relative z-10">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 md:mb-32">
-            <div>
-              <FadeIn>
-                <h2 className="text-[8vw] md:text-[5vw] leading-[0.9] font-display font-bold mb-4 uppercase">
-                  Selected <br/> <span className="text-accent pl-4 md:pl-20">Work</span>
-                </h2>
-              </FadeIn>
-            </div>
-            <FadeIn delay={0.2} className="hidden md:block max-w-sm text-right">
-              <p className="text-muted-foreground text-lg mb-6">
-                A curation of our finest digital experiences. Award-winning sites, complex dashboards, and next-gen apps.
+      {/* Bold Statement Section */}
+      <section className="py-20 md:py-32 bg-background relative z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,255,0,0.08),transparent_60%)]" />
+        <div className="container mx-auto px-6 relative z-10">
+          <FadeIn>
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black uppercase leading-[1.1] mb-8">
+                <span className="text-white/40">Your website is your</span>{" "}
+                <span className="text-white">first impression.</span>
+                <br />
+                <span className="text-accent">Make it count.</span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+                In 5 seconds, visitors decide if they trust you. We craft websites that capture attention, build trust, and drive action.
               </p>
-              <Link href="/work" data-testid="link-view-archive" className="inline-block border-b border-accent text-accent uppercase tracking-widest pb-1 hover:text-white hover:border-white transition-colors">
-                View Full Archive
-              </Link>
-            </FadeIn>
-          </div>
-
-          <div className="flex flex-col gap-16 md:gap-32">
-             {/* Project 1 - Full Width Parallax */}
-             <div className="group relative">
-                <Link href="/work" className="block">
-                  <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg">
-                    <ParallaxImage src={project3} alt="Fintech App" className="w-full h-full" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 flex items-center justify-center">
-                      <h3 className="text-4xl md:text-9xl font-display font-bold text-transparent text-stroke opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-10 group-hover:translate-y-0">
-                        FINTECH
-                      </h3>
-                    </div>
+              <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                {[
+                  { number: "0.05s", label: "First Impression" },
+                  { number: "94%", label: "Design-Based Trust" },
+                  { number: "3x", label: "Higher Conversion" },
+                ].map((stat, i) => (
+                  <div key={i} className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 md:px-8 md:py-6">
+                    <div className="text-2xl md:text-4xl font-display font-black text-accent">{stat.number}</div>
+                    <div className="text-xs md:text-sm uppercase tracking-widest text-white/60 mt-1">{stat.label}</div>
                   </div>
-                  <div className="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-baseline gap-2 border-b border-white/10 pb-6">
-                    <h3 className="text-2xl md:text-3xl font-display font-bold">Neo Bank App</h3>
-                    <p className="font-mono text-accent uppercase text-xs md:text-sm">Fintech / Mobile / React</p>
-                  </div>
-                </Link>
-             </div>
-
-             {/* Projects 2 & 3 - Staggered Grid */}
-             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-                <div className="md:col-span-5 md:col-start-2">
-                    <ProjectCard 
-                        title="Luxe Commerce" 
-                        category="E-commerce" 
-                        image={project2} 
-                        id="2" 
-                        className="aspect-[4/5]"
-                    />
-                </div>
-                <div className="md:col-span-6 md:col-start-7 md:pt-20">
-                     <FadeIn delay={0.2}>
-                         <div className="mb-8 md:mb-12">
-                            <h3 className="text-2xl md:text-4xl font-display font-bold mb-4">Detail Oriented.</h3>
-                            <p className="text-muted-foreground text-base md:text-lg">
-                                We obsess over the micro-interactions. The way a card lifts, the way text reveals, the physics of a scroll. It's not just about looking good, it's about feeling right.
-                            </p>
-                         </div>
-                     </FadeIn>
-                    <ProjectCard 
-                        title="SaaS Analytics" 
-                        category="Dashboard UI" 
-                        image={project1} 
-                        id="3" 
-                    />
-                </div>
-             </div>
-          </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
