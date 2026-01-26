@@ -362,14 +362,16 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <FadeIn className="mb-12 md:mb-24 w-full">
-            <div className="flex flex-col items-center justify-center">
-               <span className="py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Capabilities</span>
-               <h2 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold text-center">
+          <div className="mb-12 md:mb-24 w-full text-center">
+            <FadeIn>
+               <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Capabilities</span>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+               <h2 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold">
                  Beyond <span className="text-transparent text-stroke">Templates.</span>
                </h2>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-1">
              {[
