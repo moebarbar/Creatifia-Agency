@@ -229,18 +229,20 @@ export default function Home() {
                </div>
              </FadeIn>
 
-             {/* Main Headline - Horizontal Creative Layout */}
+             {/* Main Headline - Creative Mixed Typography */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <div className="text-center">
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase text-white leading-[1.1] tracking-tight">
-                      TRANSFORMING <span className="text-accent">IDEAS</span>
+                  <div className="text-center space-y-1">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display uppercase text-white leading-[1.2]">
+                      <span className="font-light tracking-[0.2em]">We don't build</span>{" "}
+                      <span className="font-black text-accent">websites</span>
                     </h1>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase text-white leading-[1.1] tracking-tight mt-2">
-                      INTO <span className="italic font-light text-white/80">REAL WORLD</span>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display uppercase leading-[1.2]">
+                      <span className="font-light text-white/60 tracking-widest">we create</span>
                     </h1>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase leading-[1.1] tracking-tight mt-2">
-                      <span className="text-accent">STORIES</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-[1.1]">
+                      <span className="italic font-light text-white tracking-tight">digital</span>{" "}
+                      <span className="font-black text-accent uppercase tracking-wide">stories</span>
                     </h1>
                   </div>
                 </FadeIn>
