@@ -355,42 +355,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expertise - Interactive Cards */}
+      {/* UI/UX Focus Section */}
       <section className="py-20 md:py-32 bg-secondary/20 relative overflow-hidden">
-        {/* Decorative blobs */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="mb-12 md:mb-24 w-full" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-            <FadeIn>
-               <span className="py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6" style={{ display: 'inline-block' }}>Capabilities</span>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-               <h2 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold" style={{ textAlign: 'center' }}>
-                 Beyond <span className="text-transparent text-stroke">Templates.</span>
-               </h2>
-            </FadeIn>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-16 md:mb-24">
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6">What We Do</span>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+                UI/UX Design That <span className="text-accent">Converts</span>
+              </h2>
+              <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+                Beautiful interfaces that users love. We design experiences that drive engagement and boost conversions.
+              </p>
+            </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
              {[
-               { icon: Globe, title: "Websites", desc: "Award-winning creative sites", color: "hover:bg-red-500/10 hover:border-red-500/50" },
-               { icon: Cpu, title: "Web Apps", desc: "Complex, data-heavy dashboards", color: "hover:bg-blue-500/10 hover:border-blue-500/50" },
-               { icon: Layers, title: "Systems", desc: "Scalable component libraries", color: "hover:bg-accent/10 hover:border-accent/50" },
+               { icon: Layers, title: "UI Design", desc: "Stunning visual interfaces that capture your brand and delight users", color: "hover:border-accent/50" },
+               { icon: Cpu, title: "UX Strategy", desc: "User-centered design that makes complex tasks feel effortless", color: "hover:border-blue-500/50" },
+               { icon: Globe, title: "Web Development", desc: "Pixel-perfect implementation that brings your design to life", color: "hover:border-purple-500/50" },
              ].map((item, i) => (
-               <FadeIn key={i} delay={i * 0.1} className={`group relative border border-white/10 bg-background/50 p-8 md:p-12 h-[280px] md:h-[400px] flex flex-col justify-between transition-all duration-500 ${item.color}`}>
-                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                 </div>
-                 
-                 <div>
-                    <h3 className="text-xl md:text-3xl font-display font-bold mb-2 md:mb-4">{item.title}</h3>
-                    <p className="text-muted-foreground text-base md:text-lg opacity-60 group-hover:opacity-100 transition-opacity">{item.desc}</p>
-                 </div>
-
-                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 -rotate-45" />
+               <FadeIn key={i} delay={i * 0.1}>
+                 <div className={`group relative border border-white/10 bg-background/50 p-8 md:p-10 rounded-lg transition-all duration-500 hover:bg-white/5 ${item.color}`}>
+                   <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <item.icon className="w-6 h-6 text-accent" />
+                   </div>
+                   <h3 className="text-xl md:text-2xl font-display font-bold mb-3">{item.title}</h3>
+                   <p className="text-muted-foreground text-base leading-relaxed">{item.desc}</p>
                  </div>
                </FadeIn>
              ))}
