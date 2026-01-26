@@ -582,11 +582,12 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.5} className="mt-10 text-center">
-            <Link href="/contact" data-testid="button-start-project" className="group relative inline-flex items-center gap-3 bg-accent text-black px-10 py-5 font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
-              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-              <span className="relative z-10 flex items-center gap-3">
+            <Link href="/contact" data-testid="button-start-project" className="btn-glow btn-creative group relative inline-flex items-center gap-4 bg-accent text-black px-12 py-6 text-lg font-black uppercase tracking-wider overflow-hidden rounded-full transition-all duration-500 hover:scale-110">
+              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="relative z-10 flex items-center gap-4">
+                <span className="w-3 h-3 bg-black rounded-full animate-pulse" />
                 Start My Project for $299
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
               </span>
             </Link>
           </FadeIn>

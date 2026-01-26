@@ -98,6 +98,54 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 
+  .btn-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(145, 255, 0, 0.4), 0 0 40px rgba(145, 255, 0, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(145, 255, 0, 0.6), 0 0 80px rgba(145, 255, 0, 0.4), 0 0 120px rgba(145, 255, 0, 0.2);
+    }
+  }
+
+  .btn-creative {
+    position: relative;
+    background: linear-gradient(135deg, #91FF00 0%, #7acc00 100%);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .btn-creative::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(135deg, #91FF00, #fff, #91FF00);
+    border-radius: inherit;
+    z-index: -1;
+    animation: rotate-border 3s linear infinite;
+  }
+
+  @keyframes rotate-border {
+    0% {
+      background: linear-gradient(0deg, #91FF00, #fff, #91FF00);
+    }
+    25% {
+      background: linear-gradient(90deg, #91FF00, #fff, #91FF00);
+    }
+    50% {
+      background: linear-gradient(180deg, #91FF00, #fff, #91FF00);
+    }
+    75% {
+      background: linear-gradient(270deg, #91FF00, #fff, #91FF00);
+    }
+    100% {
+      background: linear-gradient(360deg, #91FF00, #fff, #91FF00);
+    }
+  }
+
   .animate-marquee {
     animation: marquee 25s linear infinite;
   }
