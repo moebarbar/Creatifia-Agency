@@ -11,7 +11,7 @@ export default function About() {
           <div>
             <h1 className="text-[8vw] font-display font-bold uppercase leading-[0.85] mb-12 sticky top-32">
               <TextReveal>About</TextReveal> <br/>
-              <span className="text-accent"><TextReveal>The Studio</TextReveal></span>
+              <span className="text-accent"><TextReveal>Créatifia</TextReveal></span>
             </h1>
           </div>
           <div className="pt-4 md:pt-12">

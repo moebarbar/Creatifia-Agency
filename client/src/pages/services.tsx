@@ -11,10 +11,10 @@ export default function Services() {
 
       <div className="container mx-auto px-6 mb-24">
          <h1 className="text-[10vw] font-display font-bold uppercase leading-[0.85] mb-12">
-          <TextReveal>Our</TextReveal> <br/>
+          <TextReveal>Web Design</TextReveal> <br/>
           <div className="flex items-center flex-wrap">
-            <span className="text-stroke text-transparent"><TextReveal>Expertise</TextReveal></span>
-            <InlineVisual src={torus} alt="shape" className="w-[1em] h-[0.5em] rounded-full mx-4" delay={0.4} />
+            <span className="text-stroke text-transparent"><TextReveal>Services</TextReveal></span>
+            <InlineVisual src={torus} alt="Affordable web design services icon" className="w-[1em] h-[0.5em] rounded-full mx-4" delay={0.4} />
           </div>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl font-light">

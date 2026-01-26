@@ -42,8 +42,8 @@ export default function Work() {
       
       <div className="container mx-auto px-6 mb-20">
         <h1 className="text-[10vw] font-display font-bold uppercase leading-[0.85] mb-12">
-          <TextReveal>Selected</TextReveal> <br/>
-          <span className="text-accent"><TextReveal>Work</TextReveal></span>
+          <TextReveal>Our Website</TextReveal> <br/>
+          <span className="text-accent"><TextReveal>Portfolio</TextReveal></span>
         </h1>
 
         <div className="flex flex-wrap gap-8 border-b border-white/10 pb-8">

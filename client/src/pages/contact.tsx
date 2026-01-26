@@ -66,8 +66,8 @@ export default function Contact() {
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
           <h1 className="text-[10vw] font-display font-bold uppercase leading-[0.85] mb-12">
-            <TextReveal>Let's</TextReveal> <br/>
-            <span className="text-stroke text-transparent"><TextReveal>Talk</TextReveal></span>
+            <TextReveal>Get Your</TextReveal> <br/>
+            <span className="text-stroke text-transparent"><TextReveal>$299 Website</TextReveal></span>
           </h1>
           <FadeIn delay={0.2}>
             <p className="text-xl text-muted-foreground max-w-md font-light mb-12">

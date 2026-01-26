@@ -72,7 +72,7 @@ function PortfolioSection() {
           <FadeIn>
             <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Portfolio</span>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-              Website <span className="text-accent">Examples</span>
+              Affordable Website Design <span className="text-accent">Examples</span>
             </h2>
             <p className="text-muted-foreground text-base max-w-xl mx-auto">
               Browse our work by industry. Each site is built with our story-driven approach.
@@ -184,7 +184,7 @@ export default function Home() {
             style={{ x: mouseX, y: mouseY }}
             className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none scale-110"
         >
-          <img src={heroTexture} alt="" className="w-full h-full object-cover" loading="eager" decoding="async" />
+          <img src={heroTexture} alt="Affordable website design dark abstract background" className="w-full h-full object-cover" loading="eager" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
         </motion.div>
@@ -198,19 +198,19 @@ export default function Home() {
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute top-[8%] left-[-5%] rotate-[-12deg] w-[7vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
+                    <img src={portraitWoman} alt="Professional web designer creating affordable websites for small businesses" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
                  </motion.div>
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute top-[5%] right-[-3%] rotate-[8deg] w-[6vw] pointer-events-auto hover:rotate-[2deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-lg border-2 border-accent/60" loading="eager" decoding="async" />
+                    <img src={artFrame} alt="Modern website design showcase for startups" className="w-full shadow-2xl rounded-lg border-2 border-accent/60" loading="eager" decoding="async" />
                  </motion.div>
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute bottom-[15%] right-[-8%] rotate-[-6deg] w-[8vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={abstractArt} alt="Creative" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
+                    <img src={abstractArt} alt="Creative budget-friendly web design services" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
                  </motion.div>
              </div>
 
@@ -223,18 +223,19 @@ export default function Home() {
                </div>
              </FadeIn>
 
-             {/* Main Headline - Creative Typography with inline portrait */}
+             {/* Main Headline - SEO-optimized H1 with creative typography */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <div className="text-center space-y-1">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
+                  <h1 className="sr-only">Affordable Website Design - Professional $299 Websites Delivered in 5 Days</h1>
+                  <div className="text-center space-y-1" aria-hidden="false">
+                    <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
                       <span className="font-light">Transforming</span>{" "}
                       <span className="font-black text-accent">Ideas</span>
-                    </h1>
+                    </p>
                     <div className="flex items-center justify-center gap-2 md:gap-4">
-                      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase leading-[1.3]">
+                      <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase leading-[1.3]">
                         <span className="font-light text-white/50 tracking-[0.2em]">into</span>
-                      </h1>
+                      </p>
                       <motion.div 
                         className="relative group cursor-pointer"
                         whileHover={{ scale: 1.15, rotate: 3 }}
@@ -244,7 +245,7 @@ export default function Home() {
                         <div className="w-12 h-6 md:w-16 md:h-8 lg:w-20 lg:h-10 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300">
                           <img 
                             src={portrait} 
-                            alt="Developer" 
+                            alt="Affordable website design developer creating professional websites" 
                             className="w-full h-full object-cover object-center"
                             loading="eager"
                             decoding="async"
@@ -252,13 +253,13 @@ export default function Home() {
                         </div>
                         <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" />
                       </motion.div>
-                      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display leading-[1.3]">
+                      <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display leading-[1.3]">
                         <span className="italic font-light text-white/80 tracking-tight lowercase">real world</span>
-                      </h1>
+                      </p>
                     </div>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-[1.2] mt-1">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-[1.2] mt-1">
                       <span className="font-black text-accent uppercase tracking-widest">Stories</span>
-                    </h1>
+                    </p>
                   </div>
                 </FadeIn>
              </div>
@@ -403,7 +404,7 @@ export default function Home() {
             <FadeIn>
               <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">The Offer</span>
               <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-4">
-                One Price. Any Website. <span className="text-accent">$299.</span>
+                Affordable Website Design. Any Website. <span className="text-accent">$299.</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 No hidden fees. No hourly rates. Just a beautiful, story-driven website delivered in 5 days.
