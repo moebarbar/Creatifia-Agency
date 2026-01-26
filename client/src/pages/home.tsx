@@ -235,13 +235,21 @@ export default function Home() {
                       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase leading-[1.3]">
                         <span className="font-light text-white/50 tracking-[0.2em]">into</span>
                       </h1>
-                      <img 
-                        src={portrait} 
-                        alt="Developer" 
-                        className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-accent shadow-[0_0_20px_rgba(145,255,0,0.4)]"
-                        loading="eager"
-                        decoding="async"
-                      />
+                      <motion.div 
+                        className="relative group cursor-pointer"
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        <img 
+                          src={portrait} 
+                          alt="Developer" 
+                          className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-accent shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300"
+                          loading="eager"
+                          decoding="async"
+                        />
+                        <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" />
+                      </motion.div>
                       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display leading-[1.3]">
                         <span className="italic font-light text-white/80 tracking-tight lowercase">real world</span>
                       </h1>
