@@ -2,12 +2,15 @@ import {
   users, 
   projects,
   contactSubmissions,
+  blogPosts,
   type User, 
   type InsertUser,
   type Project,
   type InsertProject,
   type ContactSubmission,
-  type InsertContact
+  type InsertContact,
+  type BlogPost,
+  type InsertBlogPost
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc } from "drizzle-orm";
@@ -26,6 +29,12 @@ export interface IStorage {
   // Contact submissions
   createContactSubmission(contact: InsertContact): Promise<ContactSubmission>;
   getAllContactSubmissions(): Promise<ContactSubmission[]>;
+  
+  // Blog posts
+  getAllBlogPosts(): Promise<BlogPost[]>;
+  getLatestBlogPosts(limit: number): Promise<BlogPost[]>;
+  getBlogPostBySlug(slug: string): Promise<BlogPost | undefined>;
+  createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -78,6 +87,27 @@ export class DatabaseStorage implements IStorage {
 
   async getAllContactSubmissions(): Promise<ContactSubmission[]> {
     return await db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+  }
+
+  async getAllBlogPosts(): Promise<BlogPost[]> {
+    return await db.select().from(blogPosts).orderBy(desc(blogPosts.publishedAt));
+  }
+
+  async getLatestBlogPosts(limit: number): Promise<BlogPost[]> {
+    return await db.select().from(blogPosts).orderBy(desc(blogPosts.publishedAt)).limit(limit);
+  }
+
+  async getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+    const [post] = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug));
+    return post || undefined;
+  }
+
+  async createBlogPost(insertPost: InsertBlogPost): Promise<BlogPost> {
+    const [post] = await db
+      .insert(blogPosts)
+      .values(insertPost)
+      .returning();
+    return post;
   }
 }
 

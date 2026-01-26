@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertProjectSchema, insertContactSchema } from "@shared/schema";
+import { insertProjectSchema, insertContactSchema, insertBlogPostSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
 
 export async function registerRoutes(
@@ -42,6 +42,40 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Error creating contact submission:", error);
       res.status(500).json({ error: "Failed to submit contact form" });
+    }
+  });
+
+  app.get("/api/blog", async (req, res) => {
+    try {
+      const posts = await storage.getAllBlogPosts();
+      res.json(posts);
+    } catch (error) {
+      console.error("Error fetching blog posts:", error);
+      res.status(500).json({ error: "Failed to fetch blog posts" });
+    }
+  });
+
+  app.get("/api/blog/latest", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 3;
+      const posts = await storage.getLatestBlogPosts(limit);
+      res.json(posts);
+    } catch (error) {
+      console.error("Error fetching latest blog posts:", error);
+      res.status(500).json({ error: "Failed to fetch latest blog posts" });
+    }
+  });
+
+  app.get("/api/blog/:slug", async (req, res) => {
+    try {
+      const post = await storage.getBlogPostBySlug(req.params.slug);
+      if (!post) {
+        return res.status(404).json({ error: "Blog post not found" });
+      }
+      res.json(post);
+    } catch (error) {
+      console.error("Error fetching blog post:", error);
+      res.status(500).json({ error: "Failed to fetch blog post" });
     }
   });
 
