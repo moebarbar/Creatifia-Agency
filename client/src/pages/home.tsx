@@ -11,7 +11,7 @@ import sphere from "@assets/generated_images/chrome_metal_sphere_with_reflection
 import portrait from "@assets/generated_images/edgy_monochrome_developer_portrait.png";
 import portraitWoman from "@assets/generated_images/edgy_creative_woman_portrait_in_frame.png";
 import artFrame from "@assets/generated_images/abstract_digital_art_in_frame.png";
-import cyberpunkFrame from "@assets/generated_images/cyberpunk_creative_portrait_in_frame.png";
+import abstractArt from "@assets/generated_images/abstract_3d_metallic_shape.png";
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
@@ -210,7 +210,7 @@ export default function Home() {
                    style={{ x: mouseX, y: mouseY }}
                    className="absolute bottom-[15%] right-[-8%] rotate-[-6deg] w-[8vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
+                    <img src={abstractArt} alt="Creative" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
                  </motion.div>
              </div>
 
