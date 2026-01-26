@@ -17,7 +17,143 @@ import cyberpunkFrame from "@assets/generated_images/cyberpunk_creative_portrait
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket } from "lucide-react";
 import { Link } from "wouter";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+
+const portfolioCategories = [
+  { 
+    category: "Restaurant & Food", 
+    description: "Mouth-watering designs that drive reservations and orders",
+    color: "from-orange-500/20 to-red-500/20",
+    sites: [
+      { name: "Bella Cucina", desc: "Fine dining Italian restaurant", features: ["Online Reservations", "Menu Showcase", "Chef Profiles"] },
+      { name: "Fresh Bites", desc: "Modern healthy cafe", features: ["Order Online", "Nutrition Info", "Loyalty Program"] }
+    ]
+  },
+  { 
+    category: "Real Estate", 
+    description: "Premium property showcases that convert browsers into buyers",
+    color: "from-blue-500/20 to-cyan-500/20",
+    sites: [
+      { name: "Luxe Properties", desc: "High-end real estate agency", features: ["Property Search", "Virtual Tours", "Agent Directory"] },
+      { name: "Urban Living", desc: "Modern apartment rentals", features: ["Floor Plans", "Amenities", "Application Portal"] }
+    ]
+  },
+  { 
+    category: "Fitness & Wellness", 
+    description: "Energetic sites that inspire action and membership signups",
+    color: "from-green-500/20 to-emerald-500/20",
+    sites: [
+      { name: "Peak Performance", desc: "Premium fitness studio", features: ["Class Booking", "Trainer Bios", "Membership Plans"] },
+      { name: "Zen Studio", desc: "Yoga and meditation center", features: ["Schedule", "Online Classes", "Retreat Booking"] }
+    ]
+  },
+  { 
+    category: "Professional Services", 
+    description: "Trust-building sites for consultants, lawyers, and agencies",
+    color: "from-purple-500/20 to-pink-500/20",
+    sites: [
+      { name: "Sterling Law", desc: "Corporate law firm", features: ["Practice Areas", "Case Studies", "Free Consultation"] },
+      { name: "Growth Partners", desc: "Business consulting agency", features: ["Services", "Client Results", "Contact Form"] }
+    ]
+  }
+];
+
+function PortfolioSection() {
+  const [activeCategory, setActiveCategory] = useState(0);
+  const currentCategory = portfolioCategories[activeCategory];
+
+  return (
+    <section id="portfolio" className="py-20 md:py-32 bg-background relative">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12 md:mb-16">
+          <FadeIn>
+            <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Portfolio</span>
+            <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+              Website <span className="text-accent">Examples</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Browse our work by industry. Each site is built with our story-driven approach.
+            </p>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.2}>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-16">
+            {portfolioCategories.map((cat, idx) => (
+              <button
+                key={idx}
+                data-testid={`tab-category-${idx}`}
+                onClick={() => setActiveCategory(idx)}
+                className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
+                  activeCategory === idx
+                    ? 'bg-accent text-black shadow-[0_0_20px_rgba(145,255,0,0.4)]'
+                    : 'bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-accent/30'
+                }`}
+              >
+                {cat.category}
+              </button>
+            ))}
+          </div>
+        </FadeIn>
+
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <div className="mb-8 text-center">
+            <p className="text-muted-foreground text-lg">{currentCategory.description}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {currentCategory.sites.map((site, siteIdx) => (
+              <div key={siteIdx} data-testid={`card-portfolio-${activeCategory}-${siteIdx}`} className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500">
+                <div className={`relative h-[200px] md:h-[280px] overflow-hidden bg-gradient-to-br ${currentCategory.color} m-3 rounded-xl flex items-center justify-center`}>
+                  <div className="text-center p-6">
+                    <div className="text-6xl md:text-8xl font-display font-black text-white/10 group-hover:text-white/20 transition-colors mb-4">
+                      {site.name.charAt(0)}
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {site.features.map((feature, fIdx) => (
+                        <span key={fIdx} className="text-xs bg-white/10 text-white/80 px-2 py-1 rounded-full">{feature}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                </div>
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-lg md:text-xl font-display font-bold text-white">{site.name}</h4>
+                    <span className="text-xs font-mono text-accent uppercase">{currentCategory.category.split(' ')[0]}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-4">{site.desc}</p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link 
+                      href="/work"
+                      data-testid={`button-preview-${activeCategory}-${siteIdx}`}
+                      className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      View Details
+                    </Link>
+                    <Link 
+                      href="/contact"
+                      data-testid={`button-request-similar-${activeCategory}-${siteIdx}`}
+                      className="flex items-center justify-center gap-2 bg-accent text-black px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
+                    >
+                      Request Similar
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -359,118 +495,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio / Website Examples Section */}
-      <section id="portfolio" className="py-20 md:py-32 bg-background relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12 md:mb-20">
-            <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Portfolio</span>
-              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
-                Website <span className="text-accent">Examples</span>
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Browse our work by industry. Each site is built with our story-driven approach.
-              </p>
-            </FadeIn>
-          </div>
-
-          <div className="space-y-12 md:space-y-16">
-            {[
-              { 
-                category: "Restaurant & Food", 
-                description: "Mouth-watering designs that drive reservations and orders",
-                color: "from-orange-500/20 to-red-500/20",
-                sites: [
-                  { name: "Bella Cucina", desc: "Fine dining Italian restaurant", features: ["Online Reservations", "Menu Showcase", "Chef Profiles"] },
-                  { name: "Fresh Bites", desc: "Modern healthy cafe", features: ["Order Online", "Nutrition Info", "Loyalty Program"] }
-                ]
-              },
-              { 
-                category: "Real Estate", 
-                description: "Premium property showcases that convert browsers into buyers",
-                color: "from-blue-500/20 to-cyan-500/20",
-                sites: [
-                  { name: "Luxe Properties", desc: "High-end real estate agency", features: ["Property Search", "Virtual Tours", "Agent Directory"] },
-                  { name: "Urban Living", desc: "Modern apartment rentals", features: ["Floor Plans", "Amenities", "Application Portal"] }
-                ]
-              },
-              { 
-                category: "Fitness & Wellness", 
-                description: "Energetic sites that inspire action and membership signups",
-                color: "from-green-500/20 to-emerald-500/20",
-                sites: [
-                  { name: "Peak Performance", desc: "Premium fitness studio", features: ["Class Booking", "Trainer Bios", "Membership Plans"] },
-                  { name: "Zen Studio", desc: "Yoga and meditation center", features: ["Schedule", "Online Classes", "Retreat Booking"] }
-                ]
-              },
-              { 
-                category: "Professional Services", 
-                description: "Trust-building sites for consultants, lawyers, and agencies",
-                color: "from-purple-500/20 to-pink-500/20",
-                sites: [
-                  { name: "Sterling Law", desc: "Corporate law firm", features: ["Practice Areas", "Case Studies", "Free Consultation"] },
-                  { name: "Growth Partners", desc: "Business consulting agency", features: ["Services", "Client Results", "Contact Form"] }
-                ]
-              }
-            ].map((category, catIdx) => (
-              <FadeIn key={catIdx} delay={catIdx * 0.1}>
-                <div className="mb-8">
-                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-                    <div>
-                      <span className="text-accent font-mono text-sm uppercase tracking-widest">0{catIdx + 1}</span>
-                      <h3 className="text-2xl md:text-4xl font-display font-bold text-white">{category.category}</h3>
-                      <p className="text-muted-foreground mt-2">{category.description}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {category.sites.map((site, siteIdx) => (
-                      <div key={siteIdx} data-testid={`card-portfolio-${catIdx}-${siteIdx}`} className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500">
-                        <div className={`relative h-[200px] md:h-[280px] overflow-hidden bg-gradient-to-br ${category.color} m-3 rounded-xl flex items-center justify-center`}>
-                          <div className="text-center p-6">
-                            <div className="text-6xl md:text-8xl font-display font-black text-white/10 group-hover:text-white/20 transition-colors mb-4">
-                              {site.name.charAt(0)}
-                            </div>
-                            <div className="flex flex-wrap justify-center gap-2">
-                              {site.features.map((feature, fIdx) => (
-                                <span key={fIdx} className="text-xs bg-white/10 text-white/80 px-2 py-1 rounded-full">{feature}</span>
-                              ))}
-                            </div>
-                          </div>
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                        </div>
-                        <div className="p-4 md:p-6">
-                          <div className="flex items-center justify-between mb-3">
-                            <h4 className="text-lg md:text-xl font-display font-bold text-white">{site.name}</h4>
-                            <span className="text-xs font-mono text-accent uppercase">{category.category.split(' ')[0]}</span>
-                          </div>
-                          <p className="text-muted-foreground text-sm mb-4">{site.desc}</p>
-                          <div className="flex flex-col sm:flex-row gap-3">
-                            <Link 
-                              href="/work"
-                              data-testid={`button-preview-${catIdx}-${siteIdx}`}
-                              className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full"
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                              View Details
-                            </Link>
-                            <Link 
-                              href="/contact"
-                              data-testid={`button-request-similar-${catIdx}-${siteIdx}`}
-                              className="flex items-center justify-center gap-2 bg-accent text-black px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
-                            >
-                              Request Similar
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PortfolioSection />
 
       {/* Templates Section */}
       <section id="templates" className="py-20 md:py-32 bg-secondary/20 relative overflow-hidden">
