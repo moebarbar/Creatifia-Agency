@@ -237,17 +237,19 @@ export default function Home() {
                       </h1>
                       <motion.div 
                         className="relative group cursor-pointer"
-                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileHover={{ scale: 1.15, rotate: 3 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
-                        <img 
-                          src={portrait} 
-                          alt="Developer" 
-                          className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-accent shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300"
-                          loading="eager"
-                          decoding="async"
-                        />
+                        <div className="w-16 h-8 md:w-24 md:h-12 lg:w-28 lg:h-14 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300">
+                          <img 
+                            src={portrait} 
+                            alt="Developer" 
+                            className="w-full h-[200%] object-cover object-top"
+                            loading="eager"
+                            decoding="async"
+                          />
+                        </div>
                         <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" />
                       </motion.div>
                       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display leading-[1.3]">
