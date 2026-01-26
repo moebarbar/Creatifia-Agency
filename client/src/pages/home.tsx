@@ -362,12 +362,12 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="mb-12 md:mb-24 w-full text-center">
+          <div className="mb-12 md:mb-24 w-full" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <FadeIn>
-               <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Capabilities</span>
+               <span className="py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6" style={{ display: 'inline-block' }}>Capabilities</span>
             </FadeIn>
             <FadeIn delay={0.1}>
-               <h2 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold">
+               <h2 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold" style={{ textAlign: 'center' }}>
                  Beyond <span className="text-transparent text-stroke">Templates.</span>
                </h2>
             </FadeIn>
