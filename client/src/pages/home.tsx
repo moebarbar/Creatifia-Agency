@@ -15,7 +15,7 @@ import abstractArt from "@assets/generated_images/artistic_eye_white_background.
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket } from "lucide-react";
+import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket, Check } from "lucide-react";
 import { Link } from "wouter";
 import { useRef, useEffect, useState } from "react";
 
@@ -217,7 +217,7 @@ export default function Home() {
              {/* Price Badge */}
              <FadeIn delay={0.2} className="mb-6">
                <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
-                 <span className="text-accent font-bold text-sm md:text-base">$299 Flat Rate</span>
+                 <span className="text-accent font-bold text-sm md:text-base">$299/month</span>
                  <span className="text-white/40">|</span>
                  <span className="text-white/80 text-sm md:text-base">First Draft in 5 Days</span>
                </div>
@@ -226,7 +226,7 @@ export default function Home() {
              {/* Main Headline - SEO-optimized H1 with creative typography */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <h1 className="sr-only">Affordable Website Design - Professional $299 Websites Delivered in 5 Days</h1>
+                  <h1 className="sr-only">Affordable Website Design - Professional Websites for $299/month with Hosting & SEO</h1>
                   <div className="text-center space-y-1" aria-hidden="false">
                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
                       <span className="font-light">Transforming</span>{" "}
@@ -276,7 +276,7 @@ export default function Home() {
              <FadeIn delay={0.7} className="relative z-30">
                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                  <Link href="/contact" data-testid="button-hero-cta-primary" className="group relative flex items-center justify-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide overflow-hidden rounded-full w-full sm:w-auto shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
-                   Get My Website for $299
+                   Get Started for $299/mo
                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                  </Link>
                  <Link href="/work" data-testid="button-hero-examples" className="group flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-white/20 transition-all duration-300 rounded-full w-full sm:w-auto">
@@ -316,7 +316,7 @@ export default function Home() {
               <span className="text-accent text-2xl md:text-4xl">✦</span>
               <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Interactive Engineering</span>
               <span className="text-white text-2xl md:text-4xl">✦</span>
-              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">$299 Websites</span>
+              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">$299/mo All-Inclusive</span>
               <span className="text-accent text-2xl md:text-4xl">✦</span>
             </div>
           ))}
@@ -399,46 +399,59 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">The Offer</span>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Simple Pricing</span>
               <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-4">
-                Affordable Website Design. Any Website. <span className="text-accent">$299.</span>
+                Everything You Need. <span className="text-accent">$299/month.</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                No hidden fees. No hourly rates. Just a beautiful, story-driven website delivered in 5 days.
+                Cancel anytime and keep your website hosted. No contracts, no surprises.
               </p>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
-                <div className="text-3xl md:text-4xl font-display font-black text-accent mb-2">$299</div>
-                <div className="text-white font-bold mb-2">Flat Rate</div>
-                <p className="text-muted-foreground text-sm">Any website, any complexity. One transparent price.</p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
-                <div className="text-3xl md:text-4xl font-display font-black text-accent mb-2">5</div>
-                <div className="text-white font-bold mb-2">Days to First Draft</div>
-                <p className="text-muted-foreground text-sm">See your vision come to life in less than a week.</p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
-                <div className="text-3xl md:text-4xl font-display font-black text-accent mb-2">∞</div>
-                <div className="text-white font-bold mb-2">Revisions</div>
-                <p className="text-muted-foreground text-sm">We iterate until you're 100% satisfied.</p>
+              <div className="bg-white/5 border-2 border-accent/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-accent text-black px-4 py-1 text-xs font-bold uppercase rounded-bl-xl">Most Popular</div>
+                
+                <div className="text-center mb-8">
+                  <div className="flex items-baseline justify-center gap-1 mb-2">
+                    <span className="text-5xl md:text-6xl font-display font-black text-accent">$299</span>
+                    <span className="text-xl text-white/60">/month</span>
+                  </div>
+                  <p className="text-white/80">Everything included. No hidden fees.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  {[
+                    { icon: Globe, text: "Premium Hosting Included" },
+                    { icon: Layers, text: "Unlimited Updates & Changes" },
+                    { icon: Cpu, text: "Full SEO Services" },
+                    { icon: Check, text: "99.9% Uptime Guarantee" },
+                    { icon: Check, text: "Cancel Anytime" },
+                    { icon: Check, text: "Keep Website Hosted After Cancel" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-white/90">
+                      <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                        <item.icon className="w-4 h-4 text-accent" />
+                      </div>
+                      <span>{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center">
+                  <Link href="/contact" data-testid="button-offer-cta" className="btn-glow group relative inline-flex items-center gap-3 bg-accent text-black px-12 py-5 text-lg font-black uppercase tracking-wide overflow-hidden rounded-full transition-all duration-500 hover:scale-105">
+                    <span className="relative z-10 flex items-center gap-3">
+                      Get Started for $299/month
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                  <p className="text-white/40 text-sm mt-4">First draft in 5 days. Cancel anytime.</p>
+                </div>
               </div>
             </FadeIn>
           </div>
-
-          <FadeIn delay={0.5} className="mt-12 text-center">
-            <Link href="/contact" data-testid="button-offer-cta" className="group relative inline-flex items-center gap-3 bg-accent text-black px-10 py-5 font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
-              Get My Website for $299
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </FadeIn>
         </div>
       </section>
 
@@ -562,7 +575,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-3">
               {[
-                { Icon: CreditCard, step: "1", title: "Pay $299" },
+                { Icon: CreditCard, step: "1", title: "Subscribe $299/mo" },
                 { Icon: FileText, step: "2", title: "Fill Brief" },
                 { Icon: Video, step: "3", title: "Zoom Call" },
                 { Icon: Clock, step: "4", title: "5-Day Draft" },
@@ -586,7 +599,7 @@ export default function Home() {
               <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <span className="relative z-10 flex items-center gap-4">
                 <span className="w-3 h-3 bg-black rounded-full animate-pulse" />
-                Start My Project for $299
+                Start My Project for $299/mo
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
               </span>
             </Link>
@@ -714,13 +727,13 @@ export default function Home() {
 
           <div className="max-w-2xl mx-auto space-y-3">
             {[
-              { q: "What's included in the $299?", a: "Custom design, responsive development, basic SEO, and deployment. No hidden costs." },
+              { q: "What's included in the $299/month?", a: "Premium hosting, unlimited updates & changes, full SEO services, 99.9% uptime guarantee. Cancel anytime and keep your website hosted." },
               { q: "How long until I see my first draft?", a: "5 business days. Most clients are amazed at the speed." },
               { q: "What if I need changes?", a: "Unlimited revisions included until you're 100% satisfied." },
               { q: "What does 'any website' mean?", a: "Landing pages, portfolios, restaurants, real estate, fitness, services — any website (not web apps)." },
               { q: "Can I schedule a Zoom call?", a: "Yes! After your brief, schedule a free call to discuss details." },
               { q: "What happens after I pay?", a: "You'll get a link to fill out your project brief, then we start working." },
-              { q: "Do you offer ongoing support?", a: "Yes! Maintenance packages from $49/month available." },
+              { q: "Can I cancel anytime?", a: "Yes! Cancel anytime with no penalties. Your website stays hosted even after you cancel." },
               { q: "What if I'm not satisfied?", a: "100% money-back guarantee within 14 days of your first draft." },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.03}>
@@ -774,7 +787,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
            <FadeIn>
              <h2 className="text-2xl md:text-4xl lg:text-5xl leading-none font-display font-bold mb-6">
-               Ready for Your <span className="text-accent">$299</span> Website?
+               Ready for Your <span className="text-accent">$299/mo</span> Website?
              </h2>
            </FadeIn>
            <FadeIn delay={0.2}>
@@ -786,7 +799,7 @@ export default function Home() {
            <FadeIn delay={0.4}>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                <Link href="/contact" data-testid="button-final-cta" className="group relative flex items-center gap-3 bg-accent text-black px-10 py-5 md:px-12 md:py-6 text-base font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_50px_rgba(145,255,0,0.6)] hover:shadow-[0_0_80px_rgba(145,255,0,0.9)] transition-all duration-500">
-                 Get My Website for $299
+                 Get Started for $299/mo
                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                </Link>
                <Link href="/work" data-testid="link-view-examples-final" className="text-white/60 hover:text-accent transition-colors text-sm underline underline-offset-4">
