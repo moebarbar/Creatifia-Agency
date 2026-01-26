@@ -228,7 +228,7 @@ export default function Home() {
              {/* Main Headline - SEO-optimized H1 with creative typography */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <h1 className="sr-only">Affordable Website Design - Professional Websites for $299/month with Hosting & SEO</h1>
+                  <h1 className="sr-only">All-Inclusive Website Subscription for Just $299/Month - Design, Hosting, SEO & Updates Included</h1>
                   <div className="text-center space-y-1" aria-hidden="false">
                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
                       <span className="font-light">Transforming</span>{" "}
@@ -247,7 +247,7 @@ export default function Home() {
                         <div className="w-12 h-6 md:w-16 md:h-8 lg:w-20 lg:h-10 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300">
                           <img 
                             src={portrait} 
-                            alt="Affordable website design developer creating professional websites" 
+                            alt="affordable-monthly-website-subscription-$299" 
                             className="w-full h-full object-cover object-center"
                             loading="eager"
                             decoding="async"
@@ -269,8 +269,8 @@ export default function Home() {
              {/* Subheadline */}
              <FadeIn delay={0.5} className="mb-8">
                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                 Premium, story-driven websites that convert visitors into customers. 
-                 <span className="text-white font-medium"> Any website. One flat price. Delivered fast.</span>
+                 Stop paying thousands upfront. Get a professional website for $299/month with everything included.
+                 <span className="text-white font-medium"> No hidden fees • Cancel anytime • All-inclusive.</span>
                </p>
              </FadeIn>
             
@@ -401,12 +401,12 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Simple Pricing</span>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Monthly Website Subscription</span>
               <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-4">
-                Everything You Need. <span className="text-accent">$299/month.</span>
+                What's Included in Your <span className="text-accent">$299/Month</span> Plan
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Cancel anytime and keep your website hosted. No contracts, no surprises.
+                $299/mo vs $5,000+ upfront. Cancel anytime and keep your website hosted. No contracts, no surprises.
               </p>
             </FadeIn>
           </div>
@@ -686,10 +686,10 @@ export default function Home() {
               <FadeIn>
                 <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Why Us</span>
                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-                  Not Your Average <span className="text-accent">Dev Shop</span>
+                  Why Choose a <span className="text-accent">Website Subscription</span> Service
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Designers who code. Developers who design. No hand-offs, no miscommunication.
+                  Stop paying for every little update. Get predictable monthly costs with ongoing support.
                 </p>
               </FadeIn>
             </div>
@@ -697,8 +697,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { title: "Made in USA", desc: "100% American team. No outsourcing, ever." },
-                { title: "Performance First", desc: "Sub-second loads. 90+ Lighthouse scores." },
-                { title: "Direct Communication", desc: "Work directly with your developer. No middlemen." },
+                { title: "All-Inclusive", desc: "Hosting + maintenance + updates + SEO = normally $500+/mo" },
+                { title: "Always Up-to-Date", desc: "Your website stays current. No surprise fees for changes." },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
                   <div className="group text-center p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-accent/20 transition-all duration-500">
