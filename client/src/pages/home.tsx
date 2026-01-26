@@ -228,11 +228,10 @@ export default function Home() {
              {/* Main Headline - SEO-optimized H1 with creative typography */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black text-center mb-6">
-                    <span className="text-white">$299/Month </span>
-                    <span className="text-accent">Website Subscription</span>
+                  <h1 className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0" style={{ clip: 'rect(0, 0, 0, 0)' }}>
+                    $299/Month All-Inclusive Website Subscription - Design, Hosting, SEO & Updates Included
                   </h1>
-                  <div className="text-center space-y-1" aria-label="Transforming Ideas into Real World Stories">
+                  <div className="text-center space-y-1">
                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
                       <span className="font-light">Transforming</span>{" "}
                       <span className="font-black text-accent">Ideas</span>
