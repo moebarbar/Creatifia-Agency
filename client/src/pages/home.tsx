@@ -220,6 +220,8 @@ export default function Home() {
                  <span className="text-accent font-bold text-sm md:text-base">$299/month</span>
                  <span className="text-white/40">|</span>
                  <span className="text-white/80 text-sm md:text-base">First Draft in 5 Days</span>
+                 <span className="text-white/40">|</span>
+                 <span className="text-white/80 text-sm md:text-base">🇺🇸 Made in USA</span>
                </div>
              </FadeIn>
 
@@ -310,13 +312,13 @@ export default function Home() {
         <div className="flex whitespace-nowrap animate-marquee">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="flex items-center gap-6 md:gap-12 mx-4 md:mx-8">
-              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Next.js Specialists</span>
+              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Made in USA 🇺🇸</span>
               <span className="text-accent text-2xl md:text-4xl">✦</span>
               <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">Creative Development</span>
               <span className="text-accent text-2xl md:text-4xl">✦</span>
-              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Interactive Engineering</span>
+              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">$299/mo All-Inclusive</span>
               <span className="text-white text-2xl md:text-4xl">✦</span>
-              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">$299/mo All-Inclusive</span>
+              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">Premium Quality</span>
               <span className="text-accent text-2xl md:text-4xl">✦</span>
             </div>
           ))}
@@ -419,7 +421,7 @@ export default function Home() {
                     <span className="text-5xl md:text-6xl font-display font-black text-accent">$299</span>
                     <span className="text-xl text-white/60">/month</span>
                   </div>
-                  <p className="text-white/80">Everything included. No hidden fees.</p>
+                  <p className="text-white/80">Everything included. No hidden fees. 🇺🇸 Made in USA.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -694,9 +696,9 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: "Pixel-Perfect", desc: "We match designs down to the last pixel." },
+                { title: "Made in USA", desc: "100% American team. No outsourcing, ever." },
                 { title: "Performance First", desc: "Sub-second loads. 90+ Lighthouse scores." },
-                { title: "Future-Proof", desc: "Clean, documented, maintainable code." },
+                { title: "Direct Communication", desc: "Work directly with your developer. No middlemen." },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
                   <div className="group text-center p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-accent/20 transition-all duration-500">
