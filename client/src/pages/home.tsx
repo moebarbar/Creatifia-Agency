@@ -737,6 +737,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pronunciation Section */}
+      <section className="py-12 md:py-16 bg-black relative overflow-hidden border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center md:text-left">
+              <div className="flex items-center gap-3">
+                <span className="text-white/40 text-sm uppercase tracking-widest">How to say it:</span>
+                <span className="text-xl md:text-2xl font-display font-bold text-white">
+                  kray-ah-tee-<span className="text-accent">FEE</span>-ah
+                </span>
+              </div>
+              <span className="hidden md:block text-white/20">|</span>
+              <div className="flex items-center gap-3">
+                <span className="text-white/40 text-sm uppercase tracking-widest">Meaning:</span>
+                <span className="text-lg md:text-xl text-white/80 italic">
+                  From <span className="text-accent font-medium not-italic">"créatif"</span> — creative in French
+                </span>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 md:py-40 bg-background text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,255,0,0.1),transparent_50%)]" />
