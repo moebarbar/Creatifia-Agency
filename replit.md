@@ -1,8 +1,8 @@
-# PixelPerfect - Frontend Creative Agency
+# Créatifia - Frontend Creative Agency
 
 ## Overview
 
-PixelPerfect is a modern frontend creative agency website built as a full-stack application. The site showcases frontend development services including high-converting websites, landing pages, SaaS interfaces, and design-to-code builds. The application features a dark-themed, award-style design with bold typography, smooth animations, and an editorial aesthetic designed to impress founders, startups, and SaaS teams.
+Créatifia is a modern frontend creative agency website built as a full-stack application offering $299 flat-rate websites delivered in 5 days. The site showcases frontend development services with a story-driven approach. The application features a dark-themed, award-style design with bold typography, smooth animations, and an editorial aesthetic designed to impress founders, startups, and SaaS teams.
 
 ## User Preferences
 

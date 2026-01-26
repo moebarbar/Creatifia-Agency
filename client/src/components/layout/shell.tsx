@@ -31,8 +31,8 @@ export function Navbar() {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-display font-bold tracking-tighter uppercase z-50 relative hover:text-accent transition-colors">
-            Pixel<span className="text-accent">Perfect</span>
+          <Link href="/" className="text-2xl font-display font-bold tracking-tighter z-50 relative hover:text-accent transition-colors">
+            Créati<span className="text-accent">fia</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -109,12 +109,12 @@ export function Footer() {
               <a href="#" className="hover:text-accent transition-colors">Dribbble</a>
             </div>
             <p className="mt-8 text-white/40 max-w-xs text-right hidden md:block">
-              We create digital experiences that define brands. Frontend only. Pixel perfect.
+              We create digital experiences that define brands. Story-driven. Pixel perfect.
             </p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 text-xs uppercase tracking-widest text-white/40">
-          <p>&copy; 2024 PixelPerfect Agency</p>
+          <p>&copy; 2024 Créatifia Agency</p>
           <div className="flex flex-col md:flex-row gap-8 mt-4 md:mt-0 items-center">
             <span>San Francisco</span>
             <span>Tokyo</span>

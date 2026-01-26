@@ -17,7 +17,7 @@ export default function About() {
           <div className="pt-4 md:pt-12">
             <FadeIn className="space-y-12 text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
               <p>
-                <strong className="text-white font-bold">We are PixelPerfect.</strong> A specialized frontend studio based in the cloud. We were founded on a simple premise: Most agencies are "full-stack" but master neither. We chose to master one half of the equation.
+                <strong className="text-white font-bold">We are Créatifia.</strong> A specialized frontend studio based in the cloud. We were founded on a simple premise: Most agencies are "full-stack" but master neither. We chose to master one half of the equation.
               </p>
               <p>
                 We believe that the <span className="text-white">Frontend is the Product</span>. It's what your users touch, see, and feel. A great backend with a mediocre frontend is a failed product. A great frontend can elevate even a simple backend into a premium experience.

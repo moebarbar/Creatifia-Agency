@@ -192,18 +192,36 @@ export default function Home() {
         <div className="container mx-auto px-6 z-10 relative">
           <div className="max-w-4xl mx-auto relative">
              
-             {/* Floating Frames - Desktop only for cleaner mobile */}
+             {/* Floating Frames - Creative placement */}
              <div className="absolute inset-0 pointer-events-none z-20 hidden md:block">
-                 <div className="absolute top-[-10%] left-[-15%] rotate-[-12deg] w-[10vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-4 border-white transform hover:translate-y-[-10px]" loading="eager" decoding="async" />
-                 </div>
-                 <div className="absolute bottom-[-20%] right-[-10%] rotate-[8deg] w-[12vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-4 border-white" loading="eager" decoding="async" />
-                 </div>
+                 <motion.div 
+                   style={{ x: mouseX, y: mouseY }}
+                   className="absolute top-[5%] left-[5%] rotate-[-8deg] w-[8vw] pointer-events-auto hover:rotate-[-2deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                 >
+                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-md border-2 border-white/80" loading="eager" decoding="async" />
+                 </motion.div>
+                 <motion.div 
+                   style={{ x: mouseX, y: mouseY }}
+                   className="absolute top-[15%] right-[8%] rotate-[6deg] w-[7vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                 >
+                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-md border-2 border-white/80" loading="eager" decoding="async" />
+                 </motion.div>
+                 <motion.div 
+                   style={{ x: mouseX, y: mouseY }}
+                   className="absolute bottom-[10%] left-[12%] rotate-[10deg] w-[6vw] pointer-events-auto hover:rotate-[4deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                 >
+                    <img src={portrait} alt="Developer" className="w-full shadow-2xl rounded-md border-2 border-accent/80" loading="eager" decoding="async" />
+                 </motion.div>
+                 <motion.div 
+                   style={{ x: mouseX, y: mouseY }}
+                   className="absolute bottom-[5%] right-[5%] rotate-[-5deg] w-[9vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                 >
+                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-md border-2 border-white/80" loading="eager" decoding="async" />
+                 </motion.div>
              </div>
 
              {/* Price Badge */}
-             <FadeIn delay={0.2} className="mb-6">
+             <FadeIn delay={0.2} className="mb-8">
                <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
                  <span className="text-accent font-bold text-sm md:text-base">$299 Flat Rate</span>
                  <span className="text-white/40">|</span>
@@ -211,39 +229,20 @@ export default function Home() {
                </div>
              </FadeIn>
 
-             {/* Main Headline with Portrait */}
-             <div className="flex flex-col items-center justify-center relative z-10 w-full mb-6">
+             {/* Main Headline - Horizontal Creative Layout */}
+             <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
-                    TRANSFORMING
-                  </h1>
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9] mb-2">
-                    IDEAS
-                  </h1>
-                  
-                  {/* Portrait Image in the middle */}
-                  <div className="my-4 relative">
-                    <img 
-                      src={portrait} 
-                      alt="Creative Developer" 
-                      className="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-4 border-accent shadow-[0_0_30px_rgba(145,255,0,0.5)] mx-auto"
-                      loading="eager"
-                      decoding="async"
-                    />
+                  <div className="text-center">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase text-white leading-[1.1] tracking-tight">
+                      TRANSFORMING <span className="text-accent">IDEAS</span>
+                    </h1>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase text-white leading-[1.1] tracking-tight mt-2">
+                      INTO <span className="italic font-light text-white/80">REAL WORLD</span>
+                    </h1>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black uppercase leading-[1.1] tracking-tight mt-2">
+                      <span className="text-accent">STORIES</span>
+                    </h1>
                   </div>
-                  
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
-                    INTO
-                  </h1>
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
-                    REAL
-                  </h1>
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
-                    WORLD
-                  </h1>
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase leading-[0.9]">
-                    <span className="text-accent">STORIES</span>
-                  </h1>
                 </FadeIn>
              </div>
 
