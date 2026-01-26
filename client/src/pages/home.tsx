@@ -72,15 +72,39 @@ export default function Home() {
                </div>
              </FadeIn>
 
-             {/* Main Headline - Reduced size */}
+             {/* Main Headline with Portrait */}
              <div className="flex flex-col items-center justify-center relative z-10 w-full mb-6">
                 <FadeIn delay={0.3}>
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[1.1] mb-4">
-                    We Don't Build Websites.
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
+                    TRANSFORMING
                   </h1>
-                  <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase leading-[1.1]">
-                    We Create <span className="text-accent">Stories.</span>
-                  </h2>
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9] mb-2">
+                    IDEAS
+                  </h1>
+                  
+                  {/* Portrait Image in the middle */}
+                  <div className="my-4 relative">
+                    <img 
+                      src={portrait} 
+                      alt="Creative Developer" 
+                      className="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-4 border-accent shadow-[0_0_30px_rgba(145,255,0,0.5)] mx-auto"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
+                    INTO
+                  </h1>
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
+                    REAL
+                  </h1>
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[0.9]">
+                    WORLD
+                  </h1>
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase leading-[0.9]">
+                    <span className="text-accent">STORIES</span>
+                  </h1>
                 </FadeIn>
              </div>
 
