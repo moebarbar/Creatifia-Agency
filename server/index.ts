@@ -1,10 +1,19 @@
 import express, { type Request, Response, NextFunction } from "express";
+import compression from "compression";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 
 const app = express();
 const httpServer = createServer(app);
+
+// Disable X-Powered-By header for security
+app.disable("x-powered-by");
+
+// Enable GZip compression in production
+if (process.env.NODE_ENV === "production") {
+  app.use(compression());
+}
 
 declare module "http" {
   interface IncomingMessage {

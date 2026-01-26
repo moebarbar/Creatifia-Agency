@@ -228,8 +228,11 @@ export default function Home() {
              {/* Main Headline - SEO-optimized H1 with creative typography */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <h1 className="sr-only">All-Inclusive Website Subscription for Just $299/Month - Design, Hosting, SEO & Updates Included</h1>
-                  <div className="text-center space-y-1" aria-hidden="false">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black text-center mb-6">
+                    <span className="text-white">$299/Month </span>
+                    <span className="text-accent">Website Subscription</span>
+                  </h1>
+                  <div className="text-center space-y-1" aria-label="Transforming Ideas into Real World Stories">
                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
                       <span className="font-light">Transforming</span>{" "}
                       <span className="font-black text-accent">Ideas</span>
@@ -247,7 +250,7 @@ export default function Home() {
                         <div className="w-12 h-6 md:w-16 md:h-8 lg:w-20 lg:h-10 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300">
                           <img 
                             src={portrait} 
-                            alt="affordable-monthly-website-subscription-$299" 
+                            alt="Créatifia founder - affordable monthly website subscription service" 
                             className="w-full h-full object-cover object-center"
                             loading="eager"
                             decoding="async"
