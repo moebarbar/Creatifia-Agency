@@ -48,8 +48,8 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link href="/contact" className="bg-foreground text-background px-6 py-2 text-sm font-bold uppercase tracking-wider hover:bg-accent hover:text-black transition-colors">
-              Start Project
+            <Link href="/contact" className="btn-glow relative bg-accent text-black px-6 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full overflow-hidden hover:scale-105 transition-all duration-300">
+              <span className="relative z-10">Start Project</span>
             </Link>
           </div>
 
