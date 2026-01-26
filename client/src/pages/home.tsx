@@ -406,7 +406,7 @@ export default function Home() {
                 What's Included in Your <span className="text-accent">$299/Month</span> Plan
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                $299/mo vs $5,000+ upfront. Cancel anytime and keep your website hosted. No contracts, no surprises.
+                Cancel anytime and keep your website hosted. No contracts, no surprises.
               </p>
             </FadeIn>
           </div>
