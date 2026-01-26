@@ -15,7 +15,7 @@ import cyberpunkFrame from "@assets/generated_images/cyberpunk_creative_portrait
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2 } from "lucide-react";
+import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket } from "lucide-react";
 import { Link } from "wouter";
 import { useRef, useEffect } from "react";
 
@@ -155,7 +155,7 @@ export default function Home() {
               <p className="text-muted-foreground text-lg mb-6">
                 A curation of our finest digital experiences. Award-winning sites, complex dashboards, and next-gen apps.
               </p>
-              <Link href="/work" className="inline-block border-b border-accent text-accent uppercase tracking-widest pb-1 hover:text-white hover:border-white transition-colors">
+              <Link href="/work" data-testid="link-view-archive" className="inline-block border-b border-accent text-accent uppercase tracking-widest pb-1 hover:text-white hover:border-white transition-colors">
                 View Full Archive
               </Link>
             </FadeIn>
@@ -294,7 +294,7 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.5} className="mt-12 text-center">
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
+            <Link href="/contact" data-testid="button-offer-cta" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
               Get My Website for $299
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -334,41 +334,314 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How We Work - Process */}
-      <section className="py-20 md:py-40 bg-background relative">
+      {/* Portfolio / Website Examples Section */}
+      <section id="portfolio" className="py-20 md:py-32 bg-background relative">
         <div className="container mx-auto px-6">
-          <div className="mb-16 md:mb-24">
+          <div className="text-center mb-12 md:mb-20">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Process</span>
-              <h2 className="text-4xl md:text-7xl font-display font-bold">
-                How We <span className="text-accent">Build</span>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Portfolio</span>
+              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+                Website <span className="text-accent">Examples</span>
               </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Browse our work by industry. Each site is built with our story-driven approach.
+              </p>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <div className="space-y-12 md:space-y-16">
             {[
-              { step: "01", title: "Discovery", desc: "We dive deep into your vision and goals. Understanding your brand is key.", icon: "🎯" },
-              { step: "02", title: "Design", desc: "High-fidelity mockups and prototypes. See exactly what you're getting.", icon: "✏️" },
-              { step: "03", title: "Develop", desc: "Clean, performant code. React, Next.js, TypeScript — built to scale.", icon: "⚡" },
-              { step: "04", title: "Deploy", desc: "Launch day! We handle hosting and make sure it's blazing fast.", icon: "🚀" },
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="group relative border border-white/10 bg-secondary/20 p-6 md:p-10 hover:border-accent/50 transition-all duration-500">
-                  <div className="flex items-start gap-4 md:gap-6">
-                    <div className="text-4xl md:text-6xl font-display font-black text-white/10 group-hover:text-accent/30 transition-colors">{item.step}</div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-                        <span className="text-xl md:text-2xl">{item.icon}</span>
-                        <h3 className="text-xl md:text-3xl font-display font-bold">{item.title}</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">{item.desc}</p>
+              { 
+                category: "Restaurant & Food", 
+                description: "Mouth-watering designs that drive reservations and orders",
+                color: "from-orange-500/20 to-red-500/20",
+                sites: [
+                  { name: "Bella Cucina", desc: "Fine dining Italian restaurant", features: ["Online Reservations", "Menu Showcase", "Chef Profiles"] },
+                  { name: "Fresh Bites", desc: "Modern healthy cafe", features: ["Order Online", "Nutrition Info", "Loyalty Program"] }
+                ]
+              },
+              { 
+                category: "Real Estate", 
+                description: "Premium property showcases that convert browsers into buyers",
+                color: "from-blue-500/20 to-cyan-500/20",
+                sites: [
+                  { name: "Luxe Properties", desc: "High-end real estate agency", features: ["Property Search", "Virtual Tours", "Agent Directory"] },
+                  { name: "Urban Living", desc: "Modern apartment rentals", features: ["Floor Plans", "Amenities", "Application Portal"] }
+                ]
+              },
+              { 
+                category: "Fitness & Wellness", 
+                description: "Energetic sites that inspire action and membership signups",
+                color: "from-green-500/20 to-emerald-500/20",
+                sites: [
+                  { name: "Peak Performance", desc: "Premium fitness studio", features: ["Class Booking", "Trainer Bios", "Membership Plans"] },
+                  { name: "Zen Studio", desc: "Yoga and meditation center", features: ["Schedule", "Online Classes", "Retreat Booking"] }
+                ]
+              },
+              { 
+                category: "Professional Services", 
+                description: "Trust-building sites for consultants, lawyers, and agencies",
+                color: "from-purple-500/20 to-pink-500/20",
+                sites: [
+                  { name: "Sterling Law", desc: "Corporate law firm", features: ["Practice Areas", "Case Studies", "Free Consultation"] },
+                  { name: "Growth Partners", desc: "Business consulting agency", features: ["Services", "Client Results", "Contact Form"] }
+                ]
+              }
+            ].map((category, catIdx) => (
+              <FadeIn key={catIdx} delay={catIdx * 0.1}>
+                <div className="mb-8">
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+                    <div>
+                      <span className="text-accent font-mono text-sm uppercase tracking-widest">0{catIdx + 1}</span>
+                      <h3 className="text-2xl md:text-4xl font-display font-bold text-white">{category.category}</h3>
+                      <p className="text-muted-foreground mt-2">{category.description}</p>
                     </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {category.sites.map((site, siteIdx) => (
+                      <div key={siteIdx} data-testid={`card-portfolio-${catIdx}-${siteIdx}`} className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500">
+                        <div className={`relative h-[200px] md:h-[280px] overflow-hidden bg-gradient-to-br ${category.color} m-3 rounded-xl flex items-center justify-center`}>
+                          <div className="text-center p-6">
+                            <div className="text-6xl md:text-8xl font-display font-black text-white/10 group-hover:text-white/20 transition-colors mb-4">
+                              {site.name.charAt(0)}
+                            </div>
+                            <div className="flex flex-wrap justify-center gap-2">
+                              {site.features.map((feature, fIdx) => (
+                                <span key={fIdx} className="text-xs bg-white/10 text-white/80 px-2 py-1 rounded-full">{feature}</span>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                        </div>
+                        <div className="p-4 md:p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <h4 className="text-lg md:text-xl font-display font-bold text-white">{site.name}</h4>
+                            <span className="text-xs font-mono text-accent uppercase">{category.category.split(' ')[0]}</span>
+                          </div>
+                          <p className="text-muted-foreground text-sm mb-4">{site.desc}</p>
+                          <div className="flex flex-col sm:flex-row gap-3">
+                            <Link 
+                              href="/work"
+                              data-testid={`button-preview-${catIdx}-${siteIdx}`}
+                              className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              View Details
+                            </Link>
+                            <Link 
+                              href="/contact"
+                              data-testid={`button-request-similar-${catIdx}-${siteIdx}`}
+                              className="flex items-center justify-center gap-2 bg-accent text-black px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
+                            >
+                              Request Similar
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Templates Section */}
+      <section id="templates" className="py-20 md:py-32 bg-secondary/20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-20">
+            <FadeIn>
+              <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-4">Templates</span>
+              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+                Choose Your <span className="text-accent">Style</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Start with a template that matches your vision. We'll customize it to tell your unique story.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              { name: "Bold & Minimal", industry: "Tech Startups", desc: "Clean lines, bold typography, maximum impact", gradient: "from-blue-500/20 to-purple-500/20" },
+              { name: "Elegant Flow", industry: "Luxury Brands", desc: "Sophisticated animations, editorial layouts", gradient: "from-amber-500/20 to-rose-500/20" },
+              { name: "Dynamic Energy", industry: "Fitness & Sports", desc: "High-energy design, action-focused", gradient: "from-red-500/20 to-orange-500/20" },
+              { name: "Trust Builder", industry: "Professional Services", desc: "Credibility-focused, conversion-optimized", gradient: "from-emerald-500/20 to-teal-500/20" },
+              { name: "Artisan Craft", industry: "Restaurants & Cafes", desc: "Warm, inviting, appetite-inducing", gradient: "from-orange-500/20 to-yellow-500/20" },
+              { name: "Urban Modern", industry: "Real Estate", desc: "Sleek property showcases, premium feel", gradient: "from-slate-500/20 to-zinc-500/20" },
+            ].map((template, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div data-testid={`card-template-${i}`} className={`group relative bg-gradient-to-br ${template.gradient} border border-white/10 rounded-2xl p-6 md:p-8 hover:border-accent/30 transition-all duration-500 hover:scale-[1.02]`}>
+                  <div className="aspect-[4/3] bg-white/5 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                    <div className="text-6xl md:text-8xl font-display font-black text-white/10 group-hover:text-white/20 transition-colors">
+                      {template.name.charAt(0)}
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-accent uppercase tracking-widest">{template.industry}</span>
+                  <h4 className="text-xl md:text-2xl font-display font-bold text-white mt-2 mb-2">{template.name}</h4>
+                  <p className="text-muted-foreground text-sm mb-6">{template.desc}</p>
+                  <div className="flex gap-3">
+                    <button data-testid={`button-template-preview-${i}`} className="flex-1 flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full">
+                      Preview
+                    </button>
+                    <Link 
+                      href="/contact"
+                      data-testid={`button-template-use-${i}`}
+                      className="flex-1 flex items-center justify-center gap-2 bg-accent text-black px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
+                    >
+                      Use This Style
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.5} className="mt-12 text-center">
+            <p className="text-muted-foreground mb-4">Don't see your style? No problem.</p>
+            <Link href="/contact" data-testid="button-describe-vision" className="inline-flex items-center gap-3 border border-accent text-accent px-8 py-4 font-bold uppercase tracking-wide hover:bg-accent hover:text-black transition-all duration-300 rounded-full">
+              Describe Your Vision
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Story-Driven Method Section */}
+      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(145,255,0,0.05),transparent_50%)]" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
+            <FadeIn>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Our Philosophy</span>
+              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-6">
+                The Story-Driven <span className="text-accent">Method</span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                We don't just build websites. We engineer experiences that guide visitors through a journey — from curiosity to conversion.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2">
+            {[
+              { icon: Target, step: "Hook", desc: "Capture attention in 3 seconds with a compelling headline", color: "text-red-400" },
+              { icon: Shield, step: "Trust", desc: "Build credibility through social proof and design quality", color: "text-blue-400" },
+              { icon: CheckCircle2, step: "Proof", desc: "Show results with testimonials, case studies, and data", color: "text-green-400" },
+              { icon: Gift, step: "Offer", desc: "Present your value proposition clearly and irresistibly", color: "text-amber-400" },
+              { icon: Rocket, step: "Action", desc: "Guide visitors to take the next step with clear CTAs", color: "text-accent" },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="group relative bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-all duration-500 h-full">
+                  {i < 4 && (
+                    <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-[2px] bg-white/20 z-10" />
+                  )}
+                  <div className={`w-12 h-12 mx-auto rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform ${item.color}`}>
+                    <item.icon className="w-6 h-6" />
+                  </div>
+                  <div className="text-xs font-mono text-white/40 uppercase tracking-widest mb-2">Step {i + 1}</div>
+                  <h4 className={`text-xl md:text-2xl font-display font-bold mb-2 ${item.color}`}>{item.step}</h4>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.6} className="mt-16 text-center">
+            <p className="text-xl md:text-2xl font-display text-white/80 italic">
+              "Every element on your website should move visitors closer to becoming customers."
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* How It Works - $299 Process */}
+      <section className="py-20 md:py-32 bg-background relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 md:mb-24">
+            <FadeIn>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Simple Process</span>
+              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+                How It <span className="text-accent">Works</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                From payment to launch in 5 simple steps. No confusion, no surprises.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent via-accent/50 to-transparent hidden md:block" />
+              
+              <div className="space-y-6 md:space-y-8">
+                {[
+                  { 
+                    Icon: CreditCard, 
+                    step: "01", 
+                    title: "Pay $299", 
+                    desc: "Secure your spot with a simple one-time payment. No deposits, no installments — just $299.", 
+                    highlight: true 
+                  },
+                  { 
+                    Icon: FileText, 
+                    step: "02", 
+                    title: "Fill Out Your Brief", 
+                    desc: "After payment, you'll receive a form to describe your business, choose your category, share goals, and provide style preferences or examples.", 
+                    highlight: false 
+                  },
+                  { 
+                    Icon: Video, 
+                    step: "03", 
+                    title: "Optional Zoom Call", 
+                    desc: "Need to talk it through? Schedule a quick call with our team to discuss your vision in detail.", 
+                    highlight: false 
+                  },
+                  { 
+                    Icon: Clock, 
+                    step: "04", 
+                    title: "First Draft in 5 Days", 
+                    desc: "We get to work immediately. Within 5 business days, you'll see your website come to life.", 
+                    highlight: true 
+                  },
+                  { 
+                    Icon: CheckCircle2, 
+                    step: "05", 
+                    title: "Revisions & Launch", 
+                    desc: "Request unlimited revisions until you're 100% happy. Then we deploy your site and hand over the keys.", 
+                    highlight: false 
+                  },
+                ].map((item, i) => (
+                  <FadeIn key={i} delay={i * 0.1}>
+                    <div className={`group relative flex gap-4 md:gap-8 ${item.highlight ? 'bg-accent/5 border border-accent/20' : 'bg-white/5 border border-white/10'} rounded-2xl p-6 md:p-8 hover:border-accent/40 transition-all duration-500`}>
+                      <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center flex-shrink-0 ${item.highlight ? 'bg-accent text-black' : 'bg-white/10 text-white'}`}>
+                        <item.Icon className="w-6 h-6 md:w-8 md:h-8" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="text-xs font-mono text-accent uppercase tracking-widest">Step {item.step}</span>
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <FadeIn delay={0.6} className="mt-12 text-center">
+            <Link href="/contact" data-testid="button-start-project" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
+              Start My Project for $299
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </FadeIn>
         </div>
       </section>
 
@@ -422,9 +695,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {[
-              { quote: "PixelPerfect turned our sketches into a stunning landing page in just 2 weeks. World-class execution.", author: "Sarah Chen", role: "CEO, TechFlow", rating: 5 },
-              { quote: "They don't just code — they think. Every interaction was thoughtfully considered.", author: "Marcus Johnson", role: "Founder, Elevate", rating: 5 },
-              { quote: "A dev team that speaks both design and engineering fluently. Pure collaboration.", author: "Elena Rodriguez", role: "CPO, Quantum Labs", rating: 5 },
+              { quote: "I couldn't believe the quality for $299. Got my restaurant website in 4 days and it looks like I paid thousands. Reservations are up 40%!", author: "Maria Santos", role: "Owner, Bella Cucina", rating: 5 },
+              { quote: "The story-driven approach made all the difference. My coaching business finally has a website that converts visitors into clients.", author: "James Mitchell", role: "Founder, Peak Performance", rating: 5 },
+              { quote: "Fast, professional, and they actually listened. The Zoom call was super helpful and the revisions were quick. Highly recommend!", author: "Ashley Park", role: "CEO, Bloom Studios", rating: 5 },
             ].map((testimonial, i) => (
               <FadeIn key={i} delay={i * 0.15}>
                 <div className="group relative border border-white/10 bg-secondary/20 p-6 md:p-10 h-full flex flex-col hover:border-accent/30 transition-colors duration-500">
@@ -511,11 +784,14 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
             {[
-              { q: "What's included in the $299?", a: "Everything you need for a complete, professional website: custom design, responsive development, basic SEO setup, and deployment. No hidden costs." },
+              { q: "What's included in the $299?", a: "Everything you need for a complete, professional website: custom design, responsive development, basic SEO setup, and deployment. No hidden costs, no surprises." },
               { q: "How long until I see my first draft?", a: "We deliver your first draft within 5 business days. Most clients are amazed at how quickly their vision comes to life." },
-              { q: "What if I need changes?", a: "Unlimited revisions are included! We keep iterating until you're 100% satisfied with the result." },
-              { q: "What types of websites do you build?", a: "Landing pages, portfolio sites, small business websites, personal brands, SaaS marketing pages - if it's a website, we can build it." },
-              { q: "Do you offer ongoing support?", a: "Yes! We offer affordable monthly maintenance packages to keep your site updated, secure, and running smoothly." },
+              { q: "What if I need changes?", a: "Unlimited revisions are included! We keep iterating until you're 100% satisfied with the result. There's no limit on the number of changes." },
+              { q: "What does 'any website' mean?", a: "Landing pages, portfolio sites, restaurant websites, real estate, fitness studios, service businesses, SaaS marketing pages — if it's a website (not a full web application), we can build it for $299." },
+              { q: "Can I schedule a Zoom call to discuss my project?", a: "Absolutely! After you fill out your project brief, you can optionally schedule a quick Zoom call to discuss your vision in more detail. It's completely free and helps us understand exactly what you need." },
+              { q: "What happens after I pay?", a: "You'll immediately receive a link to fill out your project brief — a simple form where you describe your business, goals, and style preferences. Then we get to work!" },
+              { q: "Do you offer ongoing support after launch?", a: "Yes! We offer affordable monthly maintenance packages starting at $49/month to keep your site updated, secure, and running smoothly." },
+              { q: "What if I'm not satisfied with the final result?", a: "With unlimited revisions, we work until you love it. In the rare case you're not satisfied, we offer a 100% money-back guarantee within 14 days of your first draft." },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.05}>
                 <details className="group border border-white/10 bg-secondary/10 hover:border-white/20 transition-colors">
@@ -555,11 +831,11 @@ export default function Home() {
            
            <FadeIn delay={0.4}>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <Link href="/contact" className="group flex items-center gap-3 bg-accent text-black px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-bold uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)]">
+               <Link href="/contact" data-testid="button-final-cta" className="group flex items-center gap-3 bg-accent text-black px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-bold uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)]">
                  Get My Website for $299
                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                </Link>
-               <Link href="/work" className="text-white/70 hover:text-accent transition-colors underline underline-offset-4">
+               <Link href="/work" data-testid="link-view-examples-final" className="text-white/70 hover:text-accent transition-colors underline underline-offset-4">
                  View Examples First
                </Link>
              </div>
