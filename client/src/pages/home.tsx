@@ -275,7 +275,7 @@ export default function Home() {
              {/* CTAs */}
              <FadeIn delay={0.7} className="relative z-30">
                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                 <Link href="/contact" data-testid="button-hero-cta-primary" className="group flex items-center justify-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full w-full sm:w-auto shadow-[0_0_30px_rgba(145,255,0,0.4)]">
+                 <Link href="/contact" data-testid="button-hero-cta-primary" className="group relative flex items-center justify-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide overflow-hidden rounded-full w-full sm:w-auto shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
                    Get My Website for $299
                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                  </Link>
@@ -434,7 +434,7 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.5} className="mt-12 text-center">
-            <Link href="/contact" data-testid="button-offer-cta" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
+            <Link href="/contact" data-testid="button-offer-cta" className="group relative inline-flex items-center gap-3 bg-accent text-black px-10 py-5 font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
               Get My Website for $299
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -582,9 +582,12 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.5} className="mt-10 text-center">
-            <Link href="/contact" data-testid="button-start-project" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
-              Start My Project for $299
-              <ArrowRight className="w-5 h-5" />
+            <Link href="/contact" data-testid="button-start-project" className="group relative inline-flex items-center gap-3 bg-accent text-black px-10 py-5 font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
+              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              <span className="relative z-10 flex items-center gap-3">
+                Start My Project for $299
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
             </Link>
           </FadeIn>
         </div>
@@ -781,7 +784,7 @@ export default function Home() {
            
            <FadeIn delay={0.4}>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <Link href="/contact" data-testid="button-final-cta" className="group flex items-center gap-3 bg-accent text-black px-8 py-4 md:px-10 md:py-5 text-base font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)]">
+               <Link href="/contact" data-testid="button-final-cta" className="group relative flex items-center gap-3 bg-accent text-black px-10 py-5 md:px-12 md:py-6 text-base font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_50px_rgba(145,255,0,0.6)] hover:shadow-[0_0_80px_rgba(145,255,0,0.9)] transition-all duration-500">
                  Get My Website for $299
                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                </Link>
