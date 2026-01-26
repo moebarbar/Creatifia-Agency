@@ -11,7 +11,7 @@ import sphere from "@assets/generated_images/chrome_metal_sphere_with_reflection
 import portrait from "@assets/generated_images/edgy_monochrome_developer_portrait.png";
 import portraitWoman from "@assets/generated_images/edgy_creative_woman_portrait_in_frame.png";
 import artFrame from "@assets/generated_images/abstract_digital_art_in_frame.png";
-import abstractArt from "@assets/generated_images/abstract_art_in_white_frame.png";
+import abstractArt from "@assets/generated_images/artistic_eye_white_background.png";
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
