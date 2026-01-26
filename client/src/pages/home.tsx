@@ -39,7 +39,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center items-center pt-16 md:pt-20 overflow-hidden text-center">
+      <section className="relative min-h-[75vh] md:min-h-[85vh] flex flex-col justify-center items-center pt-20 md:pt-24 pb-8 overflow-hidden text-center">
         {/* Background Texture */}
         <motion.div 
             style={{ x: mouseX, y: mouseY }}
@@ -51,80 +51,64 @@ export default function Home() {
         </motion.div>
 
         <div className="container mx-auto px-6 z-10 relative">
-          <div className="max-w-[95vw] mx-auto relative">
+          <div className="max-w-4xl mx-auto relative">
              
-             {/* Floating Frames */}
-             <div className="absolute inset-0 pointer-events-none z-20">
-                 {/* Top Left Frame */}
-                 <div className="absolute top-[5%] left-[2%] md:top-[-5%] md:left-[10%] rotate-[-12deg] w-[18vw] md:w-[12vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white transform hover:translate-y-[-10px]" loading="eager" decoding="async" />
-                    <div className="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[8px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                        Lead Engineer
-                    </div>
+             {/* Floating Frames - Desktop only for cleaner mobile */}
+             <div className="absolute inset-0 pointer-events-none z-20 hidden md:block">
+                 <div className="absolute top-[-10%] left-[-15%] rotate-[-12deg] w-[10vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
+                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-sm border-4 border-white transform hover:translate-y-[-10px]" loading="eager" decoding="async" />
                  </div>
-                 
-                 {/* Bottom Right Frame */}
-                 <div className="absolute bottom-[5%] right-[2%] md:bottom-[-15%] md:right-[15%] rotate-[8deg] w-[20vw] md:w-[14vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white" loading="eager" decoding="async" />
-                    <div className="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[8px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                        React Expert
-                    </div>
-                 </div>
-
-                 {/* Middle Right Frame - Hidden on very small screens */}
-                 <div className="absolute top-[15%] right-[1%] md:right-[5%] rotate-[15deg] w-[15vw] md:w-[10vw] hidden sm:block pointer-events-auto hover:rotate-[5deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
-                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-sm border-2 md:border-4 border-white" loading="lazy" decoding="async" />
-                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black/80 px-2 md:px-3 py-1 text-[8px] md:text-xs font-mono text-accent uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                        Pixel Perfect
-                    </div>
+                 <div className="absolute bottom-[-20%] right-[-10%] rotate-[8deg] w-[12vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50 group">
+                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-sm border-4 border-white" loading="eager" decoding="async" />
                  </div>
              </div>
 
-             <div className="flex flex-col items-center justify-center relative z-10 w-full px-4 md:px-2">
-                {/* Line 1 - Adjusted for containment */}
-                <div className="flex items-center justify-center tracking-tight leading-[0.9] w-full mb-1 md:mb-2">
-                     <span className="text-[7vw] sm:text-[8vw] md:text-[6vw] font-display font-black uppercase text-white mix-blend-difference z-10">TRANSFORMING</span>
-                </div>
+             {/* Price Badge */}
+             <FadeIn delay={0.2} className="mb-6">
+               <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
+                 <span className="text-accent font-bold text-sm md:text-base">$299 Flat Rate</span>
+                 <span className="text-white/40">|</span>
+                 <span className="text-white/80 text-sm md:text-base">First Draft in 5 Days</span>
+               </div>
+             </FadeIn>
 
-                {/* Line 2 - Visible IDEAS + Portrait */}
-                <div className="flex items-center justify-center tracking-tight leading-[0.9] gap-1 md:gap-5 relative z-10 mb-1 md:mb-2">
-                     <span className="text-[7vw] sm:text-[8vw] md:text-[6vw] font-display font-black uppercase text-white hover:text-accent transition-colors duration-300">IDEAS</span>
-                     <Magnetic>
-                        <div className="w-[10vw] h-[5vw] md:w-[6vw] md:h-[3vw] rounded-full overflow-hidden border-2 border-accent rotate-6 hover:rotate-0 transition-transform duration-500 z-30 relative">
-                             <img src={portrait} alt="Portrait" className="w-full h-full object-cover scale-125" />
-                        </div>
-                     </Magnetic>
-                     <span className="text-[7vw] sm:text-[8vw] md:text-[6vw] font-display font-black uppercase text-white">INTO</span>
-                </div>
-
-                {/* Line 3 */}
-                <div className="flex items-center justify-center tracking-tight leading-[0.9] gap-1 md:gap-5 relative z-10 mb-1 md:mb-2">
-                    <span className="text-[7vw] sm:text-[8vw] md:text-[6vw] font-display font-black uppercase text-accent">REAL</span>
-                    <span className="text-[7vw] sm:text-[8vw] md:text-[6vw] font-display font-black uppercase text-white">WORLD</span>
-                </div>
-
-                 {/* Line 4 - Finish */}
-                 <div className="flex items-center justify-center tracking-tight leading-[0.9] relative z-10">
-                    <span className="text-[7vw] sm:text-[8vw] md:text-[6vw] font-display font-black uppercase text-white">RESULTS</span>
-                </div>
+             {/* Main Headline - Reduced size */}
+             <div className="flex flex-col items-center justify-center relative z-10 w-full mb-6">
+                <FadeIn delay={0.3}>
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase text-white leading-[1.1] mb-4">
+                    We Don't Build Websites.
+                  </h1>
+                  <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black uppercase leading-[1.1]">
+                    We Create <span className="text-accent">Stories.</span>
+                  </h2>
+                </FadeIn>
              </div>
+
+             {/* Subheadline */}
+             <FadeIn delay={0.5} className="mb-8">
+               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                 Premium, story-driven websites that convert visitors into customers. 
+                 <span className="text-white font-medium"> Any website. One flat price. Delivered fast.</span>
+               </p>
+             </FadeIn>
             
-            <FadeIn delay={0.8} className="mt-8 md:mt-24 max-w-2xl mx-auto relative z-30 bg-black/40 backdrop-blur-md p-6 md:p-8 rounded-2xl border border-white/10 shadow-2xl">
-              <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-8">
-                We bridge the gap between <span className="text-white font-medium">Design</span> and <span className="text-accent font-medium">Engineering</span>. We turn ambitious visuals into clean, production-ready code.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link href="/contact" className="group flex items-center justify-center gap-3 bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-accent hover:scale-105 transition-all duration-300 rounded-full w-full sm:w-auto shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(145,255,0,0.5)]">
-                  Start Project
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/work" className="group flex items-center justify-center gap-3 px-8 py-5 font-bold uppercase tracking-widest hover:text-accent transition-colors">
-                  View Archive
-                  <div className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              </div>
-            </FadeIn>
+             {/* CTAs */}
+             <FadeIn delay={0.7} className="relative z-30">
+               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                 <Link href="/contact" data-testid="button-hero-cta-primary" className="group flex items-center justify-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full w-full sm:w-auto shadow-[0_0_30px_rgba(145,255,0,0.4)]">
+                   Get My Website for $299
+                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                 </Link>
+                 <Link href="/work" data-testid="button-hero-examples" className="group flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-white/20 transition-all duration-300 rounded-full w-full sm:w-auto">
+                   See Website Examples
+                 </Link>
+               </div>
+               <div className="mt-4">
+                 <Link href="/work" data-testid="link-browse-templates" className="text-muted-foreground hover:text-accent transition-colors text-sm underline underline-offset-4">
+                   Browse Templates
+                 </Link>
+               </div>
+             </FadeIn>
           </div>
         </div>
 
@@ -269,33 +253,82 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Offer Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-black to-background border-y border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(145,255,0,0.05),transparent_70%)]" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-16">
+            <FadeIn>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">The Offer</span>
+              <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-4">
+                One Price. Any Website. <span className="text-accent">$299.</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                No hidden fees. No hourly rates. Just a beautiful, story-driven website delivered in 5 days.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+            <FadeIn delay={0.1}>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
+                <div className="text-4xl md:text-5xl font-display font-black text-accent mb-2">$299</div>
+                <div className="text-white font-bold mb-2">Flat Rate</div>
+                <p className="text-muted-foreground text-sm">Any website, any complexity. One transparent price.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
+                <div className="text-4xl md:text-5xl font-display font-black text-accent mb-2">5</div>
+                <div className="text-white font-bold mb-2">Days to First Draft</div>
+                <p className="text-muted-foreground text-sm">See your vision come to life in less than a week.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-colors">
+                <div className="text-4xl md:text-5xl font-display font-black text-accent mb-2">∞</div>
+                <div className="text-white font-bold mb-2">Revisions</div>
+                <p className="text-muted-foreground text-sm">We iterate until you're 100% satisfied.</p>
+              </div>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.5} className="mt-12 text-center">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
+              Get My Website for $299
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Stats Section */}
-      <section className="py-16 md:py-24 bg-black border-y border-white/5">
+      <section className="py-12 md:py-16 bg-black/50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <FadeIn delay={0} className="text-center">
-              <div className="text-4xl md:text-7xl font-display font-black">
-                <span className="text-accent">50</span><span className="text-white">+</span>
+              <div className="text-3xl md:text-5xl font-display font-black">
+                <span className="text-accent">150</span><span className="text-white">+</span>
               </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-4">Projects Shipped</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Websites Launched</div>
             </FadeIn>
             <FadeIn delay={0.1} className="text-center">
-              <div className="text-4xl md:text-7xl font-display font-black">
+              <div className="text-3xl md:text-5xl font-display font-black">
                 <span className="text-white">98</span><span className="text-accent">%</span>
               </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-4">Client Satisfaction</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Happy Clients</div>
             </FadeIn>
             <FadeIn delay={0.2} className="text-center">
-              <div className="text-4xl md:text-7xl font-display font-black">
-                <span className="text-accent">14</span><span className="text-white">+</span>
+              <div className="text-3xl md:text-5xl font-display font-black">
+                <span className="text-accent">5</span><span className="text-white"> Days</span>
               </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-4">Days to Launch</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Avg Delivery</div>
             </FadeIn>
             <FadeIn delay={0.3} className="text-center">
-              <div className="text-4xl md:text-7xl font-display font-black">
+              <div className="text-3xl md:text-5xl font-display font-black">
                 <span className="text-white">24</span><span className="text-accent">/7</span>
               </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-4">Support</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Support</div>
             </FadeIn>
           </div>
         </div>
@@ -470,7 +503,7 @@ export default function Home() {
           <div className="text-center mb-16 md:mb-24">
             <FadeIn>
               <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">FAQ</span>
-              <h2 className="text-4xl md:text-7xl font-display font-bold">
+              <h2 className="text-4xl md:text-6xl font-display font-bold">
                 Common <span className="text-accent">Questions</span>
               </h2>
             </FadeIn>
@@ -478,11 +511,11 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
             {[
-              { q: "How long does a project take?", a: "Most projects take 2-4 weeks. Complex apps may take 6-8 weeks." },
-              { q: "What's your pricing like?", a: "Projects range from $5K-$25K depending on scope." },
-              { q: "Do you work with startups?", a: "Absolutely! We offer flexible terms for early-stage startups." },
-              { q: "What happens after launch?", a: "We offer maintenance packages and ongoing development." },
-              { q: "Can you work with our design team?", a: "Yes! We collaborate with Figma, Sketch, or any design tool." },
+              { q: "What's included in the $299?", a: "Everything you need for a complete, professional website: custom design, responsive development, basic SEO setup, and deployment. No hidden costs." },
+              { q: "How long until I see my first draft?", a: "We deliver your first draft within 5 business days. Most clients are amazed at how quickly their vision comes to life." },
+              { q: "What if I need changes?", a: "Unlimited revisions are included! We keep iterating until you're 100% satisfied with the result." },
+              { q: "What types of websites do you build?", a: "Landing pages, portfolio sites, small business websites, personal brands, SaaS marketing pages - if it's a website, we can build it." },
+              { q: "Do you offer ongoing support?", a: "Yes! We offer affordable monthly maintenance packages to keep your site updated, secure, and running smoothly." },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.05}>
                 <details className="group border border-white/10 bg-secondary/10 hover:border-white/20 transition-colors">
@@ -502,29 +535,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Manifesto / CTA */}
-      <section className="py-20 md:py-40 bg-black text-center relative overflow-hidden">
+      {/* Final CTA */}
+      <section className="py-20 md:py-32 bg-black text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-gradient-radial from-accent/20 to-transparent rounded-full blur-[100px]" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
            <FadeIn>
-             <h2 className="text-[10vw] md:text-[7vw] leading-none font-display font-bold uppercase mb-8 md:mb-12">
-               Design <span className="text-accent">.</span> Build <span className="text-accent">.</span> Ship
+             <h2 className="text-4xl md:text-6xl lg:text-7xl leading-none font-display font-bold uppercase mb-6 md:mb-8">
+               Ready for Your <span className="text-accent">$299</span> Website?
              </h2>
            </FadeIn>
            <FadeIn delay={0.2}>
-             <p className="text-xl md:text-5xl font-display font-bold max-w-5xl mx-auto leading-tight text-transparent text-stroke hover:text-white transition-colors duration-700 cursor-crosshair px-4">
-               "We don't just hand off Figma files. We hand off <span className="text-accent">deployed, polished, pixel-perfect code</span>."
+             <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 px-4">
+               Join 150+ happy clients who got their dream website without breaking the bank. First draft in 5 days.
              </p>
            </FadeIn>
            
-           <div className="mt-20">
-                <Link href="/contact" className="inline-block bg-white text-black px-8 md:px-12 py-5 md:py-6 text-base md:text-xl font-bold uppercase tracking-wider hover:bg-accent hover:scale-105 transition-all duration-300 rounded-full">
-                  Let's Build Something Crazy
-                </Link>
-           </div>
+           <FadeIn delay={0.4}>
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+               <Link href="/contact" className="group flex items-center gap-3 bg-accent text-black px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-bold uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)]">
+                 Get My Website for $299
+                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+               </Link>
+               <Link href="/work" className="text-white/70 hover:text-accent transition-colors underline underline-offset-4">
+                 View Examples First
+               </Link>
+             </div>
+           </FadeIn>
         </div>
       </section>
 
