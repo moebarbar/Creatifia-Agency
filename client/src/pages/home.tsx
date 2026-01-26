@@ -241,11 +241,11 @@ export default function Home() {
                         whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
-                        <div className="w-16 h-8 md:w-24 md:h-12 lg:w-28 lg:h-14 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300">
+                        <div className="w-12 h-6 md:w-16 md:h-8 lg:w-20 lg:h-10 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(145,255,0,0.4)] group-hover:shadow-[0_0_40px_rgba(145,255,0,0.7)] transition-shadow duration-300">
                           <img 
                             src={portrait} 
                             alt="Developer" 
-                            className="w-full scale-[1.4] -translate-y-[10%]"
+                            className="w-full h-full object-cover object-center"
                             loading="eager"
                             decoding="async"
                           />
