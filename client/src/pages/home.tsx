@@ -302,16 +302,19 @@ export default function Home() {
       </section>
 
       {/* Services Ticker / Marquee */}
-      <div className="border-y border-white/5 py-6 md:py-8 overflow-hidden bg-black -rotate-1 scale-105 z-20 relative">
+      <div className="border-y border-accent/20 py-5 md:py-6 overflow-hidden bg-black -rotate-1 scale-105 z-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none" />
         <div className="flex whitespace-nowrap animate-marquee">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex items-center gap-8 md:gap-16 mx-4 md:mx-8">
-              <span className="text-2xl md:text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Next.js Specialists</span>
-              <img src={sphere} className="w-8 h-8 md:w-12 md:h-12 object-cover rounded-full animate-pulse" loading="lazy" decoding="async" />
-              <span className="text-2xl md:text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Creative Development</span>
-              <img src={torus} className="w-8 h-8 md:w-12 md:h-12 object-cover rounded-full animate-spin-slow" loading="lazy" decoding="async" />
-              <span className="text-2xl md:text-5xl font-display font-bold text-transparent text-stroke uppercase hover:text-white transition-colors cursor-default">Interactive Engineering</span>
-              <img src={card} className="w-10 h-6 md:w-16 md:h-10 object-cover rounded border border-accent/50" loading="lazy" decoding="async" />
+            <div key={i} className="flex items-center gap-6 md:gap-12 mx-4 md:mx-8">
+              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Next.js Specialists</span>
+              <span className="text-accent text-2xl md:text-4xl">✦</span>
+              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">Creative Development</span>
+              <span className="text-accent text-2xl md:text-4xl">✦</span>
+              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Interactive Engineering</span>
+              <span className="text-white text-2xl md:text-4xl">✦</span>
+              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">$299 Websites</span>
+              <span className="text-accent text-2xl md:text-4xl">✦</span>
             </div>
           ))}
         </div>
