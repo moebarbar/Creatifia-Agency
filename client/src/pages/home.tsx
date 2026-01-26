@@ -245,7 +245,7 @@ export default function Home() {
                           <img 
                             src={portrait} 
                             alt="Developer" 
-                            className="w-full scale-[2] -translate-y-[15%]"
+                            className="w-full scale-[1.4] -translate-y-[10%]"
                             loading="eager"
                             decoding="async"
                           />
