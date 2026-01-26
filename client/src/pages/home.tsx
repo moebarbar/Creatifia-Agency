@@ -192,36 +192,30 @@ export default function Home() {
         <div className="container mx-auto px-6 z-10 relative">
           <div className="max-w-4xl mx-auto relative">
              
-             {/* Floating Frames - Creative placement */}
+             {/* Floating Frames - Creative placement at edges */}
              <div className="absolute inset-0 pointer-events-none z-20 hidden md:block">
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
-                   className="absolute top-[5%] left-[5%] rotate-[-8deg] w-[8vw] pointer-events-auto hover:rotate-[-2deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                   className="absolute top-[8%] left-[-5%] rotate-[-12deg] w-[7vw] pointer-events-auto hover:rotate-[-5deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-md border-2 border-white/80" loading="eager" decoding="async" />
+                    <img src={portraitWoman} alt="Team" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
                  </motion.div>
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
-                   className="absolute top-[15%] right-[8%] rotate-[6deg] w-[7vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                   className="absolute top-[5%] right-[-3%] rotate-[8deg] w-[6vw] pointer-events-auto hover:rotate-[2deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-md border-2 border-white/80" loading="eager" decoding="async" />
+                    <img src={artFrame} alt="Art" className="w-full shadow-2xl rounded-lg border-2 border-accent/60" loading="eager" decoding="async" />
                  </motion.div>
                  <motion.div 
                    style={{ x: mouseX, y: mouseY }}
-                   className="absolute bottom-[10%] left-[12%] rotate-[10deg] w-[6vw] pointer-events-auto hover:rotate-[4deg] transition-transform duration-500 hover:scale-110 hover:z-50"
+                   className="absolute bottom-[15%] right-[-8%] rotate-[-6deg] w-[8vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
                  >
-                    <img src={portrait} alt="Developer" className="w-full shadow-2xl rounded-md border-2 border-accent/80" loading="eager" decoding="async" />
-                 </motion.div>
-                 <motion.div 
-                   style={{ x: mouseX, y: mouseY }}
-                   className="absolute bottom-[5%] right-[5%] rotate-[-5deg] w-[9vw] pointer-events-auto hover:rotate-[0deg] transition-transform duration-500 hover:scale-110 hover:z-50"
-                 >
-                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-md border-2 border-white/80" loading="eager" decoding="async" />
+                    <img src={cyberpunkFrame} alt="Creative" className="w-full shadow-2xl rounded-lg border-2 border-white/60" loading="eager" decoding="async" />
                  </motion.div>
              </div>
 
              {/* Price Badge */}
-             <FadeIn delay={0.2} className="mb-8">
+             <FadeIn delay={0.2} className="mb-6">
                <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
                  <span className="text-accent font-bold text-sm md:text-base">$299 Flat Rate</span>
                  <span className="text-white/40">|</span>
@@ -229,18 +223,29 @@ export default function Home() {
                </div>
              </FadeIn>
 
-             {/* Main Headline - Creative Typography */}
+             {/* Main Headline - Creative Typography with inline portrait */}
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
-                  <div className="text-center space-y-0">
+                  <div className="text-center space-y-1">
                     <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
                       <span className="font-light">Transforming</span>{" "}
                       <span className="font-black text-accent">Ideas</span>
                     </h1>
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase leading-[1.3]">
-                      <span className="font-light text-white/50 tracking-[0.2em]">into</span>{" "}
-                      <span className="italic font-light text-white/80 tracking-tight lowercase">real world</span>
-                    </h1>
+                    <div className="flex items-center justify-center gap-2 md:gap-4">
+                      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase leading-[1.3]">
+                        <span className="font-light text-white/50 tracking-[0.2em]">into</span>
+                      </h1>
+                      <img 
+                        src={portrait} 
+                        alt="Developer" 
+                        className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-accent shadow-[0_0_20px_rgba(145,255,0,0.4)]"
+                        loading="eager"
+                        decoding="async"
+                      />
+                      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display leading-[1.3]">
+                        <span className="italic font-light text-white/80 tracking-tight lowercase">real world</span>
+                      </h1>
+                    </div>
                     <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-[1.2] mt-1">
                       <span className="font-black text-accent uppercase tracking-widest">Stories</span>
                     </h1>
