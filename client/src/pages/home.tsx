@@ -63,31 +63,34 @@ function PortfolioSection() {
   const currentCategory = portfolioCategories[activeCategory];
 
   return (
-    <section id="portfolio" className="py-20 md:py-32 bg-background relative">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" className="py-20 md:py-32 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(145,255,0,0.05),transparent_50%)]" />
+      <div className="absolute top-40 left-10 w-24 h-24 border border-white/5 rounded-full hidden md:block" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <FadeIn>
             <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Portfolio</span>
-            <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
               Website <span className="text-accent">Examples</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base max-w-xl mx-auto">
               Browse our work by industry. Each site is built with our story-driven approach.
             </p>
           </FadeIn>
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-16">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12">
             {portfolioCategories.map((cat, idx) => (
               <button
                 key={idx}
                 data-testid={`tab-category-${idx}`}
                 onClick={() => setActiveCategory(idx)}
-                className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
+                className={`px-4 md:px-5 py-2 text-xs md:text-sm font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
                   activeCategory === idx
-                    ? 'bg-accent text-black shadow-[0_0_20px_rgba(145,255,0,0.4)]'
-                    : 'bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-accent/30'
+                    ? 'bg-accent text-black'
+                    : 'bg-white/5 border border-white/10 text-white/70 hover:text-white hover:border-white/20'
                 }`}
               >
                 {cat.category}
@@ -463,8 +466,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 md:py-16 bg-black/50">
-        <div className="container mx-auto px-6">
+      <section className="py-16 md:py-24 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(145,255,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(145,255,0,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <FadeIn delay={0} className="text-center">
               <div className="text-3xl md:text-5xl font-display font-black">
@@ -498,194 +502,142 @@ export default function Home() {
       <PortfolioSection />
 
       {/* Templates Section */}
-      <section id="templates" className="py-20 md:py-32 bg-secondary/20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      <section id="templates" className="py-20 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(145,255,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(145,255,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/2" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-12 md:mb-20">
+          <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-4">Templates</span>
-              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Templates</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
                 Choose Your <span className="text-accent">Style</span>
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Start with a template that matches your vision. We'll customize it to tell your unique story.
+              <p className="text-muted-foreground text-base max-w-xl mx-auto">
+                Start with a template that matches your vision. We'll customize it for you.
               </p>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
             {[
-              { name: "Bold & Minimal", industry: "Tech Startups", desc: "Clean lines, bold typography, maximum impact", gradient: "from-blue-500/20 to-purple-500/20" },
-              { name: "Elegant Flow", industry: "Luxury Brands", desc: "Sophisticated animations, editorial layouts", gradient: "from-amber-500/20 to-rose-500/20" },
-              { name: "Dynamic Energy", industry: "Fitness & Sports", desc: "High-energy design, action-focused", gradient: "from-red-500/20 to-orange-500/20" },
-              { name: "Trust Builder", industry: "Professional Services", desc: "Credibility-focused, conversion-optimized", gradient: "from-emerald-500/20 to-teal-500/20" },
-              { name: "Artisan Craft", industry: "Restaurants & Cafes", desc: "Warm, inviting, appetite-inducing", gradient: "from-orange-500/20 to-yellow-500/20" },
-              { name: "Urban Modern", industry: "Real Estate", desc: "Sleek property showcases, premium feel", gradient: "from-slate-500/20 to-zinc-500/20" },
+              { name: "Bold & Minimal", industry: "Tech Startups" },
+              { name: "Elegant Flow", industry: "Luxury Brands" },
+              { name: "Dynamic Energy", industry: "Fitness & Sports" },
+              { name: "Trust Builder", industry: "Professional Services" },
+              { name: "Artisan Craft", industry: "Restaurants & Cafes" },
+              { name: "Urban Modern", industry: "Real Estate" },
             ].map((template, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div data-testid={`card-template-${i}`} className={`group relative bg-gradient-to-br ${template.gradient} border border-white/10 rounded-2xl p-6 md:p-8 hover:border-accent/30 transition-all duration-500 hover:scale-[1.02]`}>
-                  <div className="aspect-[4/3] bg-white/5 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
-                    <div className="text-6xl md:text-8xl font-display font-black text-white/10 group-hover:text-white/20 transition-colors">
+              <FadeIn key={i} delay={i * 0.05}>
+                <Link 
+                  href="/contact"
+                  data-testid={`card-template-${i}`} 
+                  className="group block bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                >
+                  <div className="aspect-[4/3] bg-white/5 rounded-lg mb-4 flex items-center justify-center">
+                    <div className="text-4xl md:text-5xl font-display font-black text-white/10 group-hover:text-accent/30 transition-colors">
                       {template.name.charAt(0)}
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-accent uppercase tracking-widest">{template.industry}</span>
-                  <h4 className="text-xl md:text-2xl font-display font-bold text-white mt-2 mb-2">{template.name}</h4>
-                  <p className="text-muted-foreground text-sm mb-6">{template.desc}</p>
-                  <div className="flex gap-3">
-                    <button data-testid={`button-template-preview-${i}`} className="flex-1 flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full">
-                      Preview
-                    </button>
-                    <Link 
-                      href="/contact"
-                      data-testid={`button-template-use-${i}`}
-                      className="flex-1 flex items-center justify-center gap-2 bg-accent text-black px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
-                    >
-                      Use This Style
-                    </Link>
-                  </div>
-                </div>
+                  <span className="text-[10px] md:text-xs font-mono text-accent uppercase tracking-widest">{template.industry}</span>
+                  <h4 className="text-sm md:text-base font-display font-bold text-white mt-1">{template.name}</h4>
+                </Link>
               </FadeIn>
             ))}
           </div>
 
-          <FadeIn delay={0.5} className="mt-12 text-center">
-            <p className="text-muted-foreground mb-4">Don't see your style? No problem.</p>
-            <Link href="/contact" data-testid="button-describe-vision" className="inline-flex items-center gap-3 border border-accent text-accent px-8 py-4 font-bold uppercase tracking-wide hover:bg-accent hover:text-black transition-all duration-300 rounded-full">
-              Describe Your Vision
-              <ArrowRight className="w-5 h-5" />
+          <FadeIn delay={0.4} className="mt-10 text-center">
+            <Link href="/contact" data-testid="button-describe-vision" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors text-sm underline underline-offset-4">
+              Don't see your style? Describe your vision
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>
         </div>
       </section>
 
       {/* Story-Driven Method Section */}
-      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(145,255,0,0.05),transparent_50%)]" />
+      <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
             <FadeIn>
               <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Our Philosophy</span>
-              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
                 The Story-Driven <span className="text-accent">Method</span>
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                We don't just build websites. We engineer experiences that guide visitors through a journey — from curiosity to conversion.
+              <p className="text-muted-foreground text-base max-w-xl mx-auto">
+                We engineer experiences that guide visitors from curiosity to conversion.
               </p>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
             {[
-              { icon: Target, step: "Hook", desc: "Capture attention in 3 seconds with a compelling headline", color: "text-red-400" },
-              { icon: Shield, step: "Trust", desc: "Build credibility through social proof and design quality", color: "text-blue-400" },
-              { icon: CheckCircle2, step: "Proof", desc: "Show results with testimonials, case studies, and data", color: "text-green-400" },
-              { icon: Gift, step: "Offer", desc: "Present your value proposition clearly and irresistibly", color: "text-amber-400" },
-              { icon: Rocket, step: "Action", desc: "Guide visitors to take the next step with clear CTAs", color: "text-accent" },
+              { step: "Hook", color: "border-red-400/30 text-red-400" },
+              { step: "Trust", color: "border-blue-400/30 text-blue-400" },
+              { step: "Proof", color: "border-green-400/30 text-green-400" },
+              { step: "Offer", color: "border-amber-400/30 text-amber-400" },
+              { step: "Action", color: "border-accent/30 text-accent" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="group relative bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-accent/30 transition-all duration-500 h-full">
-                  {i < 4 && (
-                    <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-[2px] bg-white/20 z-10" />
-                  )}
-                  <div className={`w-12 h-12 mx-auto rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform ${item.color}`}>
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <div className="text-xs font-mono text-white/40 uppercase tracking-widest mb-2">Step {i + 1}</div>
-                  <h4 className={`text-xl md:text-2xl font-display font-bold mb-2 ${item.color}`}>{item.step}</h4>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <div className={`group flex items-center gap-3 px-5 py-3 md:px-6 md:py-4 rounded-full border bg-white/[0.02] hover:bg-white/5 transition-all duration-300 ${item.color}`}>
+                  <span className="text-xs font-mono text-white/40">{i + 1}</span>
+                  <span className="font-display font-bold text-sm md:text-base">{item.step}</span>
                 </div>
               </FadeIn>
             ))}
           </div>
 
-          <FadeIn delay={0.6} className="mt-16 text-center">
-            <p className="text-xl md:text-2xl font-display text-white/80 italic">
-              "Every element on your website should move visitors closer to becoming customers."
+          <FadeIn delay={0.5} className="mt-12 text-center">
+            <p className="text-lg md:text-xl text-white/60 italic max-w-2xl mx-auto">
+              "Every element moves visitors closer to becoming customers."
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* How It Works - $299 Process */}
-      <section className="py-20 md:py-32 bg-background relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 md:mb-24">
+      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute top-20 right-20 w-16 h-16 border border-accent/10 rounded-full hidden md:block" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-16">
             <FadeIn>
               <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Simple Process</span>
-              <h2 className="text-3xl md:text-6xl font-display font-black text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
                 How It <span className="text-accent">Works</span>
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                From payment to launch in 5 simple steps. No confusion, no surprises.
+              <p className="text-muted-foreground text-base max-w-lg mx-auto">
+                From payment to launch in 5 simple steps.
               </p>
             </FadeIn>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent via-accent/50 to-transparent hidden md:block" />
-              
-              <div className="space-y-6 md:space-y-8">
-                {[
-                  { 
-                    Icon: CreditCard, 
-                    step: "01", 
-                    title: "Pay $299", 
-                    desc: "Secure your spot with a simple one-time payment. No deposits, no installments — just $299.", 
-                    highlight: true 
-                  },
-                  { 
-                    Icon: FileText, 
-                    step: "02", 
-                    title: "Fill Out Your Brief", 
-                    desc: "After payment, you'll receive a form to describe your business, choose your category, share goals, and provide style preferences or examples.", 
-                    highlight: false 
-                  },
-                  { 
-                    Icon: Video, 
-                    step: "03", 
-                    title: "Optional Zoom Call", 
-                    desc: "Need to talk it through? Schedule a quick call with our team to discuss your vision in detail.", 
-                    highlight: false 
-                  },
-                  { 
-                    Icon: Clock, 
-                    step: "04", 
-                    title: "First Draft in 5 Days", 
-                    desc: "We get to work immediately. Within 5 business days, you'll see your website come to life.", 
-                    highlight: true 
-                  },
-                  { 
-                    Icon: CheckCircle2, 
-                    step: "05", 
-                    title: "Revisions & Launch", 
-                    desc: "Request unlimited revisions until you're 100% happy. Then we deploy your site and hand over the keys.", 
-                    highlight: false 
-                  },
-                ].map((item, i) => (
-                  <FadeIn key={i} delay={i * 0.1}>
-                    <div className={`group relative flex gap-4 md:gap-8 ${item.highlight ? 'bg-accent/5 border border-accent/20' : 'bg-white/5 border border-white/10'} rounded-2xl p-6 md:p-8 hover:border-accent/40 transition-all duration-500`}>
-                      <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center flex-shrink-0 ${item.highlight ? 'bg-accent text-black' : 'bg-white/10 text-white'}`}>
-                        <item.Icon className="w-6 h-6 md:w-8 md:h-8" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-xs font-mono text-accent uppercase tracking-widest">Step {item.step}</span>
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{item.desc}</p>
-                      </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-3">
+              {[
+                { Icon: CreditCard, step: "1", title: "Pay $299" },
+                { Icon: FileText, step: "2", title: "Fill Brief" },
+                { Icon: Video, step: "3", title: "Zoom Call" },
+                { Icon: Clock, step: "4", title: "5-Day Draft" },
+                { Icon: CheckCircle2, step: "5", title: "Launch" },
+              ].map((item, i) => (
+                <FadeIn key={i} delay={i * 0.08}>
+                  <div className="group text-center p-5 md:p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-accent/20 transition-all duration-300">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/10 transition-colors">
+                      <item.Icon className="w-5 h-5 text-accent" />
                     </div>
-                  </FadeIn>
-                ))}
-              </div>
+                    <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest mb-1">Step {item.step}</div>
+                    <h3 className="text-sm md:text-base font-display font-bold text-white">{item.title}</h3>
+                  </div>
+                </FadeIn>
+              ))}
             </div>
           </div>
 
-          <FadeIn delay={0.6} className="mt-12 text-center">
+          <FadeIn delay={0.5} className="mt-10 text-center">
             <Link href="/contact" data-testid="button-start-project" className="inline-flex items-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_30px_rgba(145,255,0,0.4)]">
               Start My Project for $299
               <ArrowRight className="w-5 h-5" />
@@ -695,32 +647,23 @@ export default function Home() {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-20 md:py-32 bg-secondary/10 border-y border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 md:mb-24">
+      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Tech Stack</span>
-              <h2 className="text-4xl md:text-7xl font-display font-bold mb-6">
-                Built With <span className="text-accent">Modern</span> Tools
+              <h2 className="text-2xl md:text-4xl font-display font-bold mb-4">
+                Built With <span className="text-accent">Modern Tools</span>
               </h2>
-              <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-                We use the latest technologies to ensure your project is fast, scalable, and future-proof.
-              </p>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-6">
-            {[
-              { name: "React", color: "from-cyan-500/20 to-cyan-500/5" },
-              { name: "Next.js", color: "from-white/20 to-white/5" },
-              { name: "TypeScript", color: "from-blue-500/20 to-blue-500/5" },
-              { name: "Tailwind", color: "from-teal-500/20 to-teal-500/5" },
-              { name: "Framer", color: "from-pink-500/20 to-pink-500/5" },
-              { name: "Node.js", color: "from-green-500/20 to-green-500/5" },
-            ].map((tech, i) => (
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-3xl mx-auto">
+            {["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion", "Node.js"].map((tech, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <div className={`group relative p-4 md:p-8 rounded-xl border border-white/10 bg-gradient-to-br ${tech.color} hover:border-white/30 hover:scale-105 transition-all duration-300 text-center`}>
-                  <div className="text-sm md:text-xl font-display font-bold">{tech.name}</div>
+                <div className="px-5 py-2.5 md:px-6 md:py-3 rounded-full border border-white/10 bg-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300">
+                  <span className="text-sm md:text-base font-medium text-white/80">{tech}</span>
                 </div>
               </FadeIn>
             ))}
@@ -729,36 +672,38 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-40 bg-background relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] pointer-events-none -translate-x-1/2" />
+      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(145,255,0,0.08),transparent_60%)]" />
+        <div className="absolute top-20 right-20 w-32 h-32 border border-accent/10 rounded-full hidden md:block" />
+        <div className="absolute bottom-20 left-20 w-20 h-20 border border-white/5 rounded-full hidden md:block" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16 md:mb-24">
+          <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Testimonials</span>
-              <h2 className="text-4xl md:text-7xl font-display font-bold">
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Testimonials</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold">
                 What Founders <span className="text-accent">Say</span>
               </h2>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { quote: "I couldn't believe the quality for $299. Got my restaurant website in 4 days and it looks like I paid thousands. Reservations are up 40%!", author: "Maria Santos", role: "Owner, Bella Cucina", rating: 5 },
-              { quote: "The story-driven approach made all the difference. My coaching business finally has a website that converts visitors into clients.", author: "James Mitchell", role: "Founder, Peak Performance", rating: 5 },
-              { quote: "Fast, professional, and they actually listened. The Zoom call was super helpful and the revisions were quick. Highly recommend!", author: "Ashley Park", role: "CEO, Bloom Studios", rating: 5 },
+              { quote: "I couldn't believe the quality for $299. Got my restaurant website in 4 days and reservations are up 40%!", author: "Maria Santos", role: "Owner, Bella Cucina" },
+              { quote: "The story-driven approach made all the difference. My coaching business finally has a website that converts.", author: "James Mitchell", role: "Founder, Peak Performance" },
+              { quote: "Fast, professional, and they actually listened. The Zoom call was super helpful. Highly recommend!", author: "Ashley Park", role: "CEO, Bloom Studios" },
             ].map((testimonial, i) => (
-              <FadeIn key={i} delay={i * 0.15}>
-                <div className="group relative border border-white/10 bg-secondary/20 p-6 md:p-10 h-full flex flex-col hover:border-accent/30 transition-colors duration-500">
-                  <div className="flex gap-1 mb-4 md:mb-6">
-                    {[...Array(testimonial.rating)].map((_, j) => (
-                      <Star key={j} className="w-3 h-3 md:w-5 md:h-5 fill-accent text-accent" />
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="group relative bg-white/[0.02] border border-white/10 rounded-2xl p-6 md:p-8 h-full flex flex-col hover:border-accent/20 transition-all duration-500">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                     ))}
                   </div>
-                  <p className="text-base md:text-xl text-white/90 leading-relaxed mb-6 md:mb-8 flex-1">"{testimonial.quote}"</p>
-                  <div className="border-t border-white/10 pt-4 md:pt-6">
-                    <div className="font-display font-bold text-white text-sm md:text-base">{testimonial.author}</div>
-                    <div className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</div>
+                  <p className="text-white/80 leading-relaxed mb-6 flex-1">"{testimonial.quote}"</p>
+                  <div className="pt-4 border-t border-white/5">
+                    <div className="font-display font-bold text-white text-sm">{testimonial.author}</div>
+                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                   </div>
                 </div>
               </FadeIn>
@@ -768,89 +713,77 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 md:py-32 bg-black">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
-            <div>
+      <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
               <FadeIn>
-                <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">Why Us</span>
-                <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
+                <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Why Us</span>
+                <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
                   Not Your Average <span className="text-accent">Dev Shop</span>
                 </h2>
-                <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-8">
-                  We're a tight-knit team of designers who code and developers who design. No hand-offs, no miscommunication — just seamless execution from concept to launch.
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                  Designers who code. Developers who design. No hand-offs, no miscommunication.
                 </p>
               </FadeIn>
-              
-              <div className="space-y-6">
-                {[
-                  { title: "Pixel-Perfect Execution", desc: "We match designs down to the last pixel. No compromises." },
-                  { title: "Performance Obsessed", desc: "Sub-second load times. 90+ Lighthouse scores. Always." },
-                  { title: "Future-Proof Code", desc: "Clean, documented, maintainable. Your next dev will thank you." },
-                ].map((item, i) => (
-                  <FadeIn key={i} delay={i * 0.1}>
-                    <div className="flex gap-4 items-start group">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 group-hover:scale-150 transition-transform" />
-                      <div>
-                        <h4 className="text-lg md:text-xl font-display font-bold mb-1">{item.title}</h4>
-                        <p className="text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  </FadeIn>
-                ))}
-              </div>
             </div>
-
-            <FadeIn delay={0.3}>
-              <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-accent/20 via-transparent to-blue-500/20 rounded-3xl border border-white/10 p-8 md:p-12 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl md:text-[12rem] font-display font-black text-transparent text-stroke opacity-20">PP</div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-2xl md:text-4xl font-display font-bold">
-                        <span className="text-white">Pixel</span><span className="text-accent">Perfect</span>
-                      </div>
-                    </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: "Pixel-Perfect", desc: "We match designs down to the last pixel." },
+                { title: "Performance First", desc: "Sub-second loads. 90+ Lighthouse scores." },
+                { title: "Future-Proof", desc: "Clean, documented, maintainable code." },
+              ].map((item, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="group text-center p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-accent/20 transition-all duration-500">
+                    <div className="w-3 h-3 bg-accent rounded-full mx-auto mb-4 group-hover:scale-150 transition-transform" />
+                    <h4 className="text-lg font-display font-bold mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm">{item.desc}</p>
                   </div>
-                </div>
-              </div>
-            </FadeIn>
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 md:py-32 bg-background border-t border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 md:mb-24">
+      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,255,0,0.03),transparent_70%)]" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest mb-6">FAQ</span>
-              <h2 className="text-4xl md:text-6xl font-display font-bold">
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">FAQ</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold">
                 Common <span className="text-accent">Questions</span>
               </h2>
             </FadeIn>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
+          <div className="max-w-2xl mx-auto space-y-3">
             {[
-              { q: "What's included in the $299?", a: "Everything you need for a complete, professional website: custom design, responsive development, basic SEO setup, and deployment. No hidden costs, no surprises." },
-              { q: "How long until I see my first draft?", a: "We deliver your first draft within 5 business days. Most clients are amazed at how quickly their vision comes to life." },
-              { q: "What if I need changes?", a: "Unlimited revisions are included! We keep iterating until you're 100% satisfied with the result. There's no limit on the number of changes." },
-              { q: "What does 'any website' mean?", a: "Landing pages, portfolio sites, restaurant websites, real estate, fitness studios, service businesses, SaaS marketing pages — if it's a website (not a full web application), we can build it for $299." },
-              { q: "Can I schedule a Zoom call to discuss my project?", a: "Absolutely! After you fill out your project brief, you can optionally schedule a quick Zoom call to discuss your vision in more detail. It's completely free and helps us understand exactly what you need." },
-              { q: "What happens after I pay?", a: "You'll immediately receive a link to fill out your project brief — a simple form where you describe your business, goals, and style preferences. Then we get to work!" },
-              { q: "Do you offer ongoing support after launch?", a: "Yes! We offer affordable monthly maintenance packages starting at $49/month to keep your site updated, secure, and running smoothly." },
-              { q: "What if I'm not satisfied with the final result?", a: "With unlimited revisions, we work until you love it. In the rare case you're not satisfied, we offer a 100% money-back guarantee within 14 days of your first draft." },
+              { q: "What's included in the $299?", a: "Custom design, responsive development, basic SEO, and deployment. No hidden costs." },
+              { q: "How long until I see my first draft?", a: "5 business days. Most clients are amazed at the speed." },
+              { q: "What if I need changes?", a: "Unlimited revisions included until you're 100% satisfied." },
+              { q: "What does 'any website' mean?", a: "Landing pages, portfolios, restaurants, real estate, fitness, services — any website (not web apps)." },
+              { q: "Can I schedule a Zoom call?", a: "Yes! After your brief, schedule a free call to discuss details." },
+              { q: "What happens after I pay?", a: "You'll get a link to fill out your project brief, then we start working." },
+              { q: "Do you offer ongoing support?", a: "Yes! Maintenance packages from $49/month available." },
+              { q: "What if I'm not satisfied?", a: "100% money-back guarantee within 14 days of your first draft." },
             ].map((faq, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <details className="group border border-white/10 bg-secondary/10 hover:border-white/20 transition-colors">
-                  <summary className="flex items-center justify-between p-4 md:p-8 cursor-pointer list-none">
-                    <h3 className="text-base md:text-xl font-display font-bold pr-4">{faq.q}</h3>
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border border-white/20 flex items-center justify-center group-open:rotate-45 transition-transform flex-shrink-0">
-                      <span className="text-lg md:text-xl leading-none">+</span>
+              <FadeIn key={i} delay={i * 0.03}>
+                <details className="group bg-white/[0.02] border border-white/10 rounded-xl hover:border-accent/20 transition-all duration-300">
+                  <summary className="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none">
+                    <h3 className="text-sm md:text-base font-display font-bold pr-4">{faq.q}</h3>
+                    <div className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-open:rotate-45 group-open:border-accent group-open:text-accent transition-all flex-shrink-0">
+                      <span className="text-lg leading-none">+</span>
                     </div>
                   </summary>
-                  <div className="px-4 md:px-8 pb-4 md:pb-8 text-muted-foreground text-sm md:text-lg">
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 text-muted-foreground text-sm">
                     {faq.a}
                   </div>
                 </details>
@@ -861,30 +794,32 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-black text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-gradient-radial from-accent/20 to-transparent rounded-full blur-[100px]" />
-        </div>
+      <section className="py-24 md:py-40 bg-background text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,255,0,0.1),transparent_50%)]" />
+        <div className="absolute top-10 left-10 w-40 h-40 border border-accent/10 rounded-full hidden md:block" />
+        <div className="absolute bottom-10 right-10 w-24 h-24 border border-white/5 rounded-full hidden md:block" />
+        <div className="absolute top-1/2 right-20 w-2 h-2 bg-accent rounded-full hidden md:block" />
+        <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-white/30 rounded-full hidden md:block" />
 
         <div className="container mx-auto px-6 relative z-10">
            <FadeIn>
-             <h2 className="text-4xl md:text-6xl lg:text-7xl leading-none font-display font-bold uppercase mb-6 md:mb-8">
+             <h2 className="text-3xl md:text-5xl lg:text-6xl leading-none font-display font-bold mb-6">
                Ready for Your <span className="text-accent">$299</span> Website?
              </h2>
            </FadeIn>
            <FadeIn delay={0.2}>
-             <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 px-4">
-               Join 150+ happy clients who got their dream website without breaking the bank. First draft in 5 days.
+             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+               Join 150+ happy clients. First draft in 5 days.
              </p>
            </FadeIn>
            
            <FadeIn delay={0.4}>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <Link href="/contact" data-testid="button-final-cta" className="group flex items-center gap-3 bg-accent text-black px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-bold uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)]">
+               <Link href="/contact" data-testid="button-final-cta" className="group flex items-center gap-3 bg-accent text-black px-8 py-4 md:px-10 md:py-5 text-base font-bold uppercase tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 rounded-full shadow-[0_0_40px_rgba(145,255,0,0.5)]">
                  Get My Website for $299
                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                </Link>
-               <Link href="/work" data-testid="link-view-examples-final" className="text-white/70 hover:text-accent transition-colors underline underline-offset-4">
+               <Link href="/work" data-testid="link-view-examples-final" className="text-white/60 hover:text-accent transition-colors text-sm underline underline-offset-4">
                  View Examples First
                </Link>
              </div>
