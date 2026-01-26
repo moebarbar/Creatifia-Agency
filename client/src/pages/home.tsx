@@ -81,13 +81,13 @@ function PortfolioSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12">
+          <div className="flex flex-wrap justify-center gap-1.5 md:gap-2 mb-8 md:mb-10">
             {portfolioCategories.map((cat, idx) => (
               <button
                 key={idx}
                 data-testid={`tab-category-${idx}`}
                 onClick={() => setActiveCategory(idx)}
-                className={`px-4 md:px-5 py-2 text-xs md:text-sm font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
+                className={`px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
                   activeCategory === idx
                     ? 'bg-accent text-black'
                     : 'bg-white/5 border border-white/10 text-white/70 hover:text-white hover:border-white/20'
@@ -461,39 +461,6 @@ export default function Home() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 md:py-24 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(145,255,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(145,255,0,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <FadeIn delay={0} className="text-center">
-              <div className="text-3xl md:text-5xl font-display font-black">
-                <span className="text-accent">150</span><span className="text-white">+</span>
-              </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Websites Launched</div>
-            </FadeIn>
-            <FadeIn delay={0.1} className="text-center">
-              <div className="text-3xl md:text-5xl font-display font-black">
-                <span className="text-white">98</span><span className="text-accent">%</span>
-              </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Happy Clients</div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="text-center">
-              <div className="text-3xl md:text-5xl font-display font-black">
-                <span className="text-accent">5</span><span className="text-white"> Days</span>
-              </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Avg Delivery</div>
-            </FadeIn>
-            <FadeIn delay={0.3} className="text-center">
-              <div className="text-3xl md:text-5xl font-display font-black">
-                <span className="text-white">24</span><span className="text-accent">/7</span>
-              </div>
-              <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mt-3">Support</div>
-            </FadeIn>
-          </div>
         </div>
       </section>
 
