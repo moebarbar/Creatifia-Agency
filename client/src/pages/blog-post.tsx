@@ -174,6 +174,15 @@ export default function BlogPost() {
                   components={{
                     a: ({ node, ...props }) => (
                       <a {...props} target="_blank" rel="noopener noreferrer" />
+                    ),
+                    img: ({ node, src, alt, ...props }) => (
+                      <img 
+                        src={src} 
+                        alt={alt || ''} 
+                        className="w-full rounded-xl border border-white/10 my-10"
+                        loading="lazy"
+                        {...props} 
+                      />
                     )
                   }}
                 >
