@@ -103,7 +103,7 @@ export default function BlogPost() {
               <FadeIn>
                 <Link href="/blog">
                   <span 
-                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors mb-8 cursor-pointer"
+                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors cursor-pointer"
                     data-testid="back-to-blog"
                   >
                     <ArrowLeft className="w-4 h-4" />
@@ -111,9 +111,11 @@ export default function BlogPost() {
                   </span>
                 </Link>
                 
-                <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6">
-                  {post.category}
-                </span>
+                <div className="mt-8 mb-8">
+                  <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest">
+                    {post.category}
+                  </span>
+                </div>
                 
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
                   {post.title}
@@ -156,14 +158,16 @@ export default function BlogPost() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="prose prose-lg prose-invert max-w-none
                   prose-headings:font-display prose-headings:text-white prose-headings:font-bold
-                  prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
-                  prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                  prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-16 prose-h2:mb-6
+                  prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-12 prose-h3:mb-4
                   prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
                   prose-a:text-accent prose-a:no-underline hover:prose-a:underline
                   prose-strong:text-white prose-strong:font-semibold
-                  prose-ul:text-muted-foreground prose-ol:text-muted-foreground
-                  prose-li:my-2
-                  prose-blockquote:border-l-accent prose-blockquote:bg-white/[0.02] prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
+                  prose-ul:text-muted-foreground prose-ul:my-6 prose-ol:text-muted-foreground prose-ol:my-6
+                  prose-li:my-3
+                  prose-img:my-10 prose-img:rounded-xl prose-img:border prose-img:border-white/10
+                  prose-blockquote:border-l-accent prose-blockquote:bg-white/[0.02] prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:my-8
+                  prose-hr:my-12 prose-hr:border-white/10
                 "
               >
                 <ReactMarkdown
