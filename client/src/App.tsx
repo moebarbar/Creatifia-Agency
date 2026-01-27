@@ -10,6 +10,8 @@ const Work = lazy(() => import("@/pages/work"));
 const Services = lazy(() => import("@/pages/services"));
 const About = lazy(() => import("@/pages/about"));
 const Contact = lazy(() => import("@/pages/contact"));
+const Blog = lazy(() => import("@/pages/blog"));
+const BlogPost = lazy(() => import("@/pages/blog-post"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function PageLoader() {
@@ -29,6 +31,8 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

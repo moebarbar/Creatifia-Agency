@@ -15,9 +15,10 @@ import abstractArt from "@assets/generated_images/artistic_eye_white_background.
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket, Check } from "lucide-react";
+import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket, Check, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import { useRef, useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const portfolioCategories = [
   { 
@@ -57,6 +58,122 @@ const portfolioCategories = [
     ]
   }
 ];
+
+interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  author: string;
+  image: string;
+  publishedAt: string;
+}
+
+function LatestBlogSection() {
+  const { data: posts, isLoading } = useQuery<BlogPost[]>({
+    queryKey: ["/api/blog/latest"],
+    queryFn: async () => {
+      const res = await fetch("/api/blog/latest?limit=3");
+      if (!res.ok) throw new Error("Failed to fetch blog posts");
+      return res.json();
+    }
+  });
+
+  if (isLoading || !posts || posts.length === 0) return null;
+
+  return (
+    <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(145,255,0,0.05),transparent_60%)]" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+          <FadeIn>
+            <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">
+              Blog & Insights
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+              Web Design <span className="text-accent">Insights</span>
+            </h2>
+            <p className="text-muted-foreground text-base max-w-xl mx-auto">
+              Expert advice on web design, performance, and building websites that convert.
+            </p>
+          </FadeIn>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10">
+          {posts.map((post, index) => {
+            const date = new Date(post.publishedAt);
+            const formattedDate = date.toLocaleDateString('en-US', { 
+              month: 'short', 
+              day: 'numeric',
+              year: 'numeric'
+            });
+
+            return (
+              <FadeIn key={post.id} delay={index * 0.1}>
+                <Link href={`/blog/${post.slug}`}>
+                  <div 
+                    className="group bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 h-full flex flex-col"
+                    data-testid={`home-blog-card-${post.slug}`}
+                  >
+                    <div className="aspect-[16/10] overflow-hidden relative">
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="px-2.5 py-1 bg-black/70 backdrop-blur-sm border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-wider text-accent">
+                          {post.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-5 flex flex-col flex-grow">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+                        <Calendar className="w-3 h-3" />
+                        {formattedDate}
+                      </div>
+                      
+                      <h3 className="text-base font-display font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 flex-grow">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center text-accent text-xs font-medium group-hover:gap-2 gap-1.5 transition-all duration-300 mt-3">
+                        Read More
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </FadeIn>
+            );
+          })}
+        </div>
+
+        <div className="text-center">
+          <FadeIn delay={0.3}>
+            <Link href="/blog">
+              <button 
+                data-testid="view-all-articles-button"
+                className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-6 py-3 rounded-full font-bold text-sm hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+              >
+                View All Articles
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -757,6 +874,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest Blog Posts */}
+      <LatestBlogSection />
 
       {/* Pronunciation Section */}
       <section className="py-10 md:py-16 bg-black relative overflow-hidden border-y border-white/5">
