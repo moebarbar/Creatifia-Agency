@@ -55,6 +55,11 @@ Preferred communication style: Simple, everyday language.
 4. **Type Safety**: End-to-end TypeScript with shared types between frontend and backend
 5. **Component Memoization**: Performance-critical motion components use React.memo
 
+### Blog Content Guidelines
+- **Thumbnail Images**: All blog thumbnails must align with brand colors (dark #080808 background, #91FF00 neon lime accent) and have a tech/futuristic aesthetic with circuit patterns, geometric shapes, or digital elements
+- **Article Images**: In-article images should match the dark tech style with neon lime green accents
+- **Format**: Blog content uses Markdown with external links opening in new tabs
+
 ## External Dependencies
 
 ### Database
