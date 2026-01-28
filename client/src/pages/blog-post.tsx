@@ -5,6 +5,7 @@ import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, ArrowLeft, ArrowRight, User, Clock, Tag } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface BlogPost {
   id: string;
@@ -171,6 +172,7 @@ export default function BlogPost() {
                 "
               >
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     a: ({ node, ...props }) => (
                       <a {...props} target="_blank" rel="noopener noreferrer" />
@@ -183,6 +185,23 @@ export default function BlogPost() {
                         loading="lazy"
                         {...props} 
                       />
+                    ),
+                    table: ({ node, ...props }) => (
+                      <div className="overflow-x-auto my-8">
+                        <table className="w-full border-collapse border border-white/10 rounded-lg overflow-hidden" {...props} />
+                      </div>
+                    ),
+                    thead: ({ node, ...props }) => (
+                      <thead className="bg-white/5" {...props} />
+                    ),
+                    th: ({ node, ...props }) => (
+                      <th className="px-4 py-3 text-left text-sm font-bold text-white border-b border-white/10" {...props} />
+                    ),
+                    td: ({ node, ...props }) => (
+                      <td className="px-4 py-3 text-sm text-muted-foreground border-b border-white/5" {...props} />
+                    ),
+                    tr: ({ node, ...props }) => (
+                      <tr className="hover:bg-white/[0.02] transition-colors" {...props} />
                     )
                   }}
                 >
