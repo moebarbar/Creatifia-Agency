@@ -7,40 +7,39 @@ export default function About() {
       <Navbar />
 
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-32">
-          <div>
-            <h1 className="text-[8vw] font-display font-bold uppercase leading-[0.85] mb-12 sticky top-32">
+        <div className="mb-20">
+            <h1 className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-display font-bold uppercase leading-[0.85] mb-16">
               <TextReveal>About</TextReveal> <br/>
               <span className="text-accent"><TextReveal>Créatifia</TextReveal></span>
             </h1>
           </div>
-          <div className="pt-4 md:pt-12">
-            <FadeIn className="space-y-12 text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
-              <p>
-                <strong className="text-white font-bold">We are Créatifia.</strong> A specialized frontend studio based in the cloud. We were founded on a simple premise: Most agencies are "full-stack" but master neither. We chose to master one half of the equation.
-              </p>
-              <p>
-                We believe that the <span className="text-white">Frontend is the Product</span>. It's what your users touch, see, and feel. A great backend with a mediocre frontend is a failed product. A great frontend can elevate even a simple backend into a premium experience.
-              </p>
-              <p>
-                Our team consists of "Design Engineers" – developers with the eye of a designer, and designers who think in code. We don't just implement designs; we interpret, enhance, and perfect them.
-              </p>
-            </FadeIn>
+        
+        <div className="max-w-3xl mb-32">
+          <FadeIn className="space-y-8 text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
+            <p>
+              <strong className="text-white font-bold">We are Créatifia.</strong> A specialized frontend studio based in the cloud. We were founded on a simple premise: Most agencies are "full-stack" but master neither. We chose to master one half of the equation.
+            </p>
+            <p>
+              We believe that the <span className="text-white">Frontend is the Product</span>. It's what your users touch, see, and feel. A great backend with a mediocre frontend is a failed product. A great frontend can elevate even a simple backend into a premium experience.
+            </p>
+            <p>
+              Our team consists of "Design Engineers" – developers with the eye of a designer, and designers who think in code. We don't just implement designs; we interpret, enhance, and perfect them.
+            </p>
+          </FadeIn>
 
-            <div className="grid grid-cols-2 gap-12 mt-20">
-              <FadeIn delay={0.2}>
-                <h3 className="text-4xl font-display font-bold text-white mb-2">100+</h3>
-                <p className="text-sm uppercase tracking-widest">Projects Delivered</p>
-              </FadeIn>
-              <FadeIn delay={0.3}>
-                <h3 className="text-4xl font-display font-bold text-white mb-2">50+</h3>
-                <p className="text-sm uppercase tracking-widest">Happy Clients</p>
-              </FadeIn>
-              <FadeIn delay={0.4}>
-                <h3 className="text-4xl font-display font-bold text-white mb-2">100%</h3>
-                <p className="text-sm uppercase tracking-widest">Frontend Focused</p>
-              </FadeIn>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mt-16">
+            <FadeIn delay={0.2}>
+              <h3 className="text-4xl font-display font-bold text-white mb-2">100+</h3>
+              <p className="text-sm uppercase tracking-widest">Projects Delivered</p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <h3 className="text-4xl font-display font-bold text-white mb-2">50+</h3>
+              <p className="text-sm uppercase tracking-widest">Happy Clients</p>
+            </FadeIn>
+            <FadeIn delay={0.4}>
+              <h3 className="text-4xl font-display font-bold text-white mb-2">100%</h3>
+              <p className="text-sm uppercase tracking-widest">Frontend Focused</p>
+            </FadeIn>
           </div>
         </div>
       </div>
