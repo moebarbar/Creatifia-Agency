@@ -32,8 +32,8 @@ export function Navbar() {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-display font-bold tracking-tighter z-50 relative hover:text-accent transition-colors">
-            Créati<span className="text-accent">fia</span>
+          <Link href="/" className="z-50 relative hover:opacity-80 transition-opacity">
+            <img src="/logo.png" alt="Créatifia" className="h-6" />
           </Link>
 
           {/* Desktop Nav */}
