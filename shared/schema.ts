@@ -15,6 +15,7 @@ export const projects = pgTable("projects", {
   category: text("category").notNull(),
   description: text("description").notNull(),
   image: text("image").notNull(),
+  url: text("url"),
   tags: text("tags").array().notNull(),
   featured: boolean("featured").default(false).notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
