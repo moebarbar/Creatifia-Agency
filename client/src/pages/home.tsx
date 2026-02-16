@@ -218,46 +218,46 @@ function PortfolioSection() {
             <p className="text-muted-foreground text-lg">{currentCategory.description}</p>
           </div>
           
-          <div className={`grid grid-cols-1 ${currentCategory.sites.length === 1 ? 'max-w-2xl mx-auto' : currentCategory.sites.length <= 2 ? 'md:grid-cols-2 max-w-5xl mx-auto' : 'md:grid-cols-2 max-w-5xl mx-auto'} gap-6`}>
+          <div className={`grid grid-cols-1 ${currentCategory.sites.length === 1 ? 'max-w-2xl mx-auto' : 'md:grid-cols-2 max-w-5xl mx-auto'} gap-5`}>
             {currentCategory.sites.map((site, siteIdx) => (
-              <div key={siteIdx} data-testid={`card-portfolio-${activeCategory}-${siteIdx}`} className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500">
-                <div className="relative h-[240px] md:h-[320px] overflow-hidden m-3 rounded-xl bg-[#0a0a0a]">
+              <div key={siteIdx} data-testid={`card-portfolio-${activeCategory}-${siteIdx}`} className="group bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500">
+                <a href={site.url} target="_blank" rel="noopener noreferrer" className="block relative aspect-[16/10] overflow-hidden bg-[#0a0a0a]">
                   <iframe
                     src={site.url}
                     title={site.name}
-                    className="w-[1440px] h-[900px] origin-top-left pointer-events-none border-0"
-                    style={{ transform: 'scale(0.24)', transformOrigin: 'top left' }}
+                    className="absolute top-0 left-0 w-[1440px] h-[900px] pointer-events-none border-0"
+                    style={{ transform: 'scale(0.34)', transformOrigin: 'top left' }}
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-2.5 left-2.5 flex flex-wrap gap-1.5">
                     {site.features.map((feature, fIdx) => (
                       <span key={fIdx} className="text-[10px] bg-black/60 backdrop-blur-sm text-white/90 px-2 py-0.5 rounded-full border border-white/10">{feature}</span>
                     ))}
                   </div>
-                </div>
-                <div className="p-4 md:p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-lg md:text-xl font-display font-bold text-white">{site.name}</h4>
-                    <span className="text-xs font-mono text-accent uppercase">{currentCategory.category.split(' ')[0]}</span>
+                </a>
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="text-base md:text-lg font-display font-bold text-white">{site.name}</h4>
+                    <span className="text-[10px] font-mono text-accent uppercase tracking-wide">{currentCategory.category}</span>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-4">{site.desc}</p>
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <p className="text-muted-foreground text-sm mb-3">{site.desc}</p>
+                  <div className="flex gap-2.5">
                     <a 
                       href={site.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       data-testid={`button-preview-${activeCategory}-${siteIdx}`}
-                      className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full"
+                      className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-3.5 h-3.5" />
                       Visit Site
                     </a>
                     <Link 
                       href="/contact"
                       data-testid={`button-request-similar-${activeCategory}-${siteIdx}`}
-                      className="flex items-center justify-center gap-2 bg-accent text-black px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
+                      className="flex items-center gap-1.5 bg-accent text-black px-3 py-1.5 text-xs font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
                     >
                       Request Similar
                     </Link>
