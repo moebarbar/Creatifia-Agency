@@ -22,39 +22,31 @@ import { useQuery } from "@tanstack/react-query";
 
 const portfolioCategories = [
   { 
-    category: "Restaurant & Food", 
+    category: "SaaS", 
+    description: "Powerful software platforms with stunning interfaces and seamless user experiences",
+    color: "from-violet-500/20 to-blue-500/20",
+    sites: [
+      { name: "Postphoria", desc: "Social media management platform", url: "https://postphoria.com/", features: ["Dashboard", "Analytics", "Scheduling"] },
+      { name: "SocialProofly", desc: "Social proof & conversion optimization tool", url: "https://socialproofly.com/", features: ["Notifications", "Integrations", "A/B Testing"] },
+      { name: "Analyio", desc: "Website analytics & tracking platform", url: "https://analyio.com/", features: ["Real-time Data", "Heatmaps", "Funnels"] },
+      { name: "Picxio", desc: "AI-powered image editing suite", url: "https://picxio.com/", features: ["AI Tools", "Batch Edit", "Cloud Storage"] }
+    ]
+  },
+  { 
+    category: "E-Commerce", 
+    description: "Beautiful online stores that turn browsers into buyers",
+    color: "from-amber-500/20 to-orange-500/20",
+    sites: [
+      { name: "Marble & Bone", desc: "Premium pet accessories brand", url: "https://marbleandbone.creatifia.com/", features: ["Product Catalog", "Checkout", "Brand Story"] }
+    ]
+  },
+  { 
+    category: "Food & Beverage", 
     description: "Mouth-watering designs that drive reservations and orders",
     color: "from-orange-500/20 to-red-500/20",
     sites: [
-      { name: "Bella Cucina", desc: "Fine dining Italian restaurant", features: ["Online Reservations", "Menu Showcase", "Chef Profiles"] },
-      { name: "Fresh Bites", desc: "Modern healthy cafe", features: ["Order Online", "Nutrition Info", "Loyalty Program"] }
-    ]
-  },
-  { 
-    category: "Real Estate", 
-    description: "Premium property showcases that convert browsers into buyers",
-    color: "from-blue-500/20 to-cyan-500/20",
-    sites: [
-      { name: "Luxe Properties", desc: "High-end real estate agency", features: ["Property Search", "Virtual Tours", "Agent Directory"] },
-      { name: "Urban Living", desc: "Modern apartment rentals", features: ["Floor Plans", "Amenities", "Application Portal"] }
-    ]
-  },
-  { 
-    category: "Fitness & Wellness", 
-    description: "Energetic sites that inspire action and membership signups",
-    color: "from-green-500/20 to-emerald-500/20",
-    sites: [
-      { name: "Peak Performance", desc: "Premium fitness studio", features: ["Class Booking", "Trainer Bios", "Membership Plans"] },
-      { name: "Zen Studio", desc: "Yoga and meditation center", features: ["Schedule", "Online Classes", "Retreat Booking"] }
-    ]
-  },
-  { 
-    category: "Professional Services", 
-    description: "Trust-building sites for consultants, lawyers, and agencies",
-    color: "from-purple-500/20 to-pink-500/20",
-    sites: [
-      { name: "Sterling Law", desc: "Corporate law firm", features: ["Practice Areas", "Case Studies", "Free Consultation"] },
-      { name: "Growth Partners", desc: "Business consulting agency", features: ["Services", "Client Results", "Contact Form"] }
+      { name: "NY Slice", desc: "Authentic New York style pizza", url: "https://nyslice.creatifia.com/", features: ["Online Menu", "Order Online", "Location"] },
+      { name: "Komorebi", desc: "Japanese-inspired dining experience", url: "https://komorebi.creatifia.com/", features: ["Menu", "Reservations", "Atmosphere"] }
     ]
   }
 ];
@@ -226,21 +218,24 @@ function PortfolioSection() {
             <p className="text-muted-foreground text-lg">{currentCategory.description}</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className={`grid grid-cols-1 ${currentCategory.sites.length === 1 ? 'max-w-2xl mx-auto' : currentCategory.sites.length <= 2 ? 'md:grid-cols-2 max-w-5xl mx-auto' : 'md:grid-cols-2 max-w-5xl mx-auto'} gap-6`}>
             {currentCategory.sites.map((site, siteIdx) => (
               <div key={siteIdx} data-testid={`card-portfolio-${activeCategory}-${siteIdx}`} className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500">
-                <div className={`relative h-[200px] md:h-[280px] overflow-hidden bg-gradient-to-br ${currentCategory.color} m-3 rounded-xl flex items-center justify-center`}>
-                  <div className="text-center p-6">
-                    <div className="text-6xl md:text-8xl font-display font-black text-white/10 group-hover:text-white/20 transition-colors mb-4">
-                      {site.name.charAt(0)}
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      {site.features.map((feature, fIdx) => (
-                        <span key={fIdx} className="text-xs bg-white/10 text-white/80 px-2 py-1 rounded-full">{feature}</span>
-                      ))}
-                    </div>
+                <div className="relative h-[240px] md:h-[320px] overflow-hidden m-3 rounded-xl bg-[#0a0a0a]">
+                  <iframe
+                    src={site.url}
+                    title={site.name}
+                    className="w-[1440px] h-[900px] origin-top-left pointer-events-none border-0"
+                    style={{ transform: 'scale(0.24)', transformOrigin: 'top left' }}
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                    {site.features.map((feature, fIdx) => (
+                      <span key={fIdx} className="text-[10px] bg-black/60 backdrop-blur-sm text-white/90 px-2 py-0.5 rounded-full border border-white/10">{feature}</span>
+                    ))}
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 </div>
                 <div className="p-4 md:p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -249,14 +244,16 @@ function PortfolioSection() {
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">{site.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link 
-                      href="/work"
+                    <a 
+                      href={site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       data-testid={`button-preview-${activeCategory}-${siteIdx}`}
                       className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 text-sm font-bold uppercase tracking-wide hover:bg-white/20 transition-colors rounded-full"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      View Details
-                    </Link>
+                      Visit Site
+                    </a>
                     <Link 
                       href="/contact"
                       data-testid={`button-request-similar-${activeCategory}-${siteIdx}`}

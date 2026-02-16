@@ -11,7 +11,7 @@ async function fetchProjects(): Promise<Project[]> {
   return response.json();
 }
 
-const filters = ["All", "Website", "SaaS", "App"];
+const filters = ["All", "SaaS", "E-Commerce", "Food & Beverage"];
 
 export default function Work() {
   const [filter, setFilter] = useState("All");
@@ -63,7 +63,7 @@ export default function Work() {
       </div>
 
       <div className="container mx-auto px-6 pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {filteredProjects.map((project, index) => (
             <FadeIn key={project.id} delay={index * 0.1}>
               <ProjectCard
@@ -71,6 +71,7 @@ export default function Work() {
                 title={project.title}
                 category={project.category}
                 image={project.image}
+                url={project.url}
               />
             </FadeIn>
           ))}

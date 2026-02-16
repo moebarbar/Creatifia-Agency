@@ -5,6 +5,7 @@ import { serveStatic } from "./static";
 import { createServer } from "http";
 import path from "path";
 import { autoSeedBlogPosts } from "./auto-seed-blog";
+import { autoSeedProjects } from "./auto-seed-projects";
 
 const app = express();
 const httpServer = createServer(app);
@@ -75,6 +76,7 @@ app.use((req, res, next) => {
 
 (async () => {
   await autoSeedBlogPosts();
+  await autoSeedProjects();
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
