@@ -17,8 +17,40 @@ import abstractArt from "@assets/generated_images/artistic_eye_white_background.
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket, Check, Calendar } from "lucide-react";
 import { Link } from "wouter";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
+
+function IframePreview({ url, title }: { url: string; title: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(0.35);
+
+  const updateScale = useCallback(() => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth;
+      setScale(containerWidth / 1440);
+    }
+  }, []);
+
+  useEffect(() => {
+    updateScale();
+    const observer = new ResizeObserver(updateScale);
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [updateScale]);
+
+  return (
+    <div ref={containerRef} className="relative w-full aspect-[16/10] overflow-hidden bg-[#0a0a0a]">
+      <iframe
+        src={url}
+        title={title}
+        className="absolute top-0 left-0 w-[1440px] h-[900px] pointer-events-none border-0"
+        style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin"
+      />
+    </div>
+  );
+}
 
 const portfolioCategories = [
   { 
@@ -221,15 +253,8 @@ function PortfolioSection() {
           <div className={`grid grid-cols-1 ${currentCategory.sites.length === 1 ? 'max-w-2xl mx-auto' : 'md:grid-cols-2 max-w-5xl mx-auto'} gap-5`}>
             {currentCategory.sites.map((site, siteIdx) => (
               <div key={siteIdx} data-testid={`card-portfolio-${activeCategory}-${siteIdx}`} className="group bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500">
-                <a href={site.url} target="_blank" rel="noopener noreferrer" className="block relative aspect-[16/10] overflow-hidden bg-[#0a0a0a]">
-                  <iframe
-                    src={site.url}
-                    title={site.name}
-                    className="absolute top-0 left-0 w-[1440px] h-[900px] pointer-events-none border-0"
-                    style={{ transform: 'scale(0.34)', transformOrigin: 'top left' }}
-                    loading="lazy"
-                    sandbox="allow-scripts allow-same-origin"
-                  />
+                <a href={site.url} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden">
+                  <IframePreview url={site.url} title={site.name} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-2.5 left-2.5 flex flex-wrap gap-1.5">
                     {site.features.map((feature, fIdx) => (
