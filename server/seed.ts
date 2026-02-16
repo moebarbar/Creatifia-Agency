@@ -31,16 +31,7 @@ async function seed() {
       tags: ["SaaS", "Analytics", "Data"],
       featured: true,
     },
-    {
-      title: "Picxio",
-      category: "SaaS",
-      description: "AI-powered image editing suite with batch processing, cloud storage, and intelligent enhancement tools.",
-      image: "/assets/generated_images/modern_dark_mode_saas_dashboard_interface_mockup.png",
-      url: "https://picxio.com/",
-      tags: ["SaaS", "AI", "Design"],
-      featured: true,
-    },
-    {
+      {
       title: "Marble & Bone",
       category: "E-Commerce",
       description: "Premium pet accessories brand with a beautiful product catalog and seamless shopping experience.",

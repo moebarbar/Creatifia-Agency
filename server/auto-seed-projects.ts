@@ -31,15 +31,6 @@ const projectsData = [
     featured: true,
   },
   {
-    title: "Picxio",
-    category: "SaaS",
-    description: "AI-powered image editing suite with batch processing, cloud storage, and intelligent enhancement tools.",
-    image: "/assets/generated_images/modern_dark_mode_saas_dashboard_interface_mockup.png",
-    url: "https://picxio.com/",
-    tags: ["SaaS", "AI", "Design"],
-    featured: true,
-  },
-  {
     title: "Marble & Bone",
     category: "E-Commerce",
     description: "Premium pet accessories brand with a beautiful product catalog and seamless shopping experience.",
@@ -73,7 +64,7 @@ export async function autoSeedProjects() {
     const result = await db.select({ count: sql<number>`count(*)` }).from(projects);
     const count = Number(result[0].count);
 
-    if (count >= projectsData.length) {
+    if (count >= projectsData.length) { 
       console.log(`Projects already seeded (${count} found). Skipping.`);
       return;
     }

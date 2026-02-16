@@ -60,8 +60,7 @@ const portfolioCategories = [
     sites: [
       { name: "Postphoria", desc: "Social media management platform", url: "https://postphoria.com/", embeddable: true, features: ["Dashboard", "Analytics", "Scheduling"] },
       { name: "SocialProofly", desc: "Social proof & conversion optimization tool", url: "https://socialproofly.com/", embeddable: true, features: ["Notifications", "Integrations", "A/B Testing"] },
-      { name: "Analyio", desc: "Website analytics & tracking platform", url: "https://analyio.com/", embeddable: true, features: ["Real-time Data", "Heatmaps", "Funnels"] },
-      { name: "Picxio", desc: "AI-powered image editing suite", url: "https://picxio.com/", embeddable: false, features: ["AI Tools", "Batch Edit", "Cloud Storage"] }
+      { name: "Analyio", desc: "Website analytics & tracking platform", url: "https://analyio.com/", embeddable: true, features: ["Real-time Data", "Heatmaps", "Funnels"] }
     ]
   },
   { 
