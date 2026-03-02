@@ -12,6 +12,12 @@ import portrait from "@assets/generated_images/edgy_monochrome_developer_portrai
 import portraitWoman from "@assets/generated_images/edgy_creative_woman_portrait_in_frame.png";
 import artFrame from "@assets/generated_images/abstract_digital_art_in_frame.png";
 import abstractArt from "@assets/generated_images/artistic_eye_white_background.png";
+import industryTech from "@assets/generated_images/industry_tech_saas.png";
+import industryEcommerce from "@assets/generated_images/industry_ecommerce_retail.png";
+import industryFood from "@assets/generated_images/industry_restaurant_food.png";
+import industryRealEstate from "@assets/generated_images/industry_real_estate.png";
+import industryHealth from "@assets/generated_images/industry_health_wellness.png";
+import industryProfessional from "@assets/generated_images/industry_professional_services.png";
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
@@ -637,53 +643,60 @@ export default function Home() {
       <PortfolioSection />
 
       {/* Templates Section */}
-      <section id="templates" className="py-20 md:py-32 bg-background relative overflow-hidden">
+      <section id="industries" className="py-20 md:py-32 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(145,255,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(145,255,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/2" />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Templates</span>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Industries</span>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-                Choose Your <span className="text-accent">Style</span>
+                Industries We <span className="text-accent">Serve</span>
               </h2>
               <p className="text-muted-foreground text-base max-w-xl mx-auto">
-                Start with a template that matches your vision. We'll customize it for you.
+                We craft stunning websites for businesses across every industry. Here's where we shine.
               </p>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
             {[
-              { name: "Bold & Minimal", industry: "Tech Startups" },
-              { name: "Elegant Flow", industry: "Luxury Brands" },
-              { name: "Dynamic Energy", industry: "Fitness & Sports" },
-              { name: "Trust Builder", industry: "Professional Services" },
-              { name: "Artisan Craft", industry: "Restaurants & Cafes" },
-              { name: "Urban Modern", industry: "Real Estate" },
-            ].map((template, i) => (
+              { name: "Tech & SaaS", tagline: "Powerful platforms, stunning interfaces", image: industryTech },
+              { name: "E-Commerce & Retail", tagline: "Stores that turn browsers into buyers", image: industryEcommerce },
+              { name: "Restaurants & Food", tagline: "Designs that drive reservations & orders", image: industryFood },
+              { name: "Real Estate & Property", tagline: "Listings that sell themselves", image: industryRealEstate },
+              { name: "Health & Wellness", tagline: "Experiences that inspire trust & care", image: industryHealth },
+              { name: "Professional Services", tagline: "Credibility that converts visitors", image: industryProfessional },
+            ].map((industry, i) => (
               <FadeIn key={i} delay={i * 0.05}>
                 <Link 
                   href="/contact"
-                  data-testid={`card-template-${i}`} 
-                  className="group block bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                  data-testid={`card-industry-${i}`} 
+                  className="group block bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 hover:bg-accent/5 transition-all duration-500"
                 >
-                  <div className="aspect-[4/3] bg-white/5 rounded-lg mb-4 flex items-center justify-center">
-                    <div className="text-4xl md:text-5xl font-display font-black text-white/10 group-hover:text-accent/30 transition-colors">
-                      {template.name.charAt(0)}
-                    </div>
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img 
+                      src={industry.image} 
+                      alt={`${industry.name} website design`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   </div>
-                  <span className="text-[10px] md:text-xs font-mono text-accent uppercase tracking-widest">{template.industry}</span>
-                  <h4 className="text-sm md:text-base font-display font-bold text-white mt-1">{template.name}</h4>
+                  <div className="p-4 md:p-5">
+                    <h4 className="text-sm md:text-base font-display font-bold text-white group-hover:text-accent transition-colors">{industry.name}</h4>
+                    <p className="text-[11px] md:text-xs text-muted-foreground mt-1">{industry.tagline}</p>
+                  </div>
                 </Link>
               </FadeIn>
             ))}
           </div>
 
           <FadeIn delay={0.4} className="mt-10 text-center">
-            <Link href="/contact" data-testid="button-describe-vision" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors text-sm underline underline-offset-4">
-              Don't see your style? Describe your vision
+            <Link href="/contact" data-testid="button-describe-industry" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors text-sm underline underline-offset-4">
+              Don't see your industry? Tell us about your business
               <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>
