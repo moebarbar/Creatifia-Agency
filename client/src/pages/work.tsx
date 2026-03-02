@@ -91,6 +91,19 @@ const projectsData: ProjectData[] = [
     industry: "Web Analytics"
   },
   {
+    name: "FlowCapture",
+    category: "SaaS",
+    url: "https://flowcapture.creatifia.com/",
+    tagline: "Capture every lead, effortlessly",
+    description: "A sleek lead capture and form builder platform that helps businesses create high-converting forms, landing pages, and lead funnels — all without writing a single line of code.",
+    challenge: "Form builders are commoditized. The challenge was positioning FlowCapture as a premium, design-forward alternative in a crowded market full of clunky, outdated tools.",
+    solution: "We designed a clean, conversion-focused landing page that doubles as a live demo of the product's capabilities. The dark UI with neon accents communicates modernity, while interactive form previews show the product in action.",
+    results: ["Conversion-focused landing page", "Interactive product demos", "Clean onboarding flow"],
+    techStack: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion"],
+    features: ["Form Builder", "Lead Capture", "Landing Pages", "Integrations"],
+    industry: "Marketing Technology"
+  },
+  {
     name: "Marble & Bone",
     category: "E-Commerce",
     url: "https://marbleandbone.creatifia.com/",

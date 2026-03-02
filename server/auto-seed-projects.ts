@@ -31,6 +31,15 @@ const projectsData = [
     featured: true,
   },
   {
+    title: "FlowCapture",
+    category: "SaaS",
+    description: "A sleek lead capture and form builder platform that helps businesses create high-converting forms, landing pages, and lead funnels.",
+    image: "/assets/generated_images/modern_dark_mode_saas_dashboard_interface_mockup.png",
+    url: "https://flowcapture.creatifia.com/",
+    tags: ["SaaS", "Marketing", "Lead Generation"],
+    featured: true,
+  },
+  {
     title: "Marble & Bone",
     category: "E-Commerce",
     description: "Premium pet accessories brand with a beautiful product catalog and seamless shopping experience.",
