@@ -103,7 +103,7 @@ const projectsData: ProjectData[] = [
     techStack: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion"],
     features: ["Form Builder", "Lead Capture", "Landing Pages", "Integrations"],
     industry: "Marketing Technology",
-    embeddable: false
+    embeddable: true
   },
   {
     name: "Marble & Bone",
