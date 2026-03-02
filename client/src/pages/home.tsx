@@ -29,6 +29,8 @@ import { useQuery } from "@tanstack/react-query";
 function IframePreview({ url, title }: { url: string; title: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.35);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const updateScale = useCallback(() => {
     if (containerRef.current) {
@@ -39,21 +41,47 @@ function IframePreview({ url, title }: { url: string; title: string }) {
 
   useEffect(() => {
     updateScale();
-    const observer = new ResizeObserver(updateScale);
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
+    const resizeObs = new ResizeObserver(updateScale);
+    if (containerRef.current) resizeObs.observe(containerRef.current);
+    return () => resizeObs.disconnect();
   }, [updateScale]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); io.disconnect(); } },
+      { rootMargin: '200px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && !isLoaded) {
+      const t = setTimeout(() => setIsLoaded(true), 8000);
+      return () => clearTimeout(t);
+    }
+  }, [isVisible, isLoaded]);
 
   return (
     <div ref={containerRef} className="relative w-full aspect-[16/10] overflow-hidden bg-[#0a0a0a]">
-      <iframe
-        src={url}
-        title={title}
-        className="absolute top-0 left-0 w-[1440px] h-[900px] pointer-events-none border-0"
-        style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
-        loading="lazy"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-      />
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="w-6 h-6 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+        </div>
+      )}
+      {isVisible && (
+        <iframe
+          src={url}
+          title={title}
+          className={`absolute top-0 left-0 w-[1440px] h-[900px] pointer-events-none border-0 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          onLoad={() => setIsLoaded(true)}
+        />
+      )}
     </div>
   );
 }
@@ -67,7 +95,7 @@ const portfolioCategories = [
       { name: "Postphoria", desc: "Social media management platform", url: "https://postphoria.com/", embeddable: true, features: ["Dashboard", "Analytics", "Scheduling"] },
       { name: "SocialProofly", desc: "Social proof & conversion optimization tool", url: "https://socialproofly.com/", embeddable: true, features: ["Notifications", "Integrations", "A/B Testing"] },
       { name: "Analyio", desc: "Website analytics & tracking platform", url: "https://analyio.com/", embeddable: true, features: ["Real-time Data", "Heatmaps", "Funnels"] },
-      { name: "FlowCapture", desc: "Lead capture & form builder platform", url: "https://flowcapture.creatifia.com/", embeddable: true, features: ["Form Builder", "Lead Capture", "Integrations"] }
+      { name: "FlowCapture", desc: "Lead capture & form builder platform", url: "https://flowcapture.creatifia.com/", embeddable: false, features: ["Form Builder", "Lead Capture", "Integrations"] }
     ]
   },
   { 
