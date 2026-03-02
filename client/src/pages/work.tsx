@@ -137,6 +137,10 @@ export default function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const filteredProjects = activeFilter === "All"
     ? projectsData
     : projectsData.filter(p => p.category === activeFilter);
