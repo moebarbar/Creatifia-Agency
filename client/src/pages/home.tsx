@@ -52,7 +52,7 @@ function IframePreview({ url, title }: { url: string; title: string }) {
         className="absolute top-0 left-0 w-[1440px] h-[900px] pointer-events-none border-0"
         style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
         loading="lazy"
-        sandbox="allow-scripts allow-same-origin"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
       />
     </div>
   );
