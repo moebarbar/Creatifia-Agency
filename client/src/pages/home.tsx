@@ -67,7 +67,7 @@ const portfolioCategories = [
       { name: "Postphoria", desc: "Social media management platform", url: "https://postphoria.com/", embeddable: true, features: ["Dashboard", "Analytics", "Scheduling"] },
       { name: "SocialProofly", desc: "Social proof & conversion optimization tool", url: "https://socialproofly.com/", embeddable: true, features: ["Notifications", "Integrations", "A/B Testing"] },
       { name: "Analyio", desc: "Website analytics & tracking platform", url: "https://analyio.com/", embeddable: true, features: ["Real-time Data", "Heatmaps", "Funnels"] },
-      { name: "FlowCapture", desc: "Lead capture & form builder platform", url: "https://flowcapture.creatifia.com/", embeddable: true, features: ["Form Builder", "Lead Capture", "Integrations"] }
+      { name: "FlowCapture", desc: "Lead capture & form builder platform", url: "https://flowcapture.creatifia.com/", embeddable: false, features: ["Form Builder", "Lead Capture", "Integrations"] }
     ]
   },
   { 
@@ -285,7 +285,30 @@ function PortfolioSection() {
             {displaySites.map((site, siteIdx) => (
               <div key={`${site.name}-${siteIdx}`} data-testid={`card-portfolio-${activeCategory}-${siteIdx}`} className="group bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500">
                 <a href={site.url} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden">
-                  <IframePreview url={site.url} title={site.name} />
+                  {site.embeddable ? (
+                    <IframePreview url={site.url} title={site.name} />
+                  ) : (
+                    <div className="relative w-full aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0a0a0a] flex items-center justify-center">
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,255,0,0.08),transparent_70%)]" />
+                      <div className="absolute top-0 left-0 right-0 h-8 bg-[#1a1a1a] flex items-center px-3 gap-2">
+                        <div className="flex gap-1.5">
+                          <div className="w-2 h-2 rounded-full bg-red-500/60" />
+                          <div className="w-2 h-2 rounded-full bg-yellow-500/60" />
+                          <div className="w-2 h-2 rounded-full bg-green-500/60" />
+                        </div>
+                        <div className="flex-1 mx-2 h-4 bg-white/10 rounded flex items-center px-2">
+                          <span className="text-[7px] text-white/40 font-mono truncate">{site.url}</span>
+                        </div>
+                      </div>
+                      <div className="text-center z-10 pt-4">
+                        <div className="text-5xl md:text-6xl font-display font-black text-accent/20 mb-2">{site.name.charAt(0)}</div>
+                        <p className="text-white/80 font-display font-bold text-base md:text-lg">{site.name}</p>
+                        <p className="text-white/40 text-[10px] mt-1 flex items-center gap-1 justify-center">
+                          <ExternalLink className="w-3 h-3" /> Click to visit live site
+                        </p>
+                      </div>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-2.5 left-2.5 flex flex-wrap gap-1.5">
                     {site.features.map((feature, fIdx) => (

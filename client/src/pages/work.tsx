@@ -48,6 +48,7 @@ interface ProjectData {
   techStack: string[];
   features: string[];
   industry: string;
+  embeddable?: boolean;
 }
 
 const projectsData: ProjectData[] = [
@@ -101,7 +102,8 @@ const projectsData: ProjectData[] = [
     results: ["Conversion-focused landing page", "Interactive product demos", "Clean onboarding flow"],
     techStack: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion"],
     features: ["Form Builder", "Lead Capture", "Landing Pages", "Integrations"],
-    industry: "Marketing Technology"
+    industry: "Marketing Technology",
+    embeddable: false
   },
   {
     name: "Marble & Bone",
@@ -232,7 +234,30 @@ export default function Work() {
                         rel="noopener noreferrer"
                         className="block relative rounded-2xl overflow-hidden border border-white/10 hover:border-accent/30 transition-all duration-500"
                       >
-                        <IframePreview url={project.url} title={project.name} />
+                        {project.embeddable === false ? (
+                          <div className="relative w-full aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0a0a0a] flex items-center justify-center">
+                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,255,0,0.08),transparent_70%)]" />
+                            <div className="absolute top-0 left-0 right-0 h-10 bg-[#1a1a1a] flex items-center px-4 gap-2">
+                              <div className="flex gap-1.5">
+                                <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+                                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                                <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                              </div>
+                              <div className="flex-1 mx-3 h-5 bg-white/10 rounded-md flex items-center px-2">
+                                <span className="text-[8px] text-white/40 font-mono truncate">{project.url}</span>
+                              </div>
+                            </div>
+                            <div className="text-center z-10 pt-6">
+                              <div className="text-6xl md:text-7xl font-display font-black text-accent/20 mb-3">{project.name.charAt(0)}</div>
+                              <p className="text-white/80 font-display font-bold text-xl">{project.name}</p>
+                              <p className="text-white/40 text-xs mt-1 flex items-center gap-1 justify-center">
+                                <ExternalLink className="w-3 h-3" /> Click to visit live site
+                              </p>
+                            </div>
+                          </div>
+                        ) : (
+                          <IframePreview url={project.url} title={project.name} />
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                         <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                           <div className="flex flex-wrap gap-1.5">
