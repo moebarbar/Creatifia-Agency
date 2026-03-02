@@ -205,9 +205,12 @@ function PortfolioSection() {
     cat.sites.map(site => ({ ...site, category: cat.category }))
   );
 
-  const displaySites = activeCategory === "all"
+  const filteredSites = activeCategory === "all"
     ? allSites
     : portfolioCategories[activeCategory].sites.map(site => ({ ...site, category: portfolioCategories[activeCategory].category }));
+
+  const displaySites = filteredSites.slice(0, 4);
+  const hasMore = filteredSites.length > 4;
 
   const description = activeCategory === "all"
     ? "Our complete collection of stunning, story-driven websites"
@@ -311,6 +314,17 @@ function PortfolioSection() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/work"
+              data-testid="link-view-all-work"
+              className="inline-flex items-center gap-2 bg-accent text-black px-6 py-3 text-sm font-bold uppercase tracking-wide hover:bg-white transition-colors rounded-full"
+            >
+              View All Work
+              <ExternalLink className="w-4 h-4" />
+            </Link>
           </div>
         </motion.div>
       </div>
