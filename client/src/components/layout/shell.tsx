@@ -49,7 +49,13 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link href="/contact" className="btn-glow relative bg-accent text-black px-6 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full overflow-hidden hover:scale-105 transition-all duration-300">
+            <Link
+              href="/dashboard"
+              className="text-sm font-medium uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors"
+            >
+              Login
+            </Link>
+            <Link href="/auth" className="btn-glow relative bg-accent text-black px-6 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full overflow-hidden hover:scale-105 transition-all duration-300">
               <span className="relative z-10">Start Project</span>
             </Link>
           </div>

@@ -59,6 +59,22 @@ async function buildAll() {
     external: externals,
     logLevel: "info",
   });
+
+  // Standalone migration runner so production can apply migrations without
+  // dev dependencies (e.g. Railway pre-deploy: `node dist/migrate.cjs`).
+  console.log("building migrate runner...");
+  await esbuild({
+    entryPoints: ["server/migrate.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/migrate.cjs",
+    define: {
+      "process.env.NODE_ENV": '"production"',
+    },
+    external: externals,
+    logLevel: "info",
+  });
 }
 
 buildAll().catch((err) => {

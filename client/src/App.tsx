@@ -13,6 +13,11 @@ const Contact = lazy(() => import("@/pages/contact"));
 const Blog = lazy(() => import("@/pages/blog"));
 const BlogPost = lazy(() => import("@/pages/blog-post"));
 const NotFound = lazy(() => import("@/pages/not-found"));
+const Auth = lazy(() => import("@/pages/auth"));
+const Dashboard = lazy(() => import("@/pages/dashboard"));
+const BriefWizard = lazy(() => import("@/pages/dashboard-brief"));
+const PaymentReturn = lazy(() => import("@/pages/dashboard-payment"));
+const AdminCRM = lazy(() => import("@/pages/admin"));
 
 function PageLoader() {
   return (
@@ -33,6 +38,11 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/auth" component={Auth} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard/brief" component={BriefWizard} />
+        <Route path="/dashboard/payment" component={PaymentReturn} />
+        <Route path="/admin" component={AdminCRM} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
