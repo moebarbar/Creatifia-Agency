@@ -27,7 +27,11 @@ export function setupAuth(app: Express): void {
       store: new PgSession({
         pool,
         tableName: "session",
-        createTableIfMissing: true,
+        // The session table is created by migration 0001_session_table.sql.
+        // Do NOT use createTableIfMissing — it reads connect-pg-simple's
+        // bundled table.sql at runtime, which isn't present in the production
+        // bundle (ENOENT: /app/dist/table.sql) and breaks every login.
+        createTableIfMissing: false,
       }),
       secret: env.SESSION_SECRET,
       resave: false,
