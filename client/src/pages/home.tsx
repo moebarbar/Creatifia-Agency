@@ -21,7 +21,7 @@ import industryProfessional from "@assets/generated_images/industry_professional
 
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket, Check, Calendar } from "lucide-react";
+import { ArrowRight, Code, Layers, Zap, PenTool, Star, Globe, Cpu, MousePointer2, CreditCard, FileText, Video, Clock, CheckCircle2, ExternalLink, Sparkles, Target, Shield, Gift, Rocket, Check, Calendar, Search, Megaphone, TrendingUp, BarChart3 } from "lucide-react";
 import { Link } from "wouter";
 import { useRef, useEffect, useState, useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -449,9 +449,9 @@ export default function Home() {
              {/* Badge */}
              <FadeIn delay={0.2} className="mb-6">
                <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
-                 <span className="text-accent font-bold text-sm md:text-base">Creative Studio</span>
+                 <span className="text-accent font-bold text-sm md:text-base">Creative & Growth Studio</span>
                  <span className="text-white/40">|</span>
-                 <span className="text-white/80 text-sm md:text-base">Design + Development</span>
+                 <span className="text-white/80 text-sm md:text-base">Design + Marketing</span>
                  <span className="text-white/40">|</span>
                  <span className="text-white/80 text-sm md:text-base">🇺🇸 Made in USA</span>
                </div>
@@ -461,7 +461,7 @@ export default function Home() {
              <div className="relative z-10 w-full mb-8">
                 <FadeIn delay={0.3}>
                   <h1 className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0" style={{ clip: 'rect(0, 0, 0, 0)' }}>
-                    Créatifia - Premium Website Design & Development Studio | Stunning Websites That Convert
+                    Créatifia - Website Design, Content, SEO & PPC Studio | One Subscription That Grows Your Business
                   </h1>
                   <div className="text-center space-y-1">
                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display uppercase text-white leading-[1.3] tracking-[0.15em]">
@@ -503,15 +503,15 @@ export default function Home() {
              {/* Subheadline */}
              <FadeIn delay={0.5} className="mb-8">
                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                 We design and build stunning websites that captivate audiences and drive results.
-                 <span className="text-white font-medium"> Pixel-perfect craft • Modern technology • Story-driven design.</span>
+                 We build stunning websites — then fuel them with content, SEO, and paid ads.
+                 <span className="text-white font-medium"> One team. One subscription. Everything you need to grow.</span>
                </p>
              </FadeIn>
             
              {/* CTAs */}
              <FadeIn delay={0.7} className="relative z-30">
                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                 <Link href="/contact" data-testid="button-hero-cta-primary" className="group relative flex items-center justify-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide overflow-hidden rounded-full w-full sm:w-auto shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
+                 <Link href="/auth" data-testid="button-hero-cta-primary" className="group relative flex items-center justify-center gap-3 bg-accent text-black px-8 py-4 font-bold uppercase tracking-wide overflow-hidden rounded-full w-full sm:w-auto shadow-[0_0_40px_rgba(145,255,0,0.5)] hover:shadow-[0_0_60px_rgba(145,255,0,0.8)] transition-all duration-500">
                    Start Your Project
                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                  </Link>
@@ -550,10 +550,12 @@ export default function Home() {
               <span className="text-accent text-2xl md:text-4xl">✦</span>
               <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">Stunning Websites</span>
               <span className="text-accent text-2xl md:text-4xl">✦</span>
-              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Modern Technology</span>
+              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">SEO That Ranks</span>
               <span className="text-white text-2xl md:text-4xl">✦</span>
-              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">Premium Design</span>
+              <span className="text-xl md:text-4xl font-display font-black text-white uppercase tracking-wide">PPC That Converts</span>
               <span className="text-accent text-2xl md:text-4xl">✦</span>
+              <span className="text-xl md:text-4xl font-display font-black text-accent uppercase tracking-wide">Content That Sells</span>
+              <span className="text-white text-2xl md:text-4xl">✦</span>
             </div>
           ))}
         </div>
@@ -601,19 +603,22 @@ export default function Home() {
             <div className="text-center mb-16 md:mb-24">
               <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6">What We Do</span>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-                UI/UX Design That <span className="text-accent">Converts</span>
+                Built to Stun. <span className="text-accent">Engineered to Grow.</span>
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-                Beautiful interfaces that users love. We design experiences that drive engagement and boost conversions.
+                A beautiful website is just the beginning. We run the full growth stack — design, content, SEO, and paid ads — under one roof.
               </p>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
              {[
-               { icon: Layers, title: "UI Design", desc: "Stunning visual interfaces that capture your brand and delight users", color: "hover:border-accent/50" },
-               { icon: Cpu, title: "UX Strategy", desc: "User-centered design that makes complex tasks feel effortless", color: "hover:border-blue-500/50" },
-               { icon: Globe, title: "Web Development", desc: "Pixel-perfect implementation that brings your design to life", color: "hover:border-purple-500/50" },
+               { icon: Layers, title: "Web Design & UX", desc: "Stunning, story-driven interfaces that capture your brand and turn visitors into customers", color: "hover:border-accent/50" },
+               { icon: Globe, title: "Development", desc: "Pixel-perfect, lightning-fast builds on modern technology — 100 Lighthouse scores, flawless on every device", color: "hover:border-blue-500/50" },
+               { icon: PenTool, title: "Content Creation", desc: "Conversion copy, blog articles, and landing pages written in your brand voice — content that sells", color: "hover:border-purple-500/50" },
+               { icon: Search, title: "SEO", desc: "Technical SEO, keyword strategy, and local search domination so customers find you first on Google", color: "hover:border-accent/50" },
+               { icon: Megaphone, title: "PPC & Paid Ads", desc: "Google & Meta campaigns managed end-to-end — any ad budget, no management caps, relentless optimization", color: "hover:border-blue-500/50" },
+               { icon: BarChart3, title: "Analytics & CRO", desc: "Tracking, reporting, and conversion optimization — every decision backed by data, every month better than the last", color: "hover:border-purple-500/50" },
              ].map((item, i) => (
                <FadeIn key={i} delay={i * 0.1}>
                  <div className={`group relative border border-white/10 bg-background/50 p-8 md:p-10 rounded-lg transition-all duration-500 hover:bg-white/5 ${item.color}`}>
@@ -635,12 +640,12 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <FadeIn>
-              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">Everything Included</span>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">The Growth Bundle</span>
               <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-4">
-                One Subscription. <span className="text-accent">Zero Headaches.</span>
+                One Bundle. One Price. <span className="text-accent">Everything.</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Design, hosting, updates, and SEO — all handled by our team. Cancel anytime.
+                Stunning website + content + SEO + PPC — your entire online presence, handled by one team. Cancel anytime.
               </p>
             </FadeIn>
           </div>
@@ -648,24 +653,26 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <div className="bg-white/5 border-2 border-accent/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-accent text-black px-4 py-1 text-xs font-bold uppercase rounded-bl-xl">Most Popular</div>
-                
+                <div className="absolute top-0 right-0 bg-accent text-black px-4 py-1 text-xs font-bold uppercase rounded-bl-xl">The Only Plan</div>
+
                 <div className="text-center mb-8">
                   <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className="text-5xl md:text-6xl font-display font-black text-accent">$299</span>
+                    <span className="text-5xl md:text-6xl font-display font-black text-accent">$799</span>
                     <span className="text-xl text-white/60">/month</span>
                   </div>
-                  <p className="text-white/80">Everything included. No hidden fees. 🇺🇸 Made in USA.</p>
+                  <p className="text-white/80">Website + Content + SEO + PPC. One flat price. 🇺🇸 Made in USA.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   {[
+                    { icon: Sparkles, text: "Stunning Custom Website" },
+                    { icon: PenTool, text: "Content Creation Included" },
+                    { icon: Search, text: "Full SEO — Rank & Grow" },
+                    { icon: Megaphone, text: "PPC Management — Any Budget" },
                     { icon: Globe, text: "Premium Hosting Included" },
                     { icon: Layers, text: "Unlimited Updates & Changes" },
-                    { icon: Cpu, text: "Full SEO Services" },
                     { icon: Check, text: "99.9% Uptime Guarantee" },
-                    { icon: Check, text: "Cancel Anytime" },
-                    { icon: Check, text: "Keep Website Hosted After Cancel" },
+                    { icon: Check, text: "Cancel Anytime, Keep Your Site" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 text-white/90">
                       <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
@@ -677,7 +684,7 @@ export default function Home() {
                 </div>
 
                 <div className="text-center">
-                  <Link href="/contact" data-testid="button-offer-cta" className="btn-glow group relative inline-flex items-center gap-3 bg-accent text-black px-12 py-5 text-lg font-black uppercase tracking-wide overflow-hidden rounded-full transition-all duration-500 hover:scale-105">
+                  <Link href="/auth" data-testid="button-offer-cta" className="btn-glow group relative inline-flex items-center gap-3 bg-accent text-black px-12 py-5 text-lg font-black uppercase tracking-wide overflow-hidden rounded-full transition-all duration-500 hover:scale-105">
                     <span className="relative z-10 flex items-center gap-3">
                       Start Your Project
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -688,6 +695,92 @@ export default function Home() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* The Growth Engine */}
+      <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(145,255,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(145,255,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-16">
+            <FadeIn>
+              <span className="inline-block py-1 px-3 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-4">How It Compounds</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+                The Créatifia <span className="text-accent">Growth Engine</span>
+              </h2>
+              <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+                Most agencies sell you pieces. We run the whole machine — each part feeding the next, compounding month after month.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="relative max-w-6xl mx-auto">
+            {/* Connecting line (desktop) */}
+            <div className="hidden lg:block absolute top-[52px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+              {[
+                {
+                  icon: Rocket,
+                  phase: "01 — Launch",
+                  title: "Stunning Website",
+                  desc: "A story-driven, conversion-engineered site that makes your brand impossible to ignore.",
+                  points: ["Custom design", "5-day first draft", "Blazing fast"],
+                },
+                {
+                  icon: TrendingUp,
+                  phase: "02 — Attract",
+                  title: "Content + SEO",
+                  desc: "Fresh content and relentless SEO pull in customers who are already searching for you.",
+                  points: ["Keyword strategy", "Blog & landing copy", "Local SEO"],
+                },
+                {
+                  icon: Target,
+                  phase: "03 — Convert",
+                  title: "PPC That Pays",
+                  desc: "Google & Meta campaigns managed with surgical precision — any budget, zero management caps.",
+                  points: ["Google & Meta Ads", "Retargeting", "A/B testing"],
+                },
+                {
+                  icon: BarChart3,
+                  phase: "04 — Scale",
+                  title: "Data & Iterate",
+                  desc: "We measure everything, double down on what works, and keep your growth curve bending up.",
+                  points: ["Monthly reporting", "CRO", "Unlimited updates"],
+                },
+              ].map((step, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="group relative h-full bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-accent/40 hover:bg-accent/[0.04] transition-all duration-500 hover:-translate-y-1">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(145,255,0,0.3)] transition-all duration-500 relative z-10 bg-background">
+                      <step.icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <div className="text-[10px] font-mono text-accent/70 uppercase tracking-widest mb-2">{step.phase}</div>
+                    <h3 className="text-lg md:text-xl font-display font-bold text-white mb-2">{step.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{step.desc}</p>
+                    <ul className="space-y-1.5">
+                      {step.points.map((p, j) => (
+                        <li key={j} className="flex items-center gap-2 text-xs text-white/70">
+                          <Check className="w-3 h-3 text-accent flex-shrink-0" /> {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+
+          <FadeIn delay={0.5} className="mt-12 text-center">
+            <p className="text-white/50 text-sm mb-5 italic">All four. One team. One $799/month subscription.</p>
+            <Link href="/auth" data-testid="button-growth-engine-cta" className="btn-glow group relative inline-flex items-center gap-3 bg-accent text-black px-10 py-4 text-base font-black uppercase tracking-wide overflow-hidden rounded-full transition-all duration-500 hover:scale-105">
+              <span className="relative z-10 flex items-center gap-3">
+                Start Growing
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </FadeIn>
         </div>
       </section>
 
@@ -797,7 +890,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works - $299 Process */}
+      {/* How It Works - $799 Process */}
       <section className="py-20 md:py-32 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
         <div className="absolute top-20 right-20 w-16 h-16 border border-accent/10 rounded-full hidden md:block" />
@@ -810,7 +903,7 @@ export default function Home() {
                 How It <span className="text-accent">Works</span>
               </h2>
               <p className="text-muted-foreground text-base max-w-lg mx-auto">
-                From payment to launch in 5 simple steps.
+                From signup to growth in 5 simple steps.
               </p>
             </FadeIn>
           </div>
@@ -818,11 +911,11 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-3">
               {[
-                { Icon: CreditCard, step: "1", title: "Subscribe" },
-                { Icon: FileText, step: "2", title: "Fill Brief" },
-                { Icon: Video, step: "3", title: "Zoom Call" },
+                { Icon: FileText, step: "1", title: "Fill Brief" },
+                { Icon: Video, step: "2", title: "Zoom Call" },
+                { Icon: CreditCard, step: "3", title: "Subscribe" },
                 { Icon: Clock, step: "4", title: "5-Day Draft" },
-                { Icon: CheckCircle2, step: "5", title: "Launch" },
+                { Icon: Rocket, step: "5", title: "Launch & Grow" },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 0.08}>
                   <div className="group text-center p-5 md:p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-accent/20 transition-all duration-300">
@@ -838,7 +931,7 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.5} className="mt-10 text-center">
-            <Link href="/contact" data-testid="button-start-project" className="btn-glow btn-creative group relative inline-flex items-center gap-4 bg-accent text-black px-12 py-6 text-lg font-black uppercase tracking-wider overflow-hidden rounded-full transition-all duration-500 hover:scale-110">
+            <Link href="/auth" data-testid="button-start-project" className="btn-glow btn-creative group relative inline-flex items-center gap-4 bg-accent text-black px-12 py-6 text-lg font-black uppercase tracking-wider overflow-hidden rounded-full transition-all duration-500 hover:scale-110">
               <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <span className="relative z-10 flex items-center gap-4">
                 <span className="w-3 h-3 bg-black rounded-full animate-pulse" />
@@ -930,7 +1023,7 @@ export default function Home() {
                   Why <span className="text-accent">Créatifia</span>
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  We combine creative excellence with modern technology to deliver websites that truly stand out.
+                  We combine creative excellence with full-stack marketing to deliver brands that stand out — and keep growing.
                 </p>
               </FadeIn>
             </div>
@@ -938,8 +1031,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { title: "Made in USA", desc: "100% American team. No outsourcing, ever." },
-                { title: "All-Inclusive", desc: "Design, hosting, maintenance, updates, and SEO — everything handled." },
-                { title: "Always Evolving", desc: "Your website stays fresh and current with unlimited updates." },
+                { title: "All-Inclusive", desc: "Design, hosting, content, SEO, and PPC — your entire online presence, handled." },
+                { title: "Always Growing", desc: "Unlimited updates, fresh content, and campaigns optimized every single month." },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
                   <div className="group text-center p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-accent/20 transition-all duration-500">
@@ -970,12 +1063,13 @@ export default function Home() {
 
           <div className="max-w-2xl mx-auto space-y-3">
             {[
-              { q: "What's included in the subscription?", a: "Everything — premium hosting, unlimited updates & changes, full SEO services, 99.9% uptime guarantee. All for $299/month. Cancel anytime and keep your website hosted." },
+              { q: "What's included in the subscription?", a: "Everything — your custom website, premium hosting, unlimited updates, content creation, full SEO, and PPC campaign management. All for one flat $799/month. Cancel anytime and keep your website hosted." },
+              { q: "Is ad spend included in PPC management?", a: "We manage your campaigns end-to-end with no caps — any budget, unlimited optimization. Your actual ad spend is paid directly to Google/Meta, so you keep full control of it." },
+              { q: "Do you write the content too?", a: "Yes — website copy, landing pages, and blog articles, all written in your brand voice and optimized to rank and convert." },
               { q: "How long until I see my first draft?", a: "5 business days. Most clients are amazed at the speed." },
               { q: "What if I need changes?", a: "Unlimited revisions included until you're 100% satisfied." },
-              { q: "What does 'any website' mean?", a: "Landing pages, portfolios, restaurants, real estate, fitness, services — any website (not web apps)." },
               { q: "Can I schedule a Zoom call?", a: "Yes! After your brief, schedule a free call to discuss details." },
-              { q: "What happens after I pay?", a: "You'll get a link to fill out your project brief, then we start working." },
+              { q: "When do I pay?", a: "After you complete your brief and discovery call — so we fully understand your business before a dollar changes hands." },
               { q: "Can I cancel anytime?", a: "Yes! Cancel anytime with no penalties. Your website stays hosted even after you cancel." },
               { q: "What if I'm not satisfied?", a: "100% money-back guarantee within 14 days of your first draft." },
             ].map((faq, i) => (
@@ -1038,13 +1132,13 @@ export default function Home() {
            </FadeIn>
            <FadeIn delay={0.2}>
              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-               Let's create a website that tells your story and drives results. First draft in 5 days.
+               A website that tells your story — backed by content, SEO, and ads that grow it. First draft in 5 days.
              </p>
            </FadeIn>
            
            <FadeIn delay={0.4}>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <Link href="/contact" data-testid="button-final-cta" className="group relative flex items-center gap-3 bg-accent text-black px-10 py-5 md:px-12 md:py-6 text-base font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_50px_rgba(145,255,0,0.6)] hover:shadow-[0_0_80px_rgba(145,255,0,0.9)] transition-all duration-500">
+               <Link href="/auth" data-testid="button-final-cta" className="group relative flex items-center gap-3 bg-accent text-black px-10 py-5 md:px-12 md:py-6 text-base font-bold uppercase tracking-wide overflow-hidden rounded-full shadow-[0_0_50px_rgba(145,255,0,0.6)] hover:shadow-[0_0_80px_rgba(145,255,0,0.9)] transition-all duration-500">
                  Start Your Project
                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                </Link>

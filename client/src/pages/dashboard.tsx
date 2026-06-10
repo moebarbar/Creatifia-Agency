@@ -304,7 +304,7 @@ function PaymentCard({ inline }: { inline?: boolean } = {}) {
         {inline ? "Ready to start? Subscribe now" : "Start your subscription"}
       </h2>
       <p className="mt-2 text-sm text-muted-foreground">
-        $299/month — hosting, unlimited updates, and SEO all included. Cancel anytime.
+        $799/month — your website, content, SEO, and PPC management all included. Cancel anytime.
         Once payment is confirmed, our team begins your design.
       </p>
       <Button
@@ -312,7 +312,7 @@ function PaymentCard({ inline }: { inline?: boolean } = {}) {
         onClick={() => checkout.mutate()}
         className="mt-4 bg-accent text-black hover:bg-accent/90 font-bold"
       >
-        {checkout.isPending ? "Redirecting…" : "Subscribe — $299/mo"}
+        {checkout.isPending ? "Redirecting…" : "Subscribe — $799/mo"}
       </Button>
     </>
   );

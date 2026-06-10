@@ -149,7 +149,7 @@ export default function Blog() {
                 Ready for a Website That Converts?
               </h2>
               <p className="text-lg text-black/70 mb-8 max-w-2xl mx-auto">
-                Get a premium custom website for just $299/month. Design, hosting, SEO, and unlimited updates included.
+                Get a premium custom website for just $799/month. Design, hosting, SEO, and unlimited updates included.
               </p>
               <Link href="/contact">
                 <button 

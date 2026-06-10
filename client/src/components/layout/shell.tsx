@@ -116,7 +116,7 @@ export function Footer() {
               <a href="#" className="hover:text-accent transition-colors">Dribbble</a>
             </div>
             <p className="mt-8 text-white/40 max-w-xs text-right hidden md:block">
-              We create digital experiences that define brands. Story-driven. Pixel perfect.
+              We design, build, and grow brands online. Websites, content, SEO & PPC — one team, one subscription.
             </p>
           </div>
         </div>

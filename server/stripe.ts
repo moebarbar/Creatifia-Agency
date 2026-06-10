@@ -4,7 +4,7 @@ import { storage } from "./storage";
 import type { User } from "@shared/schema";
 
 /**
- * Stripe integration (subscription model — $299/month).
+ * Stripe integration (subscription model — $799/month).
  *
  * The Stripe client is only instantiated when keys are present, so the app
  * boots and compiles without credentials. Callers should check `stripeEnabled`

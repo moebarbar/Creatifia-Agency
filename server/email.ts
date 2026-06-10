@@ -66,7 +66,7 @@ export async function sendWelcomeEmail(to: string, name?: string) {
       <ol>
         <li><strong>Complete your brief</strong> — tell us about your business (you can save and come back anytime).</li>
         <li><strong>Book a discovery call</strong> — a quick Zoom to align on your vision.</li>
-        <li><strong>Start your subscription</strong> — $299/month, and we begin building.</li>
+        <li><strong>Start your subscription</strong> — $799/month, and we begin building.</li>
       </ol>
       <p><a href="${env.APP_URL}/dashboard">Go to your dashboard →</a></p>
     `,
@@ -135,7 +135,7 @@ export async function sendAdminNotification(subject: string, body: string) {
 /* ------------------------------ helpers ------------------------------ */
 
 function wrapHtml(inner: string): string {
-  return `<!doctype html><html><body style="font-family:Inter,Arial,sans-serif;line-height:1.6;color:#1a1a1a;max-width:560px;margin:0 auto;padding:24px;">${inner}<hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;"/><p style="font-size:12px;color:#999;">Créatifia — Premium websites, one subscription.</p></body></html>`;
+  return `<!doctype html><html><body style="font-family:Inter,Arial,sans-serif;line-height:1.6;color:#1a1a1a;max-width:560px;margin:0 auto;padding:24px;">${inner}<hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;"/><p style="font-size:12px;color:#999;">Créatifia — Websites, content, SEO & PPC. One subscription.</p></body></html>`;
 }
 
 function stripHtml(html: string): string {

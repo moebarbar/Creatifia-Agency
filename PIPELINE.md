@@ -7,7 +7,7 @@ billing model, and how to set everything up on Railway.
 
 ## 1. What this is
 
-Créatifia sells a **$299/month website subscription**. This system lets clients
+Créatifia sells a **$799/month website subscription**. This system lets clients
 sign up, tell us about their business, book a call, and pay — and gives the team
 a CRM to manage every client through the pipeline.
 
@@ -26,7 +26,7 @@ Every client has one **engagement** that moves through these stages:
 | `brief_complete` | Brief submitted (all required fields) | Client |
 | `call_scheduled` | Client books a discovery (Zoom) call | Client |
 | `awaiting_payment` | After the call, client returns to pay | Client |
-| `active` | $299/mo subscription confirmed (Stripe webhook) | System |
+| `active` | $799/mo subscription confirmed (Stripe webhook) | System |
 | `in_design` | Team builds the first draft (5 business days) | Staff |
 | `in_revision` | Feedback loop | Both |
 | `launched` | Site is live; unlimited updates continue | Staff |
@@ -86,7 +86,7 @@ UPDATE users SET role = 'admin' WHERE email = 'you@creatifia.com';
 
 ## 4. Stripe
 
-- **Model:** hosted Stripe Checkout in `subscription` mode ($299/mo).
+- **Model:** hosted Stripe Checkout in `subscription` mode ($799/mo).
 - **Manage/cancel:** Stripe Customer Portal (`/api/payments/portal`).
 - **Webhooks** (`/api/webhooks/stripe`): `checkout.session.completed`,
   `customer.subscription.*`, `invoice.paid`, `invoice.payment_failed`. Every
@@ -123,7 +123,7 @@ admin new-lead/stage notifications.
    (or run `npm run db:migrate` once locally against the Railway DB).
 4. **Build & start** — Railway uses `npm run build` then `npm run start`.
 5. **Stripe:**
-   - Create a recurring **$299/month** Price → copy its id into `STRIPE_PRICE_ID`.
+   - Create a recurring **$799/month** Price → copy its id into `STRIPE_PRICE_ID`.
    - Add a webhook endpoint → `https://<APP_URL>/api/webhooks/stripe`, subscribe
      to the events listed above → copy the signing secret into
      `STRIPE_WEBHOOK_SECRET`.

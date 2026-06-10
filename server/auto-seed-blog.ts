@@ -242,7 +242,7 @@ Remember that brand identity isn't static—it evolves as your business grows. T
 
 ## Ready to Build a Brand That Resonates?
 
-At Créatifia, we don't just build websites—we create comprehensive brand experiences that build trust, recognition, and lasting customer relationships. Our **$299/month subscription service** includes professional brand-focused design, consistent updates to maintain freshness, and strategic guidance to ensure your visual identity evolves with your business.
+At Créatifia, we don't just build websites—we create comprehensive brand experiences that build trust, recognition, and lasting customer relationships. Our **$799/month subscription service** includes professional brand-focused design, consistent updates to maintain freshness, and strategic guidance to ensure your visual identity evolves with your business.
 
 Every color, font, image, and interaction is chosen intentionally to reflect your unique brand personality and connect with your target audience. Stop settling for generic templates that dilute your brand—invest in a website that truly represents who you are.
 
@@ -447,7 +447,7 @@ If you've identified 3 or more of these signs in your current website, it's time
 
 ## Ready to Transform Your Website?
 
-At **Créatifia**, we specialize in creating premium websites that don't just look beautiful—they drive real business results. Our **$299/month subscription service** includes everything you need: professional design, hosting, maintenance, SEO optimization, and ongoing updates. No hidden fees, no surprises, just a high-performing website that grows with your business.
+At **Créatifia**, we specialize in creating premium websites that don't just look beautiful—they drive real business results. Our **$799/month subscription service** includes everything you need: professional design, hosting, maintenance, SEO optimization, and ongoing updates. No hidden fees, no surprises, just a high-performing website that grows with your business.
 
 Don't let an outdated website cost you another day of lost revenue and missed opportunities. [Contact us today](/contact) for a free website audit and discover how a strategic redesign can transform your business.
 
@@ -471,7 +471,7 @@ Don't let an outdated website cost you another day of lost revenue and missed op
     publishedAt: new Date("2026-01-20"),
     content: `# Premium Website Design Trends 2026: What Sets High-End Sites Apart
 
-The digital landscape of 2026 has evolved dramatically, with premium website design reaching new heights of sophistication and user engagement. As businesses increasingly recognize the power of exceptional web presence, the gap between average and extraordinary websites continues to widen. At **Créatifia**, we've been at the forefront of implementing these cutting-edge trends for our clients through our $299/month all-inclusive website subscription.
+The digital landscape of 2026 has evolved dramatically, with premium website design reaching new heights of sophistication and user engagement. As businesses increasingly recognize the power of exceptional web presence, the gap between average and extraordinary websites continues to widen. At **Créatifia**, we've been at the forefront of implementing these cutting-edge trends for our clients through our $799/month all-inclusive website subscription.
 
 ## The Rise of Glassmorphism 2.0
 
@@ -519,7 +519,7 @@ Dark mode has evolved from a feature to an art form. Premium websites now offer 
 
 ## How Créatifia Implements These Trends
 
-At Créatifia, our $299/month website subscription includes access to these premium design techniques. We don't believe exceptional design should be reserved for enterprises with massive budgets.
+At Créatifia, our $799/month website subscription includes access to these premium design techniques. We don't believe exceptional design should be reserved for enterprises with massive budgets.
 
 ## Looking Forward
 
@@ -573,7 +573,7 @@ Ready to apply psychology-backed design to your business? [Contact Créatifia](/
     publishedAt: new Date("2026-01-08"),
     content: `# Custom Website Design vs Template: When Premium Matters for Your Business
 
-The debate between custom website design and templates has intensified as both options have evolved dramatically. At **Créatifia**, we help clients navigate this choice through our $299/month subscription that brings custom design within reach.
+The debate between custom website design and templates has intensified as both options have evolved dramatically. At **Créatifia**, we help clients navigate this choice through our $799/month subscription that brings custom design within reach.
 
 ## Understanding the Real Differences
 
