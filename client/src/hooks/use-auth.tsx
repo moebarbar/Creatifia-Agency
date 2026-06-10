@@ -28,7 +28,10 @@ export function useAuth() {
       const res = await apiRequest("POST", "/api/auth/login", vars);
       return res.json();
     },
-    onSuccess: () => {
+    onSuccess: (data: MeResponse) => {
+      // Seed the cache synchronously so `user` is available before we
+      // navigate — otherwise the dashboard sees a stale null and blanks/bounces.
+      if (data?.user) queryClient.setQueryData(["/api/auth/me"], data);
       queryClient.invalidateQueries({ queryKey: ["/api/auth/me"] });
     },
   });
@@ -43,7 +46,8 @@ export function useAuth() {
       const res = await apiRequest("POST", "/api/auth/register", vars);
       return res.json();
     },
-    onSuccess: () => {
+    onSuccess: (data: MeResponse) => {
+      if (data?.user) queryClient.setQueryData(["/api/auth/me"], data);
       queryClient.invalidateQueries({ queryKey: ["/api/auth/me"] });
     },
   });

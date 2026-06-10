@@ -29,18 +29,18 @@ export default function AuthPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     try {
-      if (mode === "signup") {
-        await register.mutateAsync({
-          email: email.trim(),
-          password,
-          // Send undefined (not "") so blank optional fields are omitted.
-          name: name.trim() || undefined,
-          businessName: businessName.trim() || undefined,
-        });
-      } else {
-        await login.mutateAsync({ email: email.trim(), password });
-      }
-      navigate("/dashboard");
+      const result =
+        mode === "signup"
+          ? await register.mutateAsync({
+              email: email.trim(),
+              password,
+              // Send undefined (not "") so blank optional fields are omitted.
+              name: name.trim() || undefined,
+              businessName: businessName.trim() || undefined,
+            })
+          : await login.mutateAsync({ email: email.trim(), password });
+      const role = result?.user?.role;
+      navigate(!role || role === "client" ? "/dashboard" : "/admin");
     } catch (err) {
       toast({
         title: mode === "signup" ? "Couldn't create account" : "Couldn't log in",
