@@ -283,15 +283,16 @@ export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
 });
 
 export const registerSchema = z.object({
-  email: z.string().email(),
+  email: z.string().email("Please enter a valid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
-  name: z.string().min(1).optional(),
-  businessName: z.string().min(1).optional(),
+  // Optional and allowed to be empty — only email + password are required.
+  name: z.string().optional(),
+  businessName: z.string().optional(),
 });
 
 export const loginSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(1),
+  email: z.string().email("Please enter a valid email address"),
+  password: z.string().min(1, "Please enter your password"),
 });
 
 export type Project = typeof projects.$inferSelect;

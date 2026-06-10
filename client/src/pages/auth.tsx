@@ -30,15 +30,21 @@ export default function AuthPage() {
     e.preventDefault();
     try {
       if (mode === "signup") {
-        await register.mutateAsync({ email, password, name, businessName });
+        await register.mutateAsync({
+          email: email.trim(),
+          password,
+          // Send undefined (not "") so blank optional fields are omitted.
+          name: name.trim() || undefined,
+          businessName: businessName.trim() || undefined,
+        });
       } else {
-        await login.mutateAsync({ email, password });
+        await login.mutateAsync({ email: email.trim(), password });
       }
       navigate("/dashboard");
     } catch (err) {
       toast({
-        title: "Something went wrong",
-        description: err instanceof Error ? err.message.replace(/^\d+:\s*/, "") : "Please try again",
+        title: mode === "signup" ? "Couldn't create account" : "Couldn't log in",
+        description: err instanceof Error ? err.message : "Please try again.",
         variant: "destructive",
       });
     }
