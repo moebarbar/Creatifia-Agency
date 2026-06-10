@@ -63,7 +63,7 @@ export default function AdminCRM() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/">
-              <img src="/logo.png?v=2" alt="Créatifia" className="h-7" />
+              <img src="/logo.png?v=3" alt="Créatifia" className="h-7" />
             </Link>
             <span className="text-sm font-bold text-accent">CRM</span>
           </div>

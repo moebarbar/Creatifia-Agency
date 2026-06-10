@@ -54,7 +54,7 @@ export default function Dashboard() {
       <header className="border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
-            <img src="/logo.png?v=2" alt="Créatifia" className="h-7" />
+            <img src="/logo.png?v=3" alt="Créatifia" className="h-7" />
           </Link>
           <div className="flex items-center gap-4 text-sm">
             <span className="text-muted-foreground hidden sm:inline">{user?.email}</span>
