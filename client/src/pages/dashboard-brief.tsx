@@ -139,7 +139,7 @@ export default function BriefWizard() {
       <header className="border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/dashboard">
-            <img src="/logo.png?v=3" alt="Créatifia" className="h-7" />
+            <img src="/logo.png?v=3" alt="Créatifia" className="h-9" />
           </Link>
           <SaveIndicator state={saveState} />
         </div>

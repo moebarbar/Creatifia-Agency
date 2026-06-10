@@ -33,7 +33,7 @@ export function Navbar() {
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <Link href="/" className="z-50 relative hover:opacity-80 transition-opacity">
-            <img src="/logo.png?v=3" alt="Créatifia" className="h-8" />
+            <img src="/logo.png?v=3" alt="Créatifia" className="h-10" />
           </Link>
 
           {/* Desktop Nav */}

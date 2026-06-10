@@ -55,7 +55,7 @@ export default function AuthPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block mb-6">
-            <img src="/logo.png?v=3" alt="Créatifia" className="h-8 mx-auto" />
+            <img src="/logo.png?v=3" alt="Créatifia" className="h-10 mx-auto" />
           </Link>
           <h1 className="text-2xl font-display font-bold text-white">
             {mode === "signup" ? "Start your project" : "Welcome back"}
